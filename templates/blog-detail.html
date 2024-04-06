@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<!-- Page Header Start-->
+<section class="page-header">
+    <h1 class="color-white">BLOG DETAIL</h1>
+</section>
+<!-- Page Header End-->
+
+<!-- Blogs Start -->
+<section class="py-64">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xxl-9 col-lg-8 mb-48 mb-lg-0">
+                <div class="blog-detail">
+                    <h2 class="mb-16">Blog title goes here</h2>
+                    <div class="info-row pb-48 mb-48">
+                        <div class="info-left">
+                            <div class="author">
+                                <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                <p>Julia Fernandez</p>
+                            </div>
+                            <div>
+                                <span>Category: </span>
+                                <span><a href="{% url 'blogs' %}">Traveling Tips</a></span>
+                            </div>
+                        </div>
+                        <span class="date">12-Oct-2024</span>
+                    </div>
+                    <div class="row mb-48">
+                        <div class="col-md-6 order-md-1 order-2">
+                            <p class="mb-48">Lorem ipsum dolor sit amet consectetur. Rhoncus diam in elementum rutrum lorem eget aliquet morbi. Turpis suspendisse mi amet ultrices a mauris eu sed eu. Ullamcorper amet mi a nisl egestas cras nunc. In quam feugiat porttitor et pharetra nisl at. Turpis sagittis vitae porta lobortis fermentum pretium ut. Facilisis elit elit nisl malesuada gravida. Quisque tellus auctor amet urna suspendisse purus. Viverra sollicitudin libero vel ultrices volutpat. Pellentesque vulputate risus id feugiat turpis ultricies morbi aliquam eu. Viverra gravida orci leo cursus eu accumsan. Massa quam massa leo orci magna elit.</p>
+                            <div class="quote">
+                                <img src="{% static 'assets/media/icons/quote-1.png' %}" alt="" class="mb-4p quote-icon">
+                                <div class="text-center">
+                                    <h5 class="px-xl-5 px-md-3 px-2">Block quotes are a great way to summarize the blog or to help convey important points</h5>
+                                </div>
+                                <div class="text-end">
+                                    <img src="{% static 'assets/media/icons/quote-2.png' %}" alt="" class="quote-icon">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-md-2 order-1">
+                            <img src="{% static 'assets/media/blogs/blog-detail.png' %}" alt="" class="br-30 mb-32 mb-md-0">
+                        </div>
+                    </div>
+                    <p class="mb-48">Lorem ipsum dolor sit amet consectetur. Sit sociis morbi in id nunc enim scelerisque vitae. Pellentesque enim nulla diam aliquam faucibus. Pretium egestas auctor sit non in in faucibus scelerisque. Ultrices eu cursus interdum massa egestas. Ultrices volutpat malesuada quisque nunc. Risus sed pulvinar tortor duis. Eu hac proin pellentesque vehicula posuere at. Ut egestas quisque eros fusce nulla ultrices quis velit rhoncus. Tincidunt tristique integer nisl in diam gravida sapien. Diam semper sed auctor sagittis libero viverra volutpat. Interdum felis morbi vulputate pellentesque dapibus nisl sed.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur. A sociis sit enim arcu auctor libero viverra pretium. Amet adipiscing ornare tempus odio in ut. Diam senectus velit erat viverra pellentesque. Risus massa eros facilisi senectus augue. At odio feugiat nec sagittis augue sed. At pellentesque sagittis massa neque odio leo vivamus mi nulla. Tortor quis sagittis felis tincidunt ullamcorper at nunc scelerisque. Ullamcorper consectetur tortor amet viverra egestas a arcu. Non lacinia sit semper blandit fames amet. Mollis elementum egestas potenti quisque non volutpat urna elementum. Velit sit metus nibh tristique in pellentesque interdum.</p>
+                </div> 
+            </div>
+            <div class="col-xxl-3 col-lg-4 ">
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <form action="blog-grid-left-sidebar.html">
+                            <div class="search-field">
+                                <div class="form-group">
+                                    <input type="search" class="cus-form-control" id="searchInput" name="search" autocomplete="off" placeholder="Search here...">
+                                </div>
+                                <button type="submit" class="search-btn"><i class="fa-regular fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="sidebar-widget">
+                        <div class="widget-title-row mb-24">
+                            <h5>Categories</h5>
+                            <span><i class="fa-light fa-horizontal-rule"></i></span>
+                        </div>
+                        <div class="widget-content-block">
+                            <ul class="filter-list unstyled">
+                                <li>
+                                    <div class="filter-checkbox">
+                                        <input type="checkbox" id="tips">
+                                        <label for="tips">Traveling Tips</label>
+                                    </div>
+                                    <p class="fw-500">(02)</p>
+                                </li>
+                                <li>
+                                    <div class="filter-checkbox">
+                                        <input type="checkbox" id="stories">
+                                        <label for="stories">Travel Stories</label>
+                                    </div>
+                                    <p class="fw-500">(02)</p>
+                                </li>
+                                <li>
+                                    <div class="filter-checkbox">
+                                        <input type="checkbox" id="places">
+                                        <label for="places">Popular Places</label>
+                                    </div>
+                                    <p class="fw-500">(02)</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <div class="widget-title-row mb-24">
+                            <h5>Tags</h5>
+                            <span><i class="fa-regular fa-horizontal-rule"></i></span>
+                        </div>
+                        <div class="widget-content-block">
+                            <ul class="tags-list unstyled">
+                                <li><a href="">#travel</a></li>
+                                <li><a href="">#tips&tricks</a></li>
+                                <li><a href="">#cosines</a></li>
+                                <li><a href="">#food&travel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <div class="widget-title-row mb-24">
+                            <h5>Recent Blogs</h5>
+                            <span><i class="fa-regular fa-horizontal-rule"></i></span>
+                        </div>
+                        <div class="widget-content-block">
+                            <ul class="blogs-list unstyled">
+                                <li>
+                                    <div class="blog-list-item">
+                                        <a href="{% url 'blog_detail' %}" class="blog-img"><img src="{% static 'assets/media/blogs/blog-list-sm1.png' %}" alt=""></a>
+                                        <div>
+                                            <a href="{% url 'blog_detail' %}" class="h6 mb-8">Blog title goes here</a>
+                                            <a href="{% url 'blog_detail' %}" class="color-primary fw-500 d-block">Read More</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="blog-list-item">
+                                        <a href="{% url 'blog_detail' %}" class="blog-img"><img src="{% static 'assets/media/blogs/blog-list-sm2.png' %}" alt=""></a>
+                                        <div>
+                                            <a href="{% url 'blog_detail' %}" class="h6 mb-8">Blog title goes here</a>
+                                            <a href="{% url 'blog_detail' %}" class="color-primary fw-500 d-block">Read More</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="blog-list-item">
+                                        <a href="{% url 'blog_detail' %}" class="blog-img"><img src="{% static 'assets/media/blogs/blog-list-sm3.png' %}" alt=""></a>
+                                        <div>
+                                            <a href="{% url 'blog_detail' %}" class="h6 mb-8">Blog title goes here</a>
+                                            <a href="{% url 'blog_detail' %}" class="color-primary fw-500 d-block">Read More</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blogs End -->
+{% endblock %}

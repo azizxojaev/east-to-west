@@ -1,0 +1,115 @@
+// Colors
+.color-primary {
+    color: $accent-1 !important;
+}
+.bg-primary {
+    background-color: $accent-1 !important;
+}
+
+.color-white {
+    color: $white !important;
+}
+.bg-white {
+    background-color: $white !important;
+}
+
+.color-black {
+    color: $black !important;
+}
+.bg-black {
+    background-color: $black !important;
+}
+
+.light-black {
+    color: $light-black !important;
+}
+.bg-light-black {
+    background-color: $light-black !important;
+}
+
+.medium-black {
+    color: $medium-black !important;
+}
+.bg-medium-black {
+    background-color: $medium-black !important;
+}
+
+.lightest-gray {
+    color: $lightest-gray !important;
+}
+.bg-lightest-gray {
+    background-color: $lightest-gray !important;
+}
+
+.light-gray {
+    color: $light-gray !important;
+}
+.bg-light-gray {
+    background-color: $light-gray !important;
+}
+
+.medium-gray {
+    color: $medium-gray !important;
+}
+.bg-medium-gray {
+    background-color: $medium-gray !important;
+}
+
+.dark-gray {
+    color: $dark-gray !important;
+}
+.bg-dark-gray {
+    background-color: $dark-gray !important;
+}
+
+
+
+
+// Mix helper classes
+.b-unstyle {
+    border: 0;
+    background: transparent;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.fw-500{
+    font-weight: 500;
+}
+.font-sec{
+    font-family: $font-sec;
+    font-weight: 400;
+    line-height: 120%; /* 61.2px */
+    letter-spacing: -0.51px;
+}
+.br-30{
+    border-radius: clamp(20px, 1.55vw, 40px);
+}
+
+
+@media(max-width: 767px) {
+    .hide-on-mobile{
+        display: none !important;
+    }
+}
+
+.box-blur-bg{
+    border-radius: clamp(20px, 1.563vw, 36px);
+    padding: clamp(10px, 0.833vw, 18px);
+    border: 1px solid #CDCCCB;
+    background: rgba(255, 252, 250, 0.50);
+    box-shadow: $shadow;
+    backdrop-filter: blur(15px);
+    .b-radius-20{
+        border-radius: clamp(14px, 1.07vw, 26px);
+    }
+}
+
+.social-links{
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 1.66vw, 42px);
+    img{
+        width: clamp(24px, 1.66vw, 42px);
+    }
+}

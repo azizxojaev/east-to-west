@@ -1,0 +1,114 @@
+/*----------------------------------------*/
+/*  Button CSS START
+/*----------------------------------------*/
+.slider-arrow{
+  display: flex;
+  align-items: center;
+  gap: 1.25vw;
+  .arrow{
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $lightest-gray;
+    border: 1px solid $black;
+    border-radius: 0.58125vw;
+    transition: $transition;
+    padding: 0;
+    svg{
+      transition: $transition;
+      width: 1.71875vw;
+      height: 1.71875vw;
+      @include media-query(991px) {
+        width: 2.4vw;
+        height: 2.4vw;
+      }
+      path{
+        transition: $transition;
+      }
+    }
+    &.slick-disabled{
+      svg{
+        opacity: 0.3;
+      }
+    }
+    &:hover{
+      &:not(.slick-disabled){
+        background: $accent-1;
+        border-color: $accent-1;
+        box-shadow: 0px 0px 20px 1px $accent-1;
+        svg{
+          path{
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ui-btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: clamp(40px, 2.917vw, 60px);
+	background-color: transparent;
+	text-align: center;
+	font-size: clamp(14px, 0.833vw, 18px);
+	font-weight: 600;
+  letter-spacing: 0.32px;
+	overflow: hidden;
+  width: fit-content;
+	cursor: pointer;
+	border: none;
+	border-radius: clamp(12px, 0.781vw, 17px);
+	z-index: 9;
+  > * {
+    position: relative;
+    color: $white;
+    transition: transform 0.2s;
+  }
+  > *,
+  > *::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 clamp(22px, 1.667vw, 40px);
+    line-height: 1;
+    @include media-query(492px) {
+      padding: 0 clamp(14px, 3.667vw, 20px);
+    }
+  }
+  > *::after {
+    position: absolute;
+    content: attr(data-hover);
+    top: 100%;
+    width: 100%;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &:hover{
+    > * {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  &.ui-btn-primary {
+    background-color: $accent-1;
+    > *,
+    > *::after {
+      color: $white;
+    }
+    &:hover > * {
+      color: $white;
+    }
+  }
+  button {
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+  }
+}

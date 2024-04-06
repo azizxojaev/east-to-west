@@ -1,0 +1,19 @@
+.page-header{
+    background: url(../media/bg/page-header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: clamp(400px, 25.885vw, 600px);
+    padding-top: 5%;
+    @include media-query(767px) {
+        height: 300px;
+        padding-top: 10%;
+	}
+    @include media-query(492px) {
+        height: 260px;
+        padding-top: 20%;
+	}
+}

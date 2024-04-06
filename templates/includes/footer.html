@@ -1,0 +1,117 @@
+{% load static %}
+<!-- Footer Start -->
+<footer class="pt-64 pb-40">
+    <div class="container-fluid">
+        <div class="box-blur-bg">
+            <div class="footer-content bg-white b-radius-20">
+                <div class="features-row row">
+                    <div class="col-lg-3 col-6 feature-block">
+                        <img src="{% static 'assets/media/icons/australia.png' %}" alt="">
+                        <h6>SPECIAL ACTIVITES</h6>
+                    </div>
+                    <div class="col-lg-3 col-6 feature-block">                                    
+                       <img src="{% static 'assets/media/icons/tour-guide.png' %}" alt="">
+                        <h6>BEST GUIDES</h6>
+                    </div>
+                    <div class="col-lg-3 col-6 feature-block">                                    
+                       <img src="{% static 'assets/media/icons/bus.png' %}" alt="">
+                        <h6>TRANSPORT SERVICES</h6>
+                    </div>
+                    <div class="col-lg-3 col-6 feature-block">                                    
+                       <img src="{% static 'assets/media/icons/online-chat.png' %}" alt="">
+                        <h6>UNRIVALED SUPPORT</h6>
+                    </div>
+                </div>
+                <div class="footer-main py-64">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-8">
+                            <a href="{% url 'home' %}" class="footer-logo mb-40">
+                                <img src="{% static 'assets/media/footer-logo.png' %}" alt="">
+                            </a>
+                            <p class="mb-40 mb-xl-0">Ideal Office Furniture have been working in the commercial furniture market place for many years already and come with over 20 years of sales and design experience, so you will be in very good hands when doing business with us.</p>
+                        </div>
+                        <div class="col-xl-6 offset-xl-1">
+                            <div class="footer-right-content">
+                                <div class="footer-widgets mb-40 mb-xl-0">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-6">
+                                            <div class="widget mb-24">
+                                                <h6 class="mb-12">SITE MAP</h6>
+                                                <ul class="unstyled item-list">
+                                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                                    <li><a href="{% url 'tour_booking' %}">Booking Page</a></li>
+                                                    <li><a href="{% url 'blogs' %}">Blogs</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="widget mb-24">
+                                                <h6 class="mb-12">CATEGORIES</h6>
+                                                <ul class="unstyled item-list">
+                                                    <li><a href="{% url 'tours' %}">Package</a></li>
+                                                    <li><a href="{% url 'tours' %}">Tours</a></li>
+                                                    <li><a href="{% url 'tours' %}">Honeymoon Plans</a></li>
+                                                    <li><a href="{% url 'tours' %}">Couple Trip</a></li>
+                                                    <li><a href="{% url 'tours' %}">Family Trips</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="widget mb-24">
+                                                <h6 class="mb-12">CONTACT INFO</h6>
+                                                <ul class="unstyled item-list">
+                                                    <li><a href="tel:123456789">1300 337 446</a></li>
+                                                    <li><a href="mailto:info@example.com">sales@iof.com.au</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="widget mb-24">
+                                                <h6 class="mb-12">OPENING HOUR</h6>
+                                                <ul class="unstyled item-list">
+                                                    <li class="d-flex align-items-center justify-content-between"><p>MON-FRI</p><p>09am-5pm</p></li>
+                                                    <li class="d-flex align-items-center justify-content-between"><p>SAT-SUN</p><p>09am-5pm</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="newsletter">
+                                    <h5 class="mb-12">WANT TO HEAR FROM US?</h5>
+                                    <p class="mb-32">Get regular updates on furniture products, offers and solution. Staying in touch is the best way to get the best deals. This site is protected by reCAPTCHA and the Google Privacy Policy.</p>
+                                    <form action="{% url 'home' %}">
+                                        <div class="newsletter-field">
+                                            <div class="form-group ">
+                                                <input type="email" required placeholder="email@emaple.com">
+                                            </div>
+                                            <div class="ui-btn ui-btn-primary">
+                                                <button type="submit" data-hover="SUBSCRIBE">SUBSCRIBE</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-row">
+                    <p>©2024 All Rights Reserved</p>
+                    <ul class="unstyled payment-methods">
+                        <li><img src="{% static 'assets/media/icons/payment-1.png' %}" alt=""></li>
+                        <li><img src="{% static 'assets/media/icons/payment-2.png' %}" alt=""></li>
+                        <li><img src="{% static 'assets/media/icons/payment-3.png' %}" alt=""></li>
+                        <li><img src="{% static 'assets/media/icons/payment-4.png' %}" alt=""></li>
+                        <li><img src="{% static 'assets/media/icons/payment-5.png' %}" alt=""></li>
+                    </ul>
+                    <ul class="unstyled social-links">
+                        <li><a href=""><img src="{% static 'assets/media/icons/Instagram.png' %}" alt=""></a></li>
+                        <li><a href=""><img src="{% static 'assets/media/icons/Twitter.png' %}" alt=""></a></li>
+                        <li><a href=""><img src="{% static 'assets/media/icons/Facebook.png' %}" alt=""></a></li>
+                        <li><a href=""><img src="{% static 'assets/media/icons/Linkedin.png' %}" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->

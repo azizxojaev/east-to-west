@@ -1,0 +1,112 @@
+/*----------------------------------------*/
+/*  BLOGS CSS START
+/*----------------------------------------*/
+.blog-card{
+    position: relative;
+    .content{
+        position: relative;
+        background: $white;
+        .date{
+            position: absolute;
+            top: clamp(12px, 0.833vw, 20px);
+            left: clamp(12px, 0.833vw, 20px);
+            border-radius: 10px;
+            border: 1px solid #CDCCCB;
+            background: $accent-1;
+            color: $white;
+            box-shadow: $shadow;
+            backdrop-filter: blur(15px);
+            padding: clamp(5px, 0.417vw, 12px) clamp(10px, 0.833vw, 24px);
+        }
+        .blog-img{
+            border-radius: clamp(14px, 1.07vw, 26px);
+        }
+        .text-block{
+            padding: clamp(12px, 0.833vw, 24px) clamp(16px, 1.25vw, 30px);
+            .bottom-row{
+                display: flex;
+                justify-content: space-between;
+                gap: 8px;
+                align-items: center;
+                .author{
+                    display: flex;
+                    gap: clamp(5px, 0.43vw, 12px);
+                    align-items: center;
+                    .author-img{
+                        width: clamp(24px, 1.66vw, 42px);
+                        height: clamp(24px, 1.66vw, 42px);
+                    }
+                }
+                .ui-link-arrow{
+                    border-radius: clamp(16px, 1.042vw, 26px);
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    width: clamp(42px, 2.917vw, 60px);
+                    height: clamp(42px, 2.917vw, 60px);
+                    background: $accent-1;
+                    box-shadow: $shadow;
+                    backdrop-filter: blur(15px);
+                    .arrow{
+                        font-size: clamp(18px, 1.25vw, 28px);
+                        border-radius: clamp(16px, 1.042vw, 26px);
+                        color: $white;
+                        transform: rotate(-45deg);
+                        transition: $transition;
+                    }
+                    &:hover{
+                        .arrow{
+                            transform: rotate(0deg);
+                            transition: $transition;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.blogs-slider{
+    .blog-card{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+.blog-detail{
+    .info-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $medium-black;
+    }
+    .quote-icon{
+        width: clamp(16px, 1.66vw, 48px)
+    }
+    .info-left{
+        display: flex;
+        align-items: center;
+        gap: clamp(32px, 2.5vw, 64px);
+        @include media-query(767px) {
+            gap: clamp(16px, 2.5vw, 32px);
+        }
+        .author{
+            display: flex;
+            gap: clamp(5px, 0.43vw, 12px);
+            align-items: center;
+            .author-img{
+                width: clamp(24px, 1.66vw, 42px);
+                height: clamp(24px, 1.66vw, 42px);
+            }
+        }
+    }
+    .date{
+        border-radius: 10px;
+        border: 1px solid #CDCCCB;
+        background: $accent-1;
+        color: $white;
+        box-shadow: $shadow;
+        backdrop-filter: blur(15px);
+        padding: clamp(6px, 0.417vw, 12px) clamp(12px, 0.833vw, 24px);
+    }
+}

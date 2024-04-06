@@ -1,0 +1,546 @@
+
+/* ------------------------------------------------------------- *
+ * ui-Header
+/* ------------------------------------------------------------- */
+#ui-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.01);
+	backdrop-filter: blur(15px);
+	padding: 16px 0;
+	z-index: 999;
+	height: auto;
+	pointer-events: none;
+	@include media-query(767px) {
+		padding: 12px 0;
+	}
+    &.ui-header-fixed {
+        position: fixed; 
+    }
+    /* header inner */
+    .ui-header-inner {
+        width: 100%;
+        display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+    }
+    /* header columns */
+    .ui-header-col {
+        display: flex;
+        align-items: center;
+    }
+    /* Header logo */
+    .ui-logo {
+		cursor: pointer;
+    	pointer-events: initial;
+		img{
+			height: clamp(60px, 3.646vw, 70px);
+			@include media-query(1199px) {
+				height: clamp(50px, 5.859vw, 60px);
+			}
+			@include media-query(767px) {
+				height: clamp(40px, 10.163vw, 50px);
+			}
+		}
+        
+        .ui-logo-light{
+            visibility: visible;
+            opacity: 1;
+            width: auto;    
+            transition: all 0.5s ease-in;
+        }
+        .ui-logo-dark{
+            visibility: hidden;
+            opacity: 0;
+            width: 0;    
+            transition: all 0.5s ease-in;
+        }
+    }
+    /* Header tools */
+    .ui-header-tools {
+        position: relative;
+        display: flex;
+		align-items: center;
+        gap: clamp(10px, 0.833vw, 20px);
+        pointer-events: initial;
+		@include media-query(767px) {
+			gap: clamp(8px, 2.833vw, 14px);
+		}
+        /* Header tools item */
+        .ui-header-tools-item {
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            font-size: 20px;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            color: $white;
+			transition: $transition;
+			&:hover{
+            	color: $accent-1;
+				transition: $transition;
+			}
+            @include media-query(575px) {
+                width: 32px;
+                font-size: 16px;
+                height: 32px;
+            }
+			@include media-query(400px) {
+				width: 30px;
+				font-size: 14px;
+				height: 30px;
+            }
+        }
+    }
+}
+body.ui-ol-menu-open {
+    #ui-header {
+        .ui-logo {
+			img{
+				position: relative;
+				z-index: 9;
+			}
+            .ui-logo-light{
+                visibility: hidden;
+                opacity: 0;
+                width: 0;
+                transition: all 0.5s ease-in;
+            }
+            .ui-logo-dark{
+                visibility: visible;
+                opacity: 1;
+                width: auto;
+                transition: all 0.5s ease-in;
+            }
+        }
+        /* Header tools item */
+        .ui-header-tools-item {
+            color: $black;
+        }
+    }
+}
+
+/* Overlay menu */
+.ui-overlay-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: url(../media/bg/body-bg.png);
+	background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+	visibility: hidden;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: initial;
+}
+.ui-ol-menu-holder {
+	position: relative;
+	height: 100%;
+	width: calc(100% + 17px);
+	padding-right: 17px;
+	overflow-y: scroll;
+	z-index: 2;
+}
+.ui-ol-menu-inner {
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.ui-ol-menu-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+	padding: 64px 0;
+    @include media-query(1024px) {
+        flex-direction: row-reverse;
+    }
+    @include media-query(767px) {
+        padding-top: 25%;
+        padding-bottom: 35%;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.ui-menu-nav{
+    display: grid;
+    height: 100%;
+    align-content: center;
+}
+
+/* Disable page scroll if overlay menu is open */
+body.ui-ol-menu-open {
+	overflow-y: hidden !important;
+}
+
+/* Hide smooth scrollbar if overlay menu is open */
+body.ui-smooth-scroll.ui-ol-menu-open .scrollbar-track {
+	display: none !important;
+}
+
+/* Overlay menu list */
+.ui-ol-menu-list {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.ui-ol-menu-list > li {
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+	.ui-ol-menu-list > li {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+}
+.ui-ol-menu-list > li:first-child {
+	margin-top: 0;
+}
+.ui-ol-menu-list > li:last-child {
+	margin-bottom: 0;
+}
+
+/* Overlay menu list item counter */
+@media (min-width: 992px) {
+	.ui-overlay-menu.ui-ol-menu-count .ui-ol-menu-list {
+		counter-reset: ol-menu-list-counter;
+	}
+	.ui-overlay-menu.ui-ol-menu-count .ui-ol-menu-list > li > a::before,
+	.ui-overlay-menu.ui-ol-menu-count .ui-ol-menu-list > li > .ui-ol-submenu-trigger > a::before {
+		position: absolute;
+		counter-increment: ol-menu-list-counter;
+		content: "" counter(ol-menu-list-counter, decimal-leading-zero);
+		top: 5px;
+		left: -30px;
+		line-height: 1;
+		font-size: 14px;
+		font-weight: normal;
+		color: $black;
+		opacity: 0.4;
+	}
+}
+
+/* Overlay menu list links (master parent) */
+.ui-ol-menu-list > li > a,
+.ui-ol-menu-list > li > .ui-ol-submenu-trigger > a {
+	position: relative;
+	display: inline-block;
+	font-size: clamp(45px, 3.2vw, 62px);
+	font-weight: bold;
+	font-weight: 700;
+	line-height: 1.2;
+	color: $black;
+	transition: opacity 0.3s ease-in-out;
+	@include media-query(992px) {
+		font-size: clamp(40px, 4.2vw, 50px);
+	}
+}
+
+/* Overlay menu list hover/active (master parent). Note: no effect on mobile devices! */
+body:not(.is-mobile) .ui-ol-menu-list.ui-ol-menu-hover > li > a,
+body:not(.is-mobile) .ui-ol-menu-list.ui-ol-menu-hover > li > .ui-ol-submenu-trigger > a,
+body:not(.is-mobile) .ui-ol-menu-list.ui-ol-menu-hover > li > .ui-ol-submenu-trigger .ui-ol-submenu-caret {
+	opacity: .6;
+}
+body:not(.is-mobile) .ui-ol-menu-list > li.active > a,
+body:not(.is-mobile) .ui-ol-menu-list > li.active > .ui-ol-submenu-trigger > a,
+body:not(.is-mobile) .ui-ol-menu-list > li.active > .ui-ol-submenu-trigger .ui-ol-submenu-caret,
+body:not(.is-mobile) .ui-ol-menu-list > li > a:hover,
+body:not(.is-mobile) .ui-ol-menu-list > li > .ui-ol-submenu-trigger:hover > a,
+body:not(.is-mobile) .ui-ol-menu-list > li > .ui-ol-submenu-trigger:hover .ui-ol-submenu-caret,
+body:not(.is-mobile) .ui-ol-menu-list > li > .ui-ol-submenu-trigger.ui-ol-submenu-open > a,
+body:not(.is-mobile) .ui-ol-menu-list > li > .ui-ol-submenu-trigger.ui-ol-submenu-open .ui-ol-submenu-caret {
+	opacity: 1;
+}
+
+/* Overlay menu submenu */
+.ui-ol-submenu-wrap {
+	position: relative;
+}
+.ui-ol-submenu-trigger {
+	position: relative;
+	display: inline-block;
+}
+.ui-ol-submenu {
+	display: none;
+	position: relative;
+	height: auto;
+	margin-left: 20px;
+	color: #8a8a8a;
+}
+.ui-ol-menu-list > li > .ui-ol-submenu {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Overlay menu submenu list */
+.ui-ol-submenu-list {
+	padding: 0;
+	list-style: none;
+}
+.ui-ol-submenu-list .ui-ol-submenu {
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+/* Overlay menu submenu list links */
+.ui-ol-submenu-list > li a,
+.ui-ol-submenu-list > li > .ui-ol-submenu-trigger > a {
+	display: inline-block;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 19px;
+    font-weight: 700;
+	color: $dark-gray;
+	transition: color 0.3s ease-in-out;
+}
+
+/* Overlay menu submenu list hover/active */
+.ui-ol-submenu-list > li > .ui-ol-submenu-trigger.ui-ol-submenu-open > a,
+.ui-ol-submenu-list > li > .ui-ol-submenu-trigger.ui-ol-submenu-open .ui-ol-submenu-caret,
+.ui-ol-submenu-list > li.active > a,
+.ui-ol-submenu-list > li.active > .ui-ol-submenu-trigger > a,
+.ui-ol-submenu-list > li.active > .ui-ol-submenu-trigger .ui-ol-submenu-caret,
+.ui-ol-submenu-list > li a:hover,
+.ui-ol-submenu-list > li > .ui-ol-submenu-trigger:hover > a,
+.ui-ol-submenu-list > li > .ui-ol-submenu-trigger:hover .ui-ol-submenu-caret {
+	color: $black;
+}
+
+/* Submenu caret (requires FontAwesome: https://fontawesome.com/) */
+.ui-ol-submenu-caret-wrap {
+	position: absolute;
+	top: 60%;
+	right: -40px;
+	transform: translate3d(0, -50%, 0);
+}
+@media (max-width: 767px) {
+	.ui-ol-submenu-caret-wrap {
+		right: -40px;
+	}
+}
+.ui-ol-submenu-caret {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	color: $black;
+	cursor: pointer;
+	z-index: 2;
+	border-radius: 100%;
+	transition: opacity 0.3s ease-in-out;
+}
+.ui-ol-submenu-caret::after {
+	font-family: $font-awesome;
+	content: "\f107";
+	font-weight: 900;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	transition: all 0.2s ease-in-out;
+}
+.ui-ol-submenu-trigger.ui-ol-submenu-open .ui-ol-submenu-caret::after {
+	transform: rotate(180deg);
+}
+
+/* Sub-submenu caret */
+.ui-ol-menu-list > li li .ui-ol-submenu-caret-wrap {
+	top: 50%;
+	right: -40px;
+}
+.ui-ol-menu-list > li li .ui-ol-submenu-caret {
+	font-size: 16px;
+	color: #8a8a8a;
+}
+
+
+/* Overlay menu toggle button 
+============================== */
+#ui-ol-menu-toggle-btn-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	pointer-events: initial;
+	cursor: pointer;
+	z-index: 9;
+	
+}
+@media (min-width: 1025px) {
+	body.ui-header-tools-on #ui-ol-menu-toggle-btn-wrap {
+		margin-right: 16px;
+	}
+}
+.ui-ol-menu-toggle-btn-holder {
+	float: left;
+}
+
+/* Toggle button */
+.ui-ol-menu-toggle-btn {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+.ui-ol-menu-toggle-btn span {
+	position: absolute;
+	display: block;
+	top: 54%;
+	left: 50%;
+	height: 2px;
+	width: 24px;
+	background-color: transparent;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease-in-out;
+}
+.ui-ol-menu-toggle-btn span::before,
+.ui-ol-menu-toggle-btn span::after {
+	position: absolute;
+	display: block;
+	content: '';
+	height: 2px;
+	width: 24px;
+	background-color: $white;
+	transition: all 0.3s ease-in-out;
+}
+.white-bg .ui-ol-menu-toggle-btn span::before,
+.white-bg .ui-ol-menu-toggle-btn span::after{
+	@include media-query(1199px) {
+		background-color: $black;
+		transition: all 0.3s ease-in-out;
+	}
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn span::before,
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn span::after{
+    background-color: $black;
+	transition: all 0.3s ease-in-out;
+}
+.ui-ol-menu-toggle-btn span::before {
+	top: -4px;
+	width: 24px;
+}
+.ui-ol-menu-toggle-btn span::after {
+	top: auto;
+	bottom: -4px;
+	width: 18px;
+}
+
+/* Toggle button text */
+.ui-ol-menu-toggle-btn-text {
+	float: left;
+	padding-right: 5px;
+    padding-top: 5px;
+	overflow: hidden;
+	text-align: right;
+	font-size: 15px;
+	color: $white;
+    @include media-query(575px) {
+       display: none;
+    }
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn-text{
+    color: $black;
+	transition: all 0.3s ease-in-out;
+}
+
+
+/* Toggle button text hover */
+.ui-ol-menu-toggle-btn-text .text-menu {
+	position: relative;
+	display: inline-block;
+	text-align: right;
+	transition: transform 0.3s;
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn-text .text-menu {
+	display: none;
+}
+
+body:not(.is-mobile) .ui-ol-menu-toggle-btn-text .text-menu::before {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	content: attr(data-hover);
+}
+body:not(.is-mobile) #ui-ol-menu-toggle-btn-wrap:hover .ui-ol-menu-toggle-btn-text .text-menu {
+	transform: translate3d(0, -100%, 0);
+}
+
+/* Toggle button close */
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn span {
+	width: 20px;
+	background-color: transparent;
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn span::before {
+	top: 0;
+	width: 20px;
+	transform: rotate(45deg);
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn span::after {
+	bottom: 0;
+	width: 20px;
+	transform: rotate(-45deg);
+}
+
+.ui-ol-menu-toggle-btn-text .text-close {
+	display: none;
+}
+body.ui-ol-menu-open .ui-ol-menu-toggle-btn-text .text-close {
+	display: block;
+}
+
+/* Disable menu toggle button click until the animations last */
+body.olm-toggle-no-click .ui-ol-menu-toggle-btn-text,
+body.olm-toggle-no-click .ui-ol-menu-toggle-btn {
+	pointer-events: none;
+}
+
+
+/* Overlay menu position center 
+================================ */
+.ui-overlay-menu.ui-ol-menu-center .ui-ol-menu-content {
+	text-align: center;
+}
+.ui-overlay-menu.ui-ol-menu-center .ui-ol-submenu {
+	margin-left: 0;
+}
+
+
+/* Disable page scroll if ui-Search is open. */
+body{
+    &.ui-search-open {
+        overflow-y: hidden !important;
+        .scrollbar-track {
+            display: none !important;
+        }
+    }
+}
+
+.company-info{
+    position: relative;
+    .vector{
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+    }
+}

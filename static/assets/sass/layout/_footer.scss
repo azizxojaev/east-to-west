@@ -1,0 +1,102 @@
+/*----------------------------------------*/
+/*  FOOTER CSS START
+/*----------------------------------------*/
+footer{
+    .footer-content{
+        position: relative;
+        padding: clamp(24px, 2.083vw, 64px) clamp(16px, 1.25vw, 32px);
+        .features-row{
+            position: relative;
+            padding: clamp(12px, 1.25vw, 32px) 0;
+            border-bottom: 1px solid $black;
+            @include media-query(575px) {
+                align-items: center;
+            }
+            .feature-block{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: clamp(8px, 1.25vw, 32px);
+                border-right: 1px solid $black;
+                padding: 18px 0;
+                @include media-query(575px) {
+                    flex-direction: column;
+                    padding: 0;
+                    border-color: rgba(13, 13, 12, 0.5);
+                }
+                &:nth-child(1){
+                    @include media-query(992px) {
+                        margin-bottom: 16px;
+                    }
+                }
+                &:nth-child(2){
+                    @include media-query(992px) {
+                        border-right: 0;
+                        margin-bottom: 16px;
+                    }
+                }
+                &:last-child{
+                    border-right: 0;
+                }
+                h6{
+                    @include media-query(575px) {
+                        text-align: center;
+                    }
+                }
+                img{
+                    width: clamp(42px, 3.333vw, 96px);
+                    @include media-query(575px) {
+                        width: clamp(32px, 3.333vw, 48px);
+                    }
+                }
+            }
+        }
+        .footer-main{
+            .footer-logo{
+                img{
+                    @include media-query(767px) {
+                        width: clamp(300px, 3.646vw, 450px);
+                    }
+                    @include media-query(575px) {
+                        width: clamp(200px, 3.646vw, 350px);
+                    }
+                }
+            }
+            .footer-right-content{
+                padding-left: 5.208vw;
+                @include media-query(1199px) {
+                    padding-left: 0;
+                }
+            }
+            .footer-widgets{
+                margin-bottom: clamp(42px, 3.646vw, 100px);
+                @include media-query(992px) {
+                    margin-bottom: clamp(32px, 3.646vw, 48px);
+                }
+                .widget{
+                    .item-list{
+                        display: flex;
+                        flex-direction: column;
+                        gap: clamp(6px, 0.625vw, 16px);
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-bottom-row{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include media-query(992px) {
+        flex-direction: column-reverse;
+    }
+    .payment-methods{
+        display: flex;
+        gap: 8px;
+    }
+}

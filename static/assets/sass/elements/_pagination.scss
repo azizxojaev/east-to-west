@@ -1,0 +1,48 @@
+/*----------------------------------------*/
+/*  Pagination CSS START
+/*----------------------------------------*/
+.pagination{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    gap: 8px;
+    justify-content: center;
+    @include media-query(575px) {
+        gap: 6px;
+    }
+    li{
+        border-radius: clamp(14px, 1.07vw, 26px);
+        background: $white;
+        a>i,
+        a{
+            width: clamp(42px, 2.917vw, 80px);
+            height: clamp(42px, 2.917vw, 80px);
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            font-size: clamp(14px, 0.86vw, 24px);
+            font-weight: 400;
+            color: $black;
+            @include media-query(575px) {
+                width: clamp(36px, 2.5vw, 48px);
+                height: clamp(36px, 2.5vw, 48px);
+            }
+        }
+        &.prev, &.next{
+            background: $accent-1;
+            i{
+                color: $white;
+            }
+        }
+        &.active,
+        &:hover{
+            background: $accent-1;
+            transition: $transition;
+            a{
+                color: $white;
+                transition: $transition;
+            }
+        }
+    }
+}

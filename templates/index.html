@@ -1,0 +1,501 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<!-- Hero Section Start -->
+<section class="hero-banner-1 banner-content-parallax" id="hero">
+    <div class="container-fluid">
+        <h1 class="title banner-caption-title ph-appear">TRAVEL</h1>
+        <div class="content">
+            <div class="text-center sub-title">
+                <h3 class="font-sec color-white">Travel where your heart takes you!</h3>
+            </div>
+            <form action="{% url 'tours' %}">
+                <div class="find-banner-row">
+                    <div class="form-group white-input">
+                        <select name="select" class="has-nice-select cus-form-control">
+                            <option selected="selected" disabled="disabled">Where to?</option>
+                            <option value="2">Kyoto, Japan</option>
+                            <option value="3">Bali, Indonesia</option>
+                            <option value="4">Paris, France</option>
+                            <option value="5">Hawaii, USA</option>
+                            <option value="6">Rome, Italy</option>
+                        </select>
+                    </div>
+                    <div class="form-group white-input">
+                        <select name="select" class="has-nice-select cus-form-control">
+                            <option selected="selected" disabled="disabled">Select Departure</option>
+                            <option value="2">Mumbai, India</option>
+                            <option value="3">Toronto, Canada</option>
+                            <option value="4">Rome, Italy</option>
+                            <option value="5">Istanbul, Turkey</option>
+                            <option value="6">Cairo, Egypt</option>
+                            <option value="7">Paris, France</option>
+                            <option value="8">Beijing, China</option>
+                        </select>
+                    </div>
+                    <div class="form-group white-input">
+                        <select name="select" class="has-nice-select cus-form-control">
+                            <option selected="selected" disabled="disabled">Select Type</option>
+                            <option value="2">Adventure</option>
+                            <option value="3">Historical/Cultural</option>
+                            <option value="4">Beach</option>
+                            <option value="5">Relaxation</option>
+                            <option value="6">Romantic</option>
+                        </select>
+                    </div>
+                    <div class="ui-btn ui-btn-primary">
+                        <button type="submit" data-hover="FIND NOW">FIND NOW</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <img src="{% static 'assets/media/banner/mask-layer.png' %}" alt="" class="mask-layer mask-layer-desktop">
+    <img src="{% static 'assets/media/banner/tabmask.png' %}" alt="" class="mask-layer mask-layer-tab">
+    <img src="{% static 'assets/media/banner/mobilemask.png' %}" alt="" class="mask-layer mask-layer-phone">
+</section>
+<!-- Hero Section End --> 
+
+<div class="about-trigger-1" id="page-content">
+    <!-- About Section Start -->
+    <section class="about-features-1 about-1 position-relative z-2">
+        <div class="container-fluid">
+            <div class="all-content">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-7">
+                        <div class="text-block text-md-start text-center">
+                            <h3 class="mb-8 font-sec color-primary">about us :</h3>
+                            <h2 class="mb-24">WHERE PASSION<br> MEETS ADVENTURE,<br> FUELING YOUR<br> WANDERLUST DESIRES</h2>
+                            <div class="ui-btn ui-btn-primary mx-auto ms-md-0">
+                                <a href="{% url 'about' %}" data-hover="LEARN MORE">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-5">
+                        <div class="images-area">
+                            <div class="images-block">
+                                <div class="about-img-card box-blur-bg v-1">
+                                    <img src="{% static 'assets/media/about/about-img-1.png' %}" alt="" class="b-radius-20">
+                                </div>
+                                <div class="about-img-card box-blur-bg v-2">
+                                    <img src="{% static 'assets/media/about/about-img-2.png' %}" alt="" class="b-radius-20">
+                                </div>
+                                <div class="about-img-card box-blur-bg v-3">
+                                    <img src="{% static 'assets/media/about/about-img-3.png' %}" alt="" class="b-radius-20">
+                                </div>
+                                <div class="about-img-card box-blur-bg v-4">
+                                    <img src="{% static 'assets/media/about/about-img-4.png' %}" alt="" class="b-radius-20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Tour List Start -->
+    <section class="position-relative z-2 py-64">
+        <div class="container-fluid">
+            <div class="heading mb-48">
+                <h3 class="font-sec color-primary">tour list :</h3>
+                <h2>AWESOME TOURS FOR YOU</h2>
+            </div>
+            <div class="row mb-16">
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="tour-card mb-32">
+                        <img src="{% static 'assets/media/tour/tour_1.png' %}" alt="" class="tour-img">
+                        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
+                        <div class="card-info">
+                            <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
+                            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
+                            <div class="info-detail">
+                                <ul class="unstyled">
+                                    <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
+                                    <li><i class="fa-solid fa-period dot"></i></li>
+                                    <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
+                                </ul>
+                                <div class="right-block">
+                                    <h6>$5000</h6>
+                                    <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="tour-card mb-32">
+                        <img src="{% static 'assets/media/tour/tour_2.png' %}" alt="" class="tour-img">
+                        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
+                        <div class="card-info">
+                            <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
+                            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
+                            <div class="info-detail">
+                                <ul class="unstyled">
+                                    <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
+                                    <li><i class="fa-solid fa-period dot"></i></li>
+                                    <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
+                                </ul>
+                                <div class="right-block">
+                                    <h6>$5000</h6>
+                                    <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="tour-card mb-32">
+                        <img src="{% static 'assets/media/tour/tour_3.png' %}" alt="" class="tour-img">
+                        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
+                        <div class="card-info">
+                            <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
+                            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
+                            <div class="info-detail">
+                                <ul class="unstyled">
+                                    <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
+                                    <li><i class="fa-solid fa-period dot"></i></li>
+                                    <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
+                                </ul>
+                                <div class="right-block">
+                                    <h6>$5000</h6>
+                                    <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6 d-xxl-block d-lg-none">
+                    <div class="tour-card mb-32">
+                        <img src="{% static 'assets/media/tour/tour_4.png' %}" alt="" class="tour-img">
+                        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
+                        <div class="card-info">
+                            <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
+                            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
+                            <div class="info-detail">
+                                <ul class="unstyled">
+                                    <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
+                                    <li><i class="fa-solid fa-period dot"></i></li>
+                                    <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
+                                </ul>
+                                <div class="right-block">
+                                    <h6>$5000</h6>
+                                    <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="ui-btn ui-btn-primary">
+                    <a href="{% url 'about' %}" data-hover="Explore All">Explore All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tour List End -->
+
+    <!-- Tour Destinations Start -->
+    <section class=" position-relative z-2 py-64">
+        <div class="container-fluid">
+            <div class="heading mb-48">
+                <h3 class="font-sec color-primary">destinations :</h3>
+                <h2>BEST TRAVEL PLACES</h2>
+            </div>
+            <div class="row py-64 align-items-center">
+                <div class="col-lg-5 order-lg-1 order-2">
+                    <h2 class="mb-8">NETHERLANDS</h2>
+                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
+                </div>
+                <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
+                    <div class="box-blur-bg mb-16 mb-lg-0">
+                        <img src="{% static 'assets/media/tour/tour_destination_1.png' %}" alt="" class="b-radius-20">
+                    </div>
+                </div>
+            </div>
+            <div class="row py-64 align-items-center">
+                <div class="col-lg-6 ">
+                    <div class="box-blur-bg mb-16 mb-lg-0">
+                        <img src="{% static 'assets/media/tour/tour_destination_2.png' %}" alt="" class="b-radius-20">
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <h2 class="mb-8">GREECE</h2>
+                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
+                </div>
+            </div>
+            <div class="row py-64 align-items-center">
+                <div class="col-lg-5 order-lg-1 order-2">
+                    <h2 class="mb-8">ITALY</h2>
+                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
+                </div>
+                <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
+                    <div class="box-blur-bg mb-16 mb-lg-0">
+                        <img src="{% static 'assets/media/tour/tour_destination_3.png' %}" alt="" class="b-radius-20">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tour Destinations End -->
+
+    <!-- Discount Banner Start -->
+    <section class=" position-relative z-2 py-64">
+        <div class="container-fluid">
+            <div class="box-blur-bg">
+                <div class="discount-banner b-radius-20">
+                    <div class="row">
+                        <div class="col-lg-6 order-lg-1 order-2">
+                            <div class="img-block text-center">
+                                <img src="{% static 'assets/media/banner/dicount-banner/main-object.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2 order-1">
+                            <div class="content">
+                                <div class="text-block">
+                                    <div class="title-block">
+                                        <div class="discount-tag">
+                                            <h2 class="color-white">30%</h2>
+                                            <h4 class="color-white">OFF</h4>
+                                        </div>
+                                        <h1 class="mb-16 color-white position-relative z-3">INTERESTED?</h1>
+                                    </div>
+                                    <h5 class="mb-16 color-primary">DISCOUNT IF YOU BOOK NOW</h5>
+                                    <p class="mb-48 color-white">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend <br>placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit <br>lorem. Ut felis velit tristique posuere tellus sed. </p>
+                                    <div class="ui-btn ui-btn-primary">
+                                        <a href="{% url 'tour_booking' %}" data-hover="GET IN TOUCH">GET IN TOUCH</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Discount Banner End -->
+
+    <!-- Testimonials Start -->
+    <section class="py-64">
+        <div class="container-fluid">
+            <div class="heading mb-48">
+                <h3 class="font-sec color-primary">testimonials :</h3>
+                <h2>WHAT PEOPLE SAY ABOUT US!</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
+                        <div class="review">
+                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <div class="reviewer">
+                                <img src="{% static 'assets/media/users/user_1.png' %}" alt="" class="reviewer-img">
+                                <div>
+                                    <h6 class="mb-4p">Julia Fernandez</h6>
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
+                        <div class="review">
+                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <div class="reviewer">
+                                <img src="{% static 'assets/media/users/user_2.png' %}" alt="" class="reviewer-img">
+                                <div>
+                                    <h6 class="mb-4p">Henry Patel</h6>
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
+                        <div class="review">
+                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <div class="reviewer">
+                                <img src="{% static 'assets/media/users/user_3.png' %}" alt="" class="reviewer-img">
+                                <div>
+                                    <h6 class="mb-4p">Beckham Dsilva</h6>
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
+                        <div class="review">
+                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <div class="reviewer">
+                                <img src="{% static 'assets/media/users/user_4.png' %}" alt="" class="reviewer-img">
+                                <div>
+                                    <h6 class="mb-4p">Rouge Redstar</h6>
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
+                        <div class="review">
+                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <div class="reviewer">
+                                <img src="{% static 'assets/media/users/user_1.png' %}" alt="" class="reviewer-img">
+                                <div>
+                                    <h6 class="mb-4p">Julia Fernandez</h6>
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials End -->
+    
+    <!-- Blogs Start -->
+    <section class="py-64">
+        <div class="container-fluid">
+            <div class="heading mb-48">
+                <h3 class="font-sec color-primary">blogs :</h3>
+                <h2>READ EXCITING STORIES</h2>
+            </div>
+            <div class="blogs-slider">
+                <div class="blog-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <span class="date">12-Oct-2024</span>
+                        <img src="{% static 'assets/media/blogs/blog_1.png' %}" alt="" class="blog-img">
+                        <div class="text-block">
+                            <a href="{% url 'blog_detail' %}" class="mb-16 h6">Blog title goes here</a>
+                            <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placera...</p>
+                            <div class="bottom-row">
+                                <div class="author">
+                                    <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                    <p>Julia Fernandez</p>
+                                </div>
+                                <a href="{% url 'blog_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <span class="date">12-Oct-2024</span>
+                        <img src="{% static 'assets/media/blogs/blog_2.png' %}" alt="" class="blog-img">
+                        <div class="text-block">
+                            <a href="{% url 'blog_detail' %}" class="mb-16 h6">Blog title goes here</a>
+                            <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placera...</p>
+                            <div class="bottom-row">
+                                <div class="author">
+                                    <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                    <p>Julia Fernandez</p>
+                                </div>
+                                <a href="{% url 'blog_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <span class="date">12-Oct-2024</span>
+                        <img src="{% static 'assets/media/blogs/blog_3.png' %}" alt="" class="blog-img">
+                        <div class="text-block">
+                            <a href="{% url 'blog_detail' %}" class="mb-16 h6">Blog title goes here</a>
+                            <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placera...</p>
+                            <div class="bottom-row">
+                                <div class="author">
+                                    <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                    <p>Julia Fernandez</p>
+                                </div>
+                                <a href="{% url 'blog_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <span class="date">12-Oct-2024</span>
+                        <img src="{% static 'assets/media/blogs/blog_4.png' %}" alt="" class="blog-img">
+                        <div class="text-block">
+                            <a href="{% url 'blog_detail' %}" class="mb-16 h6">Blog title goes here</a>
+                            <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placera...</p>
+                            <div class="bottom-row">
+                                <div class="author">
+                                    <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                    <p>Julia Fernandez</p>
+                                </div>
+                                <a href="{% url 'blog_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card mb-32 box-blur-bg">
+                    <div class="content b-radius-20">
+                        <span class="date">12-Oct-2024</span>
+                        <img src="{% static 'assets/media/blogs/blog_2.png' %}" alt="" class="blog-img">
+                        <div class="text-block">
+                            <a href="{% url 'blog_detail' %}" class="mb-16 h6">Blog title goes here</a>
+                            <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placera...</p>
+                            <div class="bottom-row">
+                                <div class="author">
+                                    <img src="{% static 'assets/media/users/author.png' %}" alt="" class="author-img">
+                                    <p>Julia Fernandez</p>
+                                </div>
+                                <a href="{% url 'blog_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blogs End -->
+
+    <!-- Gallery Start -->
+    <section class="py-64">
+        <div class="heading mb-48">
+            <h3 class="font-sec color-primary">instagram :</h3>
+            <h2>TRAVEL GALLERIES</h2>
+        </div>
+        <div class="gallery-slider">
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_1.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_2.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_3.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_4.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_5.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_6.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_1.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_2.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_3.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_4.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_5.png' %}" alt=""></a>
+            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_6.png' %}" alt=""></a>
+        </div>
+    </section>
+    <!-- Gallery End -->
+</div>
+{% endblock %}

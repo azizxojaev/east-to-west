@@ -1,0 +1,121 @@
+/*---------------------------------------------"
+// Template Name: Globe Trekk
+// Description:  Globe Trekk Html Template
+// Version: 1.0.0
+
+===============================================   
+STYLE SHEET INDEXING
+|
+|___ Fonts
+|___ Variables
+|___ Responsive
+|___ Reset Styles
+|___ Spacing
+|___ Helper Classes
+|___ Buttons
+|___ Headings
+|___ Layout Styles
+|___ END STYLE SHEET INDEXING
+
+--------------------------------------------*/
+
+/*-------------------------
+    Fonts
+-------------------------*/
+
+//// Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+//// Italianno
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+
+/*-------------------------
+    Variables
+-------------------------*/
+/* Fonts */
+$font-primary: 'Inter', sans-serif;
+$font-sec:  'Italianno', 'cursive';
+$font-awesome: "Font Awesome 6 Pro";
+
+/* Colors */
+$accent-1: #F95C19;
+$white: #FFFCFA;
+$light-black: #282525;
+$medium-black: #1B1918;
+$black: #0D0D0C;
+$lightest-gray: #F4F1F1;
+$light-gray: #CDCCCB;
+$medium-gray: #A4A3A2;
+$dark-gray: #817F7E;
+
+
+/* Transitions */
+$transition: all .4s ease-in;
+
+/* Gradients */
+
+
+/* Shadows */
+$shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.05), 7px 6px 9px 0px rgba(0, 0, 0, 0.04), 15px 13px 12px 0px rgba(0, 0, 0, 0.03), 26px 23px 14px 0px rgba(0, 0, 0, 0.01), 41px 37px 15px 0px rgba(0, 0, 0, 0.00);
+
+
+/*-------------------------
+ Responsive Styles
+-------------------------*/
+@import "helpers/mixin";
+
+/*-------------------------
+    Reset Styles
+-------------------------*/
+@import "basic/basic";
+
+/*-------------------------
+Helpers
+-------------------------*/
+@import "helpers/classes";
+
+@import "helpers/spacing";
+
+/*-------------------------
+Elements
+-------------------------*/
+
+@import "elements/buttons";
+
+@import "elements/form";
+
+@import "elements/heading";
+
+@import "elements/search_popup";
+
+@import "elements/preloader";
+
+@import "elements/pagination";
+
+/*-------------------------
+  layouts
+-------------------------*/
+@import "layout/header";
+
+@import "layout/banner";
+
+@import "layout/about"; 
+
+@import "layout/sidebar"; 
+
+@import "layout/tour"; 
+
+@import "layout/testimonials"; 
+
+@import "layout/discount-banner"; 
+
+@import "layout/blog"; 
+
+@import "layout/page-header"; 
+
+@import "layout/gallery"; 
+
+@import "layout/footer";
+
+@import "layout/contact"; 

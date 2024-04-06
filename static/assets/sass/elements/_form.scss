@@ -1,0 +1,173 @@
+/*-------------------------
+  Form Styling
+-------------------------*/
+
+.form-group {
+  position: relative;
+  width: 100%;
+  input[type="date"],
+  input[type="text"],
+  input[type="email"],
+  input[type="file"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="submit"],
+  input[type="tel"],
+  textarea,
+  .cus-form-control{
+    width: 100%;
+    background: transparent;
+    padding: 0 clamp(16px, 1.66vw, 40px);
+    height: clamp(42px, 2.917vw, 72px);
+    color: $black;
+    display: flex;
+    border-radius: 0.781vw;
+    align-items: center;
+    border: 1px solid $black;
+    @include media-query(1024px) {
+      border-radius: 10px;
+      // height: clamp(42px, 3vw, 56px);
+    }
+    &:focus {
+      color: $black;
+      outline: none;
+      background: transparent !important;;
+      border: 1px solid $black;
+      border-radius: 0.781vw;
+      box-shadow: none;
+      @include media-query(1024px) {
+        border-radius: 10px;
+      }
+    }
+    &:hover {
+      color: $black;
+      border: 1px solid $black;
+    }
+    &::placeholder {
+      color: $black;
+      opacity: 1;
+    }
+  }
+  textarea{
+    height: auto !important;
+    padding-top: 16px;
+  }
+  &.white-input{
+    input[type="date"],
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="submit"],
+    input[type="tel"],
+    textarea,
+    .cus-form-control{
+      border: 1px solid $white;
+      &:focus {
+        color: $white;
+        border: 1px solid $white;
+      }
+      &:hover {
+        color: $white;
+        border: 1px solid $white;
+      }
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+}
+
+.newsletter-field{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 4px;
+  border-radius: clamp(14px, 1.07vw, 26px);
+  border: 1px solid $black;
+  background: transparent;
+  .ui-btn{
+    flex-shrink: 0;
+  }
+  .form-group {
+    input[type="date"],
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="submit"],
+    input[type="tel"],
+    textarea,
+    .cus-form-control{
+      border: none;
+      &:focus {
+        border: none;
+      }
+      &:hover {
+        border: none;
+      }
+      &::placeholder {
+        border: none;
+      }
+    }
+  }
+}
+// Search Field 
+.search-field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 12px;
+  border-radius: clamp(14px, 1.07vw, 26px);
+  border: 1px solid $black;
+  background: transparent;
+  .form-group {
+    input[type="date"],
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="submit"],
+    input[type="tel"],
+    textarea,
+    .cus-form-control{
+      border: none;
+      padding-right: 0;
+      &:focus {
+        border: none;
+      }
+      &:hover {
+        border: none;
+      }
+      &::placeholder {
+        border: none;
+      }
+    }
+  }
+  .search-btn{
+    flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    color: $black;
+    i{
+      font-size: clamp(16px, 1vw, 30px);
+    }
+  }
+}
+
+.cus-form-control-select{
+  padding: 0 24px;
+  border: 1px solid $black;
+  height: 48px;    
+  display: grid;
+  align-content: center;
+  border-radius: 10px;
+  width: clamp(200px, 11.146vw, 240px);
+}

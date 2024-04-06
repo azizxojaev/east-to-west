@@ -1,0 +1,29 @@
+/*----------------------------------------*/
+/*  GALLERY CSS START
+/*----------------------------------------*/
+.gallery-img-block{
+    overflow: hidden;
+    border-radius: clamp(20px, 1.563vw, 36px);
+    img {
+        -webkit-transition: all 0.6s linear 0s;
+        transition: all 0.6s linear 0s;
+    }
+    &:hover{
+        img {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-transition: all 0.6s linear 0s;
+            transition: all 0.6s linear 0s;
+        }
+    }
+}
+.gallery-slider{
+    .gallery-img-block{
+        margin-right: 12px;
+        margin-left: 12px;
+        @include media-query(492px) {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+    }
+}

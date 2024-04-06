@@ -1,0 +1,199 @@
+/*----------------------------------------*/
+/*  TOUR CARD CSS START
+/*----------------------------------------*/
+.tour-card{
+    position: relative;
+    border-radius: clamp(20px, 1.563vw, 36px);
+    box-shadow: $shadow;
+    backdrop-filter: blur(15px);
+    @include media-query(1399px) {
+        max-height: 430px;
+        overflow: hidden;
+    }
+    .tour-img{
+        width: 100%;
+        border-radius: clamp(20px, 1.563vw, 36px);
+    }
+    .wishlist-icon{
+        position: absolute;
+        top: clamp(12px, 0.833vw, 20px);
+        left: clamp(12px, 0.833vw, 20px);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        width: clamp(42px, 2.917vw, 60px);
+        height: clamp(42px, 2.917vw, 60px);
+        border-radius: clamp(16px, 1.042vw, 26px);
+        border: 1px solid #CDCCCB;
+        background: rgba(255, 252, 250, 0.80);
+        box-shadow: $shadow;
+        backdrop-filter: blur(15px);
+        i{
+            margin: auto;
+            font-size: clamp(16px, 1.042vw, 26px);
+            color: $black;
+            cursor: pointer;
+            &.fa-solid{
+                color: red;
+            }
+        }
+    }
+    .card-info{
+        position: absolute;
+        bottom: -2px;
+        width: 100.8%;
+        padding: clamp(12px, 0.833vw, 20px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(12px, 0.833vw, 20px);
+        border: 1px solid #CDCCCB;
+        background: $white;
+        box-shadow: $shadow;
+        backdrop-filter: blur(15px);
+        border-radius: clamp(20px, 1.563vw, 36px);
+        .location{
+            display: flex;
+            align-items: center;
+            gap: clamp(6px, 0.52vw, 12px);
+            i{
+                color: $accent-1;
+                font-size: clamp(14px, 0.93vw, 21px);
+            }
+        }
+        .info-detail{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            ul{
+                display: flex;
+                gap: clamp(12px, 0.833vw, 20px);
+                align-items: center;
+                li{
+                    display: flex;
+                    align-items: center;
+                    gap: clamp(6px, 0.52vw, 12px);
+                    i{
+                        color: $accent-1;
+                        font-size: clamp(14px, 0.93vw, 21px);
+                        &.dot{
+                            color: $black;    
+                            font-size: 24px;
+                            height: 38px;
+                        }
+                    }
+                }
+            }
+        }
+        .right-block{
+            display: flex;
+            gap: clamp(12px, 0.833vw, 20px);
+            align-items: center;
+            .ui-link-arrow{
+                border-radius: clamp(16px, 1.042vw, 26px);
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                width: clamp(42px, 2.917vw, 60px);
+                height: clamp(42px, 2.917vw, 60px);
+                background: $accent-1;
+                box-shadow: $shadow;
+                backdrop-filter: blur(15px);
+                .arrow{
+                    font-size: clamp(18px, 1.25vw, 28px);
+                    border-radius: clamp(16px, 1.042vw, 26px);
+                    color: $white;
+                    transform: rotate(-45deg);
+                    transition: $transition;
+                }
+                &:hover{
+                    .arrow{
+                        transform: rotate(0deg);
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  TOUR DETAIL CSS START
+/*----------------------------------------*/
+.tour-detail{
+    .price-rating{
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: clamp(16px, 1.25vw, 32px);
+        border-bottom: 1px solid $black;
+        .rating{
+            display: flex;
+            gap: clamp(6px, 0.48vw, 16px);
+            i{
+                color: $accent-1;
+            }
+        }
+    }
+    .tour-detail-features{
+        background-color: $white;
+        padding: clamp(16px, 1.25vw, 32px);
+    }
+}
+
+/*----------------------------------------*/
+/*  TOUR BOOKING CSS START
+/*----------------------------------------*/
+
+.tour-booking{
+    .booking-from{
+        row-gap: clamp(16px, 1vw, 24px);
+        @include media-query(1199px) {
+            padding: 0 16px;
+        }
+        @include media-query(767px) {
+            padding: 0 12px;
+        }
+        &.row>* {
+            padding-right: clamp(8px, 0.5vw, 12px) !important;
+            padding-left: clamp(8px, 0.5vw, 12px) !important;
+            @include media-query(575px) {
+                padding: 0 !important;
+            }
+            .row>* {
+                padding-right: clamp(8px, 0.5vw, 12px) !important;
+                padding-left: clamp(8px, 0.5vw, 12px) !important;
+                @include media-query(575px) {
+                    padding-right: clamp(12px, 0.5vw, 12px) !important;
+                    padding-left: clamp(12px, 0.5vw, 12px) !important;
+                }
+            }
+        }
+    }
+    .contact-block{
+        display: flex;
+        gap: clamp(32px, 2.5vw, 64px);
+        @include media-query(575px) {
+            flex-direction: column;
+            gap: clamp(24px, 2.5vw, 64px);
+        }
+        .contact-info{
+            flex-shrink: 0;
+        }
+        iframe{
+            height: clamp(400px, 31.25vw, 800px);
+            width: 100%;
+            border: none;
+            border-radius: clamp(20px, 1.55vw, 40px);
+             @include media-query(575px) {
+                height: 300px;
+            }
+            &:focus{
+                border: none;
+            }
+        }
+    }
+}

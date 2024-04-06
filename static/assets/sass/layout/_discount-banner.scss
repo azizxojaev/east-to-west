@@ -1,0 +1,76 @@
+/*----------------------------------------*/
+/*  Discount Banner CSS START
+/*----------------------------------------*/
+.discount-banner{
+    position: relative;
+    background: url(../media/bg/discount-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .img-block{
+        padding: clamp(50px, 3.594vw, 90px) clamp(80px, 6.146vw, 130px) clamp(60px, 4.635vw, 120px);
+        @include media-query(992px) {
+            padding: 42px 80px;
+        }
+        @include media-query(575px) {
+            padding: 32px 42px 42px;
+        }
+        img{
+            transform: rotate(7.137deg);
+            @include media-query(992px) {
+                max-width: 400px;
+            }
+            @include media-query(992px) {
+                max-width: 100%
+            }
+        }
+    }
+    .content{
+        position: relative;
+        height: 100%;
+        display: grid;
+        align-content: center;
+        .text-block{
+            position: relative;
+            z-index: 10;
+            padding: 0 0 clamp(80px, 6.406vw, 130px);
+            @include media-query(992px) {
+                padding: 48px 16px 0px;
+            }
+            @include media-query(575px) {
+                padding: 32px 16px 0px;
+            }
+            p{
+                br{
+                    @include media-query(992px) {
+                        display: none;
+                    }
+                }
+            }
+            .title-block{
+                width: fit-content;
+                position: relative;
+                z-index: 10;
+                padding-top: clamp(80px, 6.406vw, 130px) ;
+                .discount-tag{
+                    position: absolute;
+                    z-index: 1;
+                    transform: rotate(11.462deg);
+                    top: 0;
+                    right: 0;
+                    background: $accent-1;
+                    border-radius: 50%;
+                    width: clamp(100px, 9.323vw, 200px);
+                    height: clamp(100px, 9.323vw, 200px);
+                    text-align: center;
+                    display: grid;
+                    align-content: center;
+                    h4{
+                        margin-top: -9%;
+                    }
+                }
+            }
+        }
+    }
+
+}

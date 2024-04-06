@@ -1,0 +1,189 @@
+/*----------------------------------------*/
+/*  About CSS START
+/*----------------------------------------*/
+.about-features-1{
+    overflow: hidden;
+    .text-block{
+        height: 100vh;
+        display: grid;
+        align-content: center;
+        @include media-query(1050px) {
+            height: 50vh;
+        }
+        @include media-query(800px) {
+            height: 60vh;
+        }
+        @include media-query(767px) {
+            height: 54vh;
+        }
+    }
+    .images-area{
+        position: relative;
+        @include media-query(767px) {
+            height: 52vh;
+        }
+        .images-block{
+            width: 20.729vw;
+            height: 25.156vw;
+            margin-left: auto;
+            position: relative;
+            @include media-query(767px) {
+                width: 41vw;
+                height: 50vw;
+            }
+            @include media-query(575px) {
+                width: 62vw;
+                height: 75vw;
+            }
+            @include media-query(400px) {
+                width: 52vw;
+                height: 63vw;
+            }
+            .about-img-card{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                @include media-query(400px) {
+                    top: 8vh;
+                }
+                &.v-1{
+                    z-index: 40;
+                    right: 14.219vw;
+                    transform: translateX(200%);
+                    @include media-query(575px) {
+                        right: 28.42vw;
+                    }
+                }
+                &.v-2{
+                    z-index: 30;
+                    right: 11.406vw;
+                    transform: translateX(200%);
+                    @include media-query(575px) {
+                        right: 22.80vw;
+                    }
+                }
+                &.v-3{
+                    z-index: 20;
+                    right: 8.49vw;
+                    transform: translateX(200%);
+                    @include media-query(575px) {
+                        right: 16.98vw;
+                    }
+                }
+                &.v-4{  
+                    z-index: 10;
+                    top: 0.625vw;
+                    right: 5.677vw;
+                    @include media-query(400px) {
+                        top: 8.625vh;
+                    }
+                    @include media-query(575px) {
+                        right: 11.34vw;
+                    }
+                }
+                img{
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
+.about-features-2{
+    overflow: hidden;
+    .text-block{
+        height: 100vh;
+        display: grid;
+        align-content: center;
+        @include media-query(1050px) {
+            height: 50vh;
+        }
+        @include media-query(800px) {
+            height: 60vh;
+        }
+        @include media-query(767px) {
+            height: 54vh;
+        }
+    }
+    .images-area{
+        position: relative;
+        @include media-query(767px) {
+            height: 52vh;
+        }
+        .images-block{
+            width: 20.729vw;
+            height: 25.156vw;
+            margin-right: auto;
+            position: relative;
+            @include media-query(767px) {
+                width: 41vw;
+                height: 50vw;
+            }
+            @include media-query(575px) {
+                width: 62vw;
+                height: 75vw;
+            }
+            @include media-query(400px) {
+                width: 52vw;
+                height: 63vw;
+            }
+            .about-img-card{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                @include media-query(400px) {
+                    top: 8vh;
+                }
+                &.v-1{
+                    z-index: 40;
+                    left: 14.219vw;
+                    transform: translateX(-200%);
+                    @include media-query(575px) {
+                        left: 28.42vw;
+                    }
+                }
+                &.v-2{
+                    z-index: 30;
+                    left: 11.406vw;
+                    transform: translateX(-200%);
+                    @include media-query(575px) {
+                        left: 22.80vw;
+                    }
+                }
+                &.v-3{
+                    z-index: 20;
+                    left: 8.49vw;
+                    transform: translateX(-200%);
+                    @include media-query(575px) {
+                        left: 16.98vw;
+                    }
+                }
+                &.v-4{  
+                    z-index: 10;
+                    top: 0.625vw;
+                    left: 5.677vw;
+                    @include media-query(400px) {
+                        top: 8.625vh;
+                    }
+                    @include media-query(575px) {
+                        left: 11.34vw;
+                    }
+                }
+                img{
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
+#videoPlayer {
+    height: clamp(500px, 43.542vw, 100vh);
+    width: 100%;
+    object-fit: cover;
+    border-radius: clamp(14px, 1.07vw, 26px);
+}

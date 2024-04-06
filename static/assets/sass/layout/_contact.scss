@@ -1,0 +1,94 @@
+/*----------------------------------------*/
+/*  CONTACT CSS START
+/*----------------------------------------*/
+.contact-us{
+    .form-block{
+        position: relative;
+        row-gap: clamp(24px, 2.5vw, 64px);
+        .field-block{
+            display: flex;
+            gap: clamp(16px, 1.25vw, 42px);
+            align-items: flex-end;
+            @include media-query(992px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            @include media-query(767px) {
+                gap: clamp(12px, 1.25vw, 24px);
+            }
+        }
+        label{
+            flex-shrink: 0;
+            br{
+                @include media-query(992px) {
+                    display: none;
+                }
+            }
+        }
+        input{
+            width: 100%;
+            background: transparent;
+            padding: 8px;
+            color: $black;
+            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid $black;
+            @include media-query(992px) {
+                justify-content: flex-start;
+                text-align: start;
+                padding-left: 0;
+            }
+            &:focus {
+                color: $black;
+                outline: none;
+                background: transparent !important;;
+                border-bottom: 1px solid $black;
+                border-radius: 0;
+            }
+            &:hover {
+                color: $black;
+                border: none;
+                border-bottom: 1px solid $black;
+            }
+            &::placeholder {
+                color: $black;
+                opacity: 1;
+            }
+        }
+        .ui-btn{
+            flex-shrink: 0;
+            @include media-query(992px) {
+                margin: 0 auto;
+            }
+        }
+    }
+    .contact-block{
+        display: flex;
+        gap: clamp(48px, 6vw, 64px);
+        @include media-query(1199px) {
+            gap: clamp(32px, 3vw, 64px);
+        }
+        @include media-query(575px) {
+            flex-direction: column;
+            gap: clamp(24px, 2.5vw, 64px);
+        }
+        .contact-info{
+            flex-shrink: 0;
+        }
+        iframe{
+            height: clamp(350px, 27.708vw, 800px);
+            width: 100%;
+            border: none;
+            border-radius: clamp(20px, 1.55vw, 40px);
+             @include media-query(575px) {
+                height: 300px;
+            }
+            &:focus-visible{
+                border: none;
+            }
+        }
+    }
+}

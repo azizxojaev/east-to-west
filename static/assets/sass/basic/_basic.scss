@@ -1,0 +1,300 @@
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+ul.list-style,
+ol.list-style {
+    padding: 0;
+}
+
+ul.list-style li::marker,
+ol.list-style li::marker {
+    color: $accent-1;
+}
+
+.unstyled {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.container-fluid {
+    @media (min-width: 1200px) {
+        padding: 0 2.5vw;
+        width: 100%;
+    }
+     @media (max-width: 575px) {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+    }
+}
+.x-hidden{
+    overflow-x: hidden;
+}
+
+
+
+
+/*-------------------------
+    Typography
+-------------------------*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    color: $black;
+    font-size: clamp(14px, 0.833vw, 22px);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    height: 100%;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @include media-query(1199px) {
+        font-size: clamp(14px, 1.563vw, 18px);
+    }
+    @include media-query(991px) {
+        font-size: clamp(13.5px, 1.778vw, 16px);
+    }
+    @include media-query(767px) {
+        font-size: clamp(13px, 2.286vw, 14px);
+    }
+    @include media-query(575px) {
+        font-size: clamp(11px, 3.59vw, 14px);
+    }
+    // Body Background 
+    background: url(../media/bg/body-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address,
+p,
+pre,
+blockquote,
+table,
+hr {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    a {
+        color: inherit;
+    }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: $black;
+	margin-bottom: 0;
+}
+
+h1,
+.h1 {
+    font-size: clamp(80px, 6.25vw, 140px);
+    font-weight: 900;
+    line-height: 120%; /* 144px */
+    letter-spacing: -0.125vw;
+    @include media-query(1199px) {
+        font-size: clamp(70px, 7.789vw, 80px);
+        letter-spacing: -2px;
+    }
+    @include media-query(991px) {
+        font-size: clamp(60px, 9.444vw, 70px);
+        letter-spacing: -1.8px;
+    }
+    @include media-query(767px) {
+        font-size: clamp(50px, 10.43vw, 60px);
+        letter-spacing: -1.6px;
+    }
+    @include media-query(575px) {
+        font-size: clamp(32px, 17.949vw, 40px);
+        letter-spacing: -1.2px;
+    }
+}
+
+h2,
+.h2 {
+    font-size: clamp(43px, 3.49vw, 80px);
+    font-weight: 700;
+    line-height: 125%;
+    letter-spacing: -0.035vw;
+    @include media-query(1199px) {
+        font-size: clamp(35px, 4.837vw, 50px);
+        letter-spacing: -0.048vw;
+    }
+    @include media-query(991px) {
+        font-size: clamp(30px, 5.556vw, 40px);
+        letter-spacing: -0.055vw;
+    }
+    @include media-query(767px) {
+        font-size: clamp(28px, 6.462vw, 35px);
+        letter-spacing: -0.064vw;
+    }
+    @include media-query(575px) {
+        font-size: clamp(24px, 9vw, 32px);
+        letter-spacing: -0.09vw;
+    }
+}
+
+h3,
+.h3 {
+    font-size: clamp(34px, 2.656vw, 60px);
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.027vw;
+    @include media-query(1199px) {
+        font-size: clamp(32px, 4.199vw, 40px);
+        letter-spacing: -0.041vw;
+    }
+    @include media-query(991px) {
+        font-size: clamp(27px, 4.471vw, 35px);
+        letter-spacing: -0.044vw;
+    }
+    @include media-query(767px) {
+        font-size: clamp(24px, 5.231vw, 30px);
+        letter-spacing: -0.052vw;
+    }
+    @include media-query(575px) {
+        font-size: clamp(21px, 6.75vw, 28px);
+        letter-spacing: -0.067vw;
+    }
+}
+
+h4,
+.h4 {
+    font-size: clamp(26px, 1.979vw, 44px);
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.02vw;
+    @include media-query(1199px) {
+        font-size: clamp(25.5px, 3.125vw, 34px);
+        letter-spacing: -0.031vw;
+    }
+    @include media-query(991px) {
+        font-size: clamp(23px, 3.393vw, 27px);
+        letter-spacing: -0.033vw;
+    }
+    @include media-query(767px) {
+        font-size: clamp(21px, 3.923vw, 23px);
+        letter-spacing: -0.039vw;
+    }
+    @include media-query(575px) {
+        font-size: clamp(19px, 6.375vw, 21px);
+        letter-spacing: -0.063vw;
+    }
+}
+
+h5,
+.h5 {
+    font-size: clamp(20px, 1.458vw, 32px);
+    font-weight: 700;
+    line-height: 130%;
+    @include media-query(1199px) {
+        font-size: clamp(22px, 2.539vw, 24px);
+    }
+    @include media-query(991px) {
+        font-size: clamp(20px, 2.738vw, 22px);
+    }
+    @include media-query(767px) {
+        font-size: clamp(19px, 3.438vw, 23px);
+    }
+    @include media-query(575px) {
+        font-size: clamp(16px, 5.25vw, 18px);
+    }
+}
+
+h6,
+.h6 {
+    font-size: clamp(16px, 1.094vw, 24px);
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.42px;
+    @include media-query(1199px) {
+        font-size: clamp(15.5px, 2.051vw, 17px);
+    }
+    @include media-query(991px) {
+        font-size: clamp(15px, 2.381vw, 16px);
+    }
+    @include media-query(767px) {
+        font-size: clamp(14.5px, 2.969vw, 16px);
+        letter-spacing: 0.2px;
+    }
+    @include media-query(575px) {
+        font-size: clamp(14px, 4.325vw, 15px);
+    }
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: unset;
+    transition: $transition;
+    &:hover {
+        color: $accent-1;
+        transition: $transition;
+    }
+}
+
+span {
+    display: inline-block;
+}
+
+b,
+strong {
+    font-family: $font-primary;
+}
+.x-hidden{
+    overflow-x: hidden !important;
+}
+
+#page-content{
+    position: relative;
+    z-index: 1;
+    &::before{
+        background-image: url("../media/svg-bg.png");
+        background-size: 66.198vw 246.615vw;
+        display: inline-block;
+        position: absolute;
+        left: 19.844vw;
+        top: 0vw;
+        z-index: 1;
+        overflow: visible;
+        width: 66.198vw;
+        height: 246.615vw;
+        content:"";
+        @include media-query(991px) {
+            display: none;
+        }
+    }
+}
