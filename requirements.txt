@@ -1,9 +1,14 @@
 asgiref==3.8.1
+certifi==2024.2.2
+charset-normalizer==3.3.2
 Django==5.0.4
 environs==11.0.0
+idna==3.6
 marshmallow==3.21.1
 packaging==24.0
 pillow==10.3.0
 python-dotenv==1.0.1
+requests==2.31.0
 sqlparse==0.4.4
 tzdata==2024.1
+urllib3==2.2.1

@@ -12,216 +12,41 @@
 <!-- Blogs Start -->
 <section class="py-64">
     <div class="container-fluid">
-        <div class="filter-row mb-48">
-            <form action="tour-grid-left-sidebar.html" class="search-filters">
+        <form onsubmit="sendAjaxFilter(event)" class="filter-row mb-48">
+            {% csrf_token %}
+            <div class="search-filters">
                 <div class="form-group">
                     <select name="select" class="has-nice-select cus-form-control">
-                        <option selected="selected" disabled="disabled">Where to?</option>
-                        <option value="2">Kyoto, Japan</option>
-                        <option value="3">Bali, Indonesia</option>
-                        <option value="4">Paris, France</option>
-                        <option value="5">Hawaii, USA</option>
-                        <option value="6">Rome, Italy</option>
+                        <option selected="selected" disabled="disabled">Tashkent, Uzbekistan</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <select name="select" class="has-nice-select cus-form-control">
-                        <option selected="selected" disabled="disabled">Select Departure</option>
-                        <option value="2">Mumbai, India</option>
-                        <option value="3">Toronto, Canada</option>
-                        <option value="4">Rome, Italy</option>
-                        <option value="5">Istanbul, Turkey</option>
-                        <option value="6">Cairo, Egypt</option>
-                        <option value="7">Paris, France</option>
-                        <option value="8">Beijing, China</option>
+                    <select id="destination" name="destination" class="has-nice-select cus-form-control">
+                        <option {% if not active_tours.destination %}selected{% endif %} value="all">Select Destination</option>
+                        {% for d in destinations %}
+                        <option {% if active_tours.destination == d.slug %}selected{% endif %} value="{{ d.slug }}">{{ d.title }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-group">
-                    <select name="select" class="has-nice-select cus-form-control">
-                        <option selected="selected" disabled="disabled">Select Type</option>
-                        <option value="2">Adventure</option>
-                        <option value="3">Historical/Cultural</option>
-                        <option value="4">Beach</option>
-                        <option value="5">Relaxation</option>
-                        <option value="6">Romantic</option>
+                    <select id="tour_type" name="tour_type" class="has-nice-select cus-form-control">
+                        <option {% if not active_tours.tour_type %}selected{% endif %} value="all">Select Type</option>
+                        {% for t in tour_types %}
+                        <option {% if active_tours.tour_type == t.slug %}selected{% endif %} value="{{ t.slug }}">{{ t.title }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="ui-btn ui-btn-primary">
                     <button type="submit" data-hover="FIND NOW">FIND NOW</button>
                 </div>
-            </form>
+            </div>
             <div class="price-filter">
-                <input type="text" class="range-slider" value="0">
+                <input type="text" class="range-slider" value="0" id="{{ min_price }}-{{ max_price }}">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_1.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_2.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_3.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_4.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_3.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_1.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_4.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="tour-card mb-32">
-                    <img src="{% static 'assets/media/tour/tour_2.png' %}" alt="" class="tour-img">
-                    <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                    <div class="card-info">
-                        <a href="{% url 'tour_detail' %}" class="h5">FRESH WATER LAKE</a>
-                        <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>Banf National Park, Canada</h6></div>
-                        <div class="info-detail">
-                            <ul class="unstyled">
-                                <li><i class="fa-light fa-calendar"></i><p>6 Days</p></li>
-                                <li><i class="fa-solid fa-period dot"></i></li>
-                                <li><i class="fa-light fa-user"></i><p>6 Person</p></li>
-                            </ul>
-                            <div class="right-block">
-                                <h6>$5000</h6>
-                                <a href="{% url 'tour_detail' %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </form>
+        <div>
+            <div class="row tours-wrapper">
+                {% include 'includes/tours.html' %}
             </div>
             
             <!-- Pagination Start -->
@@ -237,5 +62,31 @@
         </div>
     </div>
 </section>
+<script>
+    function sendAjaxFilter(event) {
+        event.preventDefault();
+        let destination = document.getElementById('destination').value;
+        let tour_type = document.getElementById('tour_type').value;
+        let csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+        let price_from = document.querySelector('.irs-from').textContent
+        let price_to = document.querySelector('.irs-to').textContent
+
+        $.ajax({
+            url: "{% url 'tours' %}",
+            type: "post",
+            data: {'destination': destination, 'tour_type': tour_type, 'price_from': price_from, 'price_to': price_to},
+            success: function(response) {
+                $('.tours-wrapper')[0].innerHTML = response
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                console.error(error);
+            },
+            headers: {
+                'X-CSRFToken': csrfToken
+            },
+        });
+    }
+</script>
 <!-- Blogs End -->
 {% endblock %}

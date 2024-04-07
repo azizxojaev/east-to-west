@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'east_to_west'
+    'east_to_west',
+    'tours'
 ]
 
 MIDDLEWARE = [

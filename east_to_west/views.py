@@ -1,5 +1,11 @@
 from django.shortcuts import render
 from .models import *
+import requests
+from environs import Env
+from tours.models import *
+
+env = Env()
+env.read_env()
 
 
 def home_page(request):
@@ -8,6 +14,9 @@ def home_page(request):
     gallery = Gallery.objects.all()
     reviews = Review.objects.all()
     destinations = Destination.objects.all()
+    tour_destinations = TourDestination.objects.all()
+    tour_types = TourType.objects.all()
+    tours = Tour.objects.all()[:4]
 
     context = {
         'contact': contact,
@@ -15,7 +24,10 @@ def home_page(request):
         'gallery': gallery,
         'reviews': reviews,
         'reviews_range': range(5),
-        'destinations': destinations
+        'destinations': destinations,
+        'tour_destinations': tour_destinations,
+        'tour_types': tour_types,
+        'tours': tours
     }
     return render(request, 'index.html', context=context)
 
@@ -39,33 +51,26 @@ def about_page(request):
 def contact_page(request):
     contact = Contact.objects.first()
 
+    if request.method == "POST":
+        name = request.POST.get('name')
+        title = request.POST.get('title')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+        apiToken = env.str('API_TOKEN')
+        chatID = env.str('CHAT_ID')
+        apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+
+        try:
+            response = requests.post(apiURL, json={'chat_id': chatID, 'text': f"#Вопрос от {name}\n\nЗаголовок: {title}\nЭмейл: {email}\nНомер телефона: {phone_number}\n\n{message}"})
+        except Exception as e:
+            print(e)
+
     context = {
         'contact': contact,
         'google_map_url': contact.google_map_url.split('"')[1]
     }
     return render(request, 'contact-us.html', context=context)
-
-
-def tours_page(request):
-    contact = Contact.objects.first()
-    context = {'contact': contact}
-    return render(request, 'tour-grid.html', context=context)
-
-
-def tour_detail_page(request):
-    contact = Contact.objects.first()
-    context = {'contact': contact}
-    return render(request, 'tour-detail.html', context=context)
-
-
-def tour_booking_page(request):
-    contact = Contact.objects.first()
-
-    context = {
-        'contact': contact,
-        'google_map_url': contact.google_map_url.split('"')[1]
-    }
-    return render(request, 'tour-booking.html', context=context)
 
 
 def blogs_page(request):

@@ -1,0 +1,23 @@
+{% for t in tours %}
+<div class="col-xxl-3 col-lg-4 col-sm-6">
+    <div class="tour-card mb-32">
+        <img src="/media/{{ t.image }}" alt="" class="tour-img">
+        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
+        <div class="card-info">
+            <a href="{% url 'tour_detail' t.slug %}" class="h5">{{ t.title }}</a>
+            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>{{ t.destination.title }}</h6></div>
+            <div class="info-detail">
+                <ul class="unstyled">
+                    <li><i class="fa-light fa-calendar"></i><p>{{ t.days }} Days</p></li>
+                    <li><i class="fa-solid fa-period dot"></i></li>
+                    <li><i class="fa-light fa-user"></i><p>{{ t.persons }} Person</p></li>
+                </ul>
+                <div class="right-block">
+                    <h6>${{ t.price }}</h6>
+                    <a href="{% url 'tour_detail' t.slug %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

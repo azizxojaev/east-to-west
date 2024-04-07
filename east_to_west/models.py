@@ -59,8 +59,8 @@ class Destination(models.Model):
     image = models.ImageField(upload_to='tours/')
     
     class Meta:
-        verbose_name = 'Места назначения'
-        verbose_name_plural = 'Места назначения'
+        verbose_name = 'Места назначения (для главной страницы)'
+        verbose_name_plural = 'Места назначения (для главной страницы)'
 
     def __str__(self):
         return self.title
