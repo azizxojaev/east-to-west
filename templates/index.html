@@ -15,12 +15,7 @@
                 <div class="find-banner-row">
                     <div class="form-group white-input">
                         <select name="select" class="has-nice-select cus-form-control">
-                            <option selected="selected" disabled="disabled">Where to?</option>
-                            <option value="2">Kyoto, Japan</option>
-                            <option value="3">Bali, Indonesia</option>
-                            <option value="4">Paris, France</option>
-                            <option value="5">Hawaii, USA</option>
-                            <option value="6">Rome, Italy</option>
+                            <option selected="selected" disabled="disabled">Tashkent, Uzbekistan</option>
                         </select>
                     </div>
                     <div class="form-group white-input">
@@ -52,7 +47,7 @@
             </form>
         </div>
     </div>
-    <img src="{% static 'assets/media/banner/mask-layer.png' %}" alt="" class="mask-layer mask-layer-desktop">
+    <img src="{% static 'assets/media/banner/mask-layer.png' %}" alt="" style="width: 100%;" class="mask-layer mask-layer-desktop">
     <img src="{% static 'assets/media/banner/tabmask.png' %}" alt="" class="mask-layer mask-layer-tab">
     <img src="{% static 'assets/media/banner/mobilemask.png' %}" alt="" class="mask-layer mask-layer-phone">
 </section>
@@ -76,18 +71,11 @@
                     <div class="col-xl-6 col-md-5">
                         <div class="images-area">
                             <div class="images-block">
-                                <div class="about-img-card box-blur-bg v-1">
-                                    <img src="{% static 'assets/media/about/about-img-1.png' %}" alt="" class="b-radius-20">
+                                {% for p in our_gallery %}
+                                <div class="about-img-card box-blur-bg v-{{ forloop.counter }}">
+                                    <img src="/media/{{ p.image }}" alt="" class="b-radius-20">
                                 </div>
-                                <div class="about-img-card box-blur-bg v-2">
-                                    <img src="{% static 'assets/media/about/about-img-2.png' %}" alt="" class="b-radius-20">
-                                </div>
-                                <div class="about-img-card box-blur-bg v-3">
-                                    <img src="{% static 'assets/media/about/about-img-3.png' %}" alt="" class="b-radius-20">
-                                </div>
-                                <div class="about-img-card box-blur-bg v-4">
-                                    <img src="{% static 'assets/media/about/about-img-4.png' %}" alt="" class="b-radius-20">
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -206,39 +194,33 @@
                 <h3 class="font-sec color-primary">destinations :</h3>
                 <h2>BEST TRAVEL PLACES</h2>
             </div>
-            <div class="row py-64 align-items-center">
-                <div class="col-lg-5 order-lg-1 order-2">
-                    <h2 class="mb-8">NETHERLANDS</h2>
-                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
-                </div>
-                <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
-                    <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img src="{% static 'assets/media/tour/tour_destination_1.png' %}" alt="" class="b-radius-20">
-                    </div>
-                </div>
-            </div>
+            {% for d in destinations %}
+            {% if forloop.counter|divisibleby:"2" %}
             <div class="row py-64 align-items-center">
                 <div class="col-lg-6 ">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img src="{% static 'assets/media/tour/tour_destination_2.png' %}" alt="" class="b-radius-20">
+                        <img src="/media/{{ d.image }}" alt="" class="b-radius-20">
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <h2 class="mb-8">GREECE</h2>
-                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
+                    <h2 class="mb-8">{{ d.title }}</h2>
+                    <p class="pe-sm-5">{{ d.text }}</p>
                 </div>
             </div>
+            {% else %}
             <div class="row py-64 align-items-center">
                 <div class="col-lg-5 order-lg-1 order-2">
-                    <h2 class="mb-8">ITALY</h2>
-                    <p class="pe-sm-5">Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et. Varius felis pellentesque molestie justo semper id. Donec tortor dui et etiam. Vitae fermentum nibh nam ac aliquet fringilla ante integer. Scelerisque adipiscing eget nisl ut molestie.</p>
+                    <h2 class="mb-8">{{ d.title }}</h2>
+                    <p class="pe-sm-5">{{ d.text }}</p>
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img src="{% static 'assets/media/tour/tour_destination_3.png' %}" alt="" class="b-radius-20">
+                        <img src="/media/{{ d.image }}" alt="" class="b-radius-20">
                     </div>
                 </div>
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </section>
     <!-- Tour Destinations End -->
@@ -287,91 +269,29 @@
                 <h2>WHAT PEOPLE SAY ABOUT US!</h2>
             </div>
             <div class="testimonials-slider">
+                {% for r in reviews %}
                 <div class="testimonial-card mb-32 box-blur-bg">
                     <div class="content b-radius-20">
                         <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
                         <div class="review">
-                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
+                            <p>{{ r.text }}</p>
                             <div class="reviewer">
-                                <img src="{% static 'assets/media/users/user_1.png' %}" alt="" class="reviewer-img">
+                                <img src="/media/{{ r.user_photo }}" alt="" class="reviewer-img">
                                 <div>
-                                    <h6 class="mb-4p">Julia Fernandez</h6>
+                                    <h6 class="mb-4p">{{ r.user_name }}</h6>
                                     <div class="rating">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        {% for s in reviews_range %}
+                                        {% if r.stars > s %}
+                                        <i class="fa-solid fa-star"></i>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card mb-32 box-blur-bg">
-                    <div class="content b-radius-20">
-                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
-                        <div class="review">
-                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
-                            <div class="reviewer">
-                                <img src="{% static 'assets/media/users/user_2.png' %}" alt="" class="reviewer-img">
-                                <div>
-                                    <h6 class="mb-4p">Henry Patel</h6>
-                                    <div class="rating">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card mb-32 box-blur-bg">
-                    <div class="content b-radius-20">
-                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
-                        <div class="review">
-                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
-                            <div class="reviewer">
-                                <img src="{% static 'assets/media/users/user_3.png' %}" alt="" class="reviewer-img">
-                                <div>
-                                    <h6 class="mb-4p">Beckham Dsilva</h6>
-                                    <div class="rating">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card mb-32 box-blur-bg">
-                    <div class="content b-radius-20">
-                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
-                        <div class="review">
-                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
-                            <div class="reviewer">
-                                <img src="{% static 'assets/media/users/user_4.png' %}" alt="" class="reviewer-img">
-                                <div>
-                                    <h6 class="mb-4p">Rouge Redstar</h6>
-                                    <div class="rating">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card mb-32 box-blur-bg">
-                    <div class="content b-radius-20">
-                        <img src="{% static 'assets/media/icons/comment.png' %}" alt="" class="mb-16 comment-icon">
-                        <div class="review">
-                            <p>Lorem ipsum dolor sit amet consectetur. Aliquam in neque eleifend placerat scelerisque tincidunt erat porttitor. Sed sed in suscipit lorem. Ut felis velit tristique posuere tellus sed. Arcu convallis nam massa leo viverra volutpat facilisis. Nulla sagittis nam pellentesque sagittis in turpis nulla et.</p>
-                            <div class="reviewer">
-                                <img src="{% static 'assets/media/users/user_1.png' %}" alt="" class="reviewer-img">
-                                <div>
-                                    <h6 class="mb-4p">Julia Fernandez</h6>
-                                    <div class="rating">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -482,18 +402,12 @@
             <h2>TRAVEL GALLERIES</h2>
         </div>
         <div class="gallery-slider">
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_1.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_2.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_3.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_4.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_5.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_6.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_1.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_2.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_3.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_4.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_5.png' %}" alt=""></a>
-            <a href="#" class="gallery-img-block"><img src="{% static 'assets/media/gallery/gallery_6.png' %}" alt=""></a>
+            {% for p in gallery %}
+            <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+            {% endfor %}
+            {% for p in gallery %}
+            <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+            {% endfor %}
         </div>
     </section>
     <!-- Gallery End -->
