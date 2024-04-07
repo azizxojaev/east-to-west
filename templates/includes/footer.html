@@ -61,15 +61,14 @@
                                             <div class="widget mb-24">
                                                 <h6 class="mb-12">CONTACT INFO</h6>
                                                 <ul class="unstyled item-list">
-                                                    <li><a href="tel:123456789">1300 337 446</a></li>
-                                                    <li><a href="mailto:info@example.com">sales@iof.com.au</a></li>
+                                                    <li><a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></li>
+                                                    <li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
                                                 </ul>
                                             </div>
                                             <div class="widget mb-24">
                                                 <h6 class="mb-12">OPENING HOUR</h6>
                                                 <ul class="unstyled item-list">
-                                                    <li class="d-flex align-items-center justify-content-between"><p>MON-FRI</p><p>09am-5pm</p></li>
-                                                    <li class="d-flex align-items-center justify-content-between"><p>SAT-SUN</p><p>09am-5pm</p></li>
+                                                    <li class="d-flex align-items-center justify-content-between"><p>{{ contact.working_days }}</p><p>{{ contact.working_hours }}</p></li>
                                                 </ul>
                                             </div>
                                         </div>

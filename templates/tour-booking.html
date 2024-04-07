@@ -29,12 +29,12 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="email" name="email" required placeholder="email">
+                                    <input type="email" name="email" required placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="tel" name="tel" required placeholder="phone">
+                                    <input type="tel" name="tel" required placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -109,18 +109,16 @@
                             <div class="contact-info">
                                 <div class="mb-48">
                                     <h5 class="mb-12">CONTACT INFO</h5>
-                                    <p>P: <a href="tel:123456789">1300 337 446</a></p>
-                                    <p>E: <a href="mailto:info@mail.com">info@example.com</a></p>
+                                    <p>P: <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></p>
+                                    <p>E: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
                                 </div>
                                 <div class="mb-48">
                                     <h5 class="mb-12">LOCATION</h5>
-                                    <p>L: 123 Main Street, Anytown, USA</p>
-                                    <p>L: 789 Oak Lane, Sunnyville, Australia</p>
+                                    <p>L: {{ contact.location }}</p>
                                 </div>
                                 <div>
                                     <h5 class="mb-12">OPENING HOUR</h5>
-                                    <p><span class="me-5">MON-FRI</span>09am-5pm<span></span></p>
-                                    <p><span class="me-5">SAT-SUN</span>09am-5pm<span></span></p>
+                                    <p><span class="me-5">{{ contact.working_days }}</span>{{ contact.working_hours }}<span></span></p>
                                 </div>
                             </div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238291.857749356!2d19.545467107182017!3d56.780190963882944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e930677b8a9afd%3A0xcfcd68f2fc10!2sLatvia!5e0!3m2!1sen!2s!4v1709014880485!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
