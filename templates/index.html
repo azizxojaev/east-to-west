@@ -4,6 +4,11 @@
 {% block content %}
 {% load static %}
 <!-- Hero Section Start -->
+<style>
+    #select_passengers {
+        color: white;
+    }
+</style>
 <section class="hero-banner-1 banner-content-parallax" id="hero">
     <div class="container-fluid">
         <h1 class="title banner-caption-title ph-appear">TRAVEL</h1>
@@ -11,28 +16,57 @@
             <div class="text-center sub-title">
                 <h3 class="font-sec color-white">Travel where your heart takes you!</h3>
             </div>
-            <form action="{% url 'tours' %}">
+            <form action="">
                 <div class="find-banner-row">
                     <div class="form-group white-input">
-                        <select name="select" class="has-nice-select cus-form-control">
-                            <option selected="selected" disabled="disabled">Tashkent, Uzbekistan</option>
-                        </select>
-                    </div>
-                    <div class="form-group white-input">
-                        <select name="destination" class="has-nice-select cus-form-control">
-                            <option selected="selected" disabled="disabled">Select Destination</option>
-                            {% for d in tour_destinations %}
+                        <select name="departure" class="has-nice-select cus-form-control">
+                            <option selected="selected" disabled="disabled">Select Departure</option>
+                            {% for d in departures %}
                             <option value="{{ d.slug }}">{{ d.title }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group white-input">
-                        <select name="tour_type" class="has-nice-select cus-form-control">
-                            <option selected="selected" disabled="disabled">Select Type</option>
-                            {% for t in tour_types %}
-                            <option value="{{ t.slug }}">{{ t.title }}</option>
+                        <input placeholder="Enter your destination" type="text" list="destinations">
+                        <datalist id="destinations">
+                            {% for c in countries %}
+                            {% if c.capital != "" %}
+                            <option value="{{ c.capital }}, {{ c.countryName }}">{{ c.capital }}, {{ c.countryName }}</option>
+                            {% endif %} 
                             {% endfor %}
-                        </select>
+                        </datalist>
+                    </div>
+                    <div class="form-group white-input">
+                        <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
+                            <span class="current">Select Departure</span>
+                            <ul id="passengers_btn_list" class="list">
+                                <li data-value="Select Departure" class="option selected disabled focus" style="font-size: 17px;">Select Departure</li>
+                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                    <p>Adults (12+ y.o)</p>
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <p style="font-size: 17px;">1</p>
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                    </div>
+                                </li>
+                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                    <p>Children (2-11 y.o)</p>
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <p style="font-size: 17px;">0</p>
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                    </div>
+                                </li>
+                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                    <p>Babies (under 2 y.o)</p>
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <p style="font-size: 17px;">0</p>
+                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="ui-btn ui-btn-primary">
                         <button type="submit" data-hover="FIND NOW">FIND NOW</button>
@@ -78,47 +112,6 @@
         </div>
     </section>
     <!-- About Section End -->
-
-    <!-- Tour List Start -->
-    <section class="position-relative z-2 py-64">
-        <div class="container-fluid">
-            <div class="heading mb-48">
-                <h3 class="font-sec color-primary">tour list :</h3>
-                <h2>AWESOME TOURS FOR YOU</h2>
-            </div>
-            <div class="row mb-16">
-                {% for t in tours %}
-                <div class="col-xxl-3 col-lg-4 col-sm-6">
-                    <div class="tour-card mb-32">
-                        <img src="/media/{{ t.image }}" alt="" class="tour-img">
-                        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
-                        <div class="card-info">
-                            <a href="{% url 'tour_detail' t.slug %}" class="h5">{{ t.title }}</a>
-                            <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>{{ t.destination.title }}</h6></div>
-                            <div class="info-detail">
-                                <ul class="unstyled">
-                                    <li><i class="fa-light fa-calendar"></i><p>{{ t.days }} Days</p></li>
-                                    <li><i class="fa-solid fa-period dot"></i></li>
-                                    <li><i class="fa-light fa-user"></i><p>{{ t.persons }} Person</p></li>
-                                </ul>
-                                <div class="right-block">
-                                    <h6>${{ t.price }}</h6>
-                                    <a href="{% url 'tour_detail' t.slug %}" class="ui-link-arrow"><i class="fa-light fa-arrow-right arrow" ></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="text-center">
-                <div class="ui-btn ui-btn-primary">
-                    <a href="{% url 'about' %}" data-hover="Explore All">Explore All</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Tour List End -->
 
     <!-- Tour Destinations Start -->
     <section class=" position-relative z-2 py-64">
@@ -345,4 +338,16 @@
     </section>
     <!-- Gallery End -->
 </div>
+<script>
+    let passengers_btn = document.querySelector('#passengers_btn')
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        if (clickedElement.id !== 'passengers_btn_list' && !clickedElement.closest('#passengers_btn_list')) {
+            passengers_btn.classList.remove('open')
+        }
+        if (clickedElement.closest('#passengers_btn')) {
+            passengers_btn.classList.add('open')
+        }
+    });
+</script>
 {% endblock %}

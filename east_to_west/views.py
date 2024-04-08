@@ -16,9 +16,16 @@ def home_page(request):
     gallery = Gallery.objects.all()
     reviews = Review.objects.all()
     destinations = Destination.objects.all()
-    tour_destinations = TourDestination.objects.all()
-    tour_types = TourType.objects.all()
-    tours = Tour.objects.all()[:4]
+    departures = Departure.objects.all()
+
+    url = "http://api.geonames.org/countryInfoJSON"
+    params = {
+        'username': 'azizxojaev',
+        'lang': 'en'
+    }
+    response = requests.get(url, params=params)
+    data = response.json()
+    countries = data['geonames']
 
     context = {
         'contact': contact,
@@ -27,9 +34,8 @@ def home_page(request):
         'reviews': reviews,
         'reviews_range': range(5),
         'destinations': destinations,
-        'tour_destinations': tour_destinations,
-        'tour_types': tour_types,
-        'tours': tours
+        'departures': departures,
+        'countries': countries
     }
     return render(request, 'index.html', context=context)
 

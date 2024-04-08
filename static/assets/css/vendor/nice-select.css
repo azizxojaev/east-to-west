@@ -1,4 +1,4 @@
-.nice-select {
+.nice-select, .nice-select2 {
   -webkit-tap-highlight-color: transparent;
   background-color: transparent;
   border-radius: 0px;
@@ -27,15 +27,15 @@
   white-space: nowrap;
   width: auto;
 }
-.nice-select:hover {
+.nice-select:hover, .nice-select2:hover {
   border-color: #dbdbdb;
 }
-.nice-select:active,
-.nice-select.open,
-.nice-select:focus {
+.nice-select:active, .nice-select2:active,
+.nice-select.open, .nice-select2.open,
+.nice-select:focus, .nice-select2:focus {
   border-color: #999;
 }
-.nice-select:after {
+.nice-select:after, .nice-select2:after {
   border-bottom: 2px solid #2A322D;
   border-right: 2px solid #2A322D;
   content: "";
@@ -57,54 +57,54 @@
   transition: all 0.15s ease-in-out;
 }
 
-.nice-select.open:after {
+.nice-select.open:after, .nice-select2.open:after {
   -webkit-transform: rotate(-135deg);
   -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-.nice-select.open .list {
+.nice-select.open .list, .nice-select2.open .list {
   opacity: 1;
   pointer-events: auto;
   -webkit-transform: scale(1) translateY(0);
   -ms-transform: scale(1) translateY(0);
   transform: scale(1) translateY(0);
 }
-.nice-select.disabled {
+.nice-select.disabled, .nice-select2.disabled {
   border-color: #ededed;
   color: #999;
   pointer-events: none;
 }
-.nice-select.disabled:after {
+.nice-select.disabled:after, .nice-select2.disabled:after {
   border-color: #cccccc;
 }
-.nice-select.wide {
+.nice-select.wide, .nice-select2.wide {
   width: 100%;
 }
-.nice-select.wide .list {
+.nice-select.wide .list, .nice-select2.wide .list {
   left: 0 !important;
   right: 0 !important;
 }
-.nice-select.right {
+.nice-select.right, .nice-select2.right {
   float: right;
 }
-.nice-select.right .list {
+.nice-select.right .list, .nice-select2.right .list {
   left: auto;
   right: 0;
 }
-.nice-select.small {
+.nice-select.small, .nice-select2.small {
   font-size: 12px;
   height: 36px;
   line-height: 34px;
 }
-.nice-select.small:after {
+.nice-select.small:after, .nice-select2.small:after {
   height: 4px;
   width: 4px;
 }
-.nice-select.small .option {
+.nice-select.small .option, .nice-select2.small .option {
   line-height: 34px;
   min-height: 34px;
 }
-.nice-select .list {
+.nice-select .list, .nice-select2 .list {
   width: 100%;
   background: rgba(255, 252, 250, 0.9);
   box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.05), 7px 6px 9px 0px rgba(0, 0, 0, 0.04), 15px 13px 12px 0px rgba(0, 0, 0, 0.03), 26px 23px 14px 0px rgba(0, 0, 0, 0.01), 41px 37px 15px 0px rgba(0, 0, 0, 0);
@@ -133,7 +133,7 @@
 .nice-select .list:hover .option:not(:hover) {
   background-color: transparent !important;
 }
-.nice-select .option {
+.nice-select .option, .nice-select2 .option {
   cursor: pointer;
   font-weight: 500;
   line-height: clamp(32px, 2.083vw, 45px);
@@ -147,30 +147,40 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
+.nice-select2 .option {
+  padding: 12px 20px;
+}
+.nice-select2 li {
+  font-size: 17px;
+}
+.nice-select2 .ui-btn.disabled {
+  background-color: gray !important;
+}
 .nice-select .option:hover,
 .nice-select .option.focus,
-.nice-select .option.selected.focus {
+.nice-select .option.selected.focus,
+.nice-select2 .option.selected {
   background: rgba(255, 92, 0, 0.20);
   color: #F95C19;
 }
 
-.nice-select .option.disabled {
+.nice-select .option.disabled, .nice-select .option.disabled {
   background-color: transparent;
   color: #999;
   cursor: default;
 }
 
-.no-csspointerevents .nice-select .list {
+.no-csspointerevents .nice-select .list, .no-csspointerevents .nice-select2 .list {
   display: none;
 }
 
-.no-csspointerevents .nice-select.open .list {
+.no-csspointerevents .nice-select.open .list, .no-csspointerevents .nice-select2.open .list {
   display: block;
 }
-.white-input .nice-select .current{
+.white-input .nice-select .current, .white-input .nice-select2 .current {
   color: #FFFCFA;
 }
-.white-input .nice-select:after {
+.white-input .nice-select:after, .white-input .nice-select2:after {
   border-bottom: 2px solid #FFFCFA;
   border-right: 2px solid #FFFCFA;
 }
