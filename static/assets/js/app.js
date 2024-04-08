@@ -32,6 +32,7 @@ var MyScroll = "";
       Init.slick();
       Init.videoJS();
       Init.contactForm();
+      Init.bookingForm();
       Init.filterToggle();
     },
 
@@ -555,19 +556,50 @@ var MyScroll = "";
             $(".contact-form").trigger("reset");
             _self.find('button[type="submit"]').removeAttr("disabled");
             if (data.success) {
-              document.getElementById("message").innerHTML =
+              document.getElementById("success_message").innerHTML =
                 "<h5 class='text-success mt-3 mb-2'>Email Sent Successfully</h5>";
             } else {
-              document.getElementById("message").innerHTML =
+              document.getElementById("success_message").innerHTML =
                 "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
             }
-            $("#message").show("slow");
-            $("#message").slideDown("slow");
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
             setTimeout(function () {
-              $("#message").slideUp("hide");
-              $("#message").hide("slow");
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
             }, 3000);
-          },
+          }
+        });
+      });
+    },
+    // =======================
+    //  Booking Form
+    // =======================
+    bookingForm: function () {
+      $(".booking-form").on("submit", function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+        $.ajax({
+          url: "/tour-booking/",
+          type: "post",
+          dataType: "json",
+          data: data,
+          success: function (data) {
+            $(".booking-form").trigger("reset");
+            if (data.success) {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
+            } else {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
+            }
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
+            setTimeout(function () {
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
+            }, 3000);
+          }
         });
       });
     },

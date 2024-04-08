@@ -15,7 +15,8 @@
             <div class="row">
                 <div class="col-xl-5 mb-48 mb-xl-0">
                     <h3 class="text-uppercase mb-48">Please fill out the form to book your tour</h3>
-                    <form action="{% url 'tour_booking' %}">
+                    <form action="{% url 'tour_booking' %}" class="booking-form">
+                        {% csrf_token %}
                         <div class="row booking-from">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -37,58 +38,13 @@
                                     <input type="tel" name="tel" required placeholder="Phone">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <select name="select" class="has-nice-select cus-form-control">
-                                        <option selected="selected" disabled="disabled">Number of person</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <select name="select" class="has-nice-select cus-form-control">
-                                                <option selected="selected" disabled="disabled">Adults</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <select name="select" class="has-nice-select cus-form-control">
-                                                <option selected="selected" disabled="disabled">Kids</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <select name="select" class="has-nice-select cus-form-control">
+                                    <select name="tour" class="has-nice-select cus-form-control">
                                         <option selected="selected" disabled="disabled">Select Tour</option>
-                                        <option value="2">Kyoto, Japan</option>
-                                        <option value="3">Bali, Indonesia</option>
-                                        <option value="4">Paris, France</option>
-                                        <option value="5">Hawaii, USA</option>
-                                        <option value="6">Rome, Italy</option>
+                                        {% for d in destinations %}
+                                        <option value="{{ d.slug }}">{{ d.title }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -100,7 +56,8 @@
                             <div class="ui-btn ui-btn-primary w-100">
                                 <button type="submit" data-hover="Book Tour">Book Tour</button>
                             </div>
-                        </div>
+                        </div>  
+                        <div id="success_message"></div>
                     </form>
                 </div>
                 <div class="col-xl-7">

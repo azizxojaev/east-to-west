@@ -3,6 +3,8 @@ from .models import *
 import requests
 from environs import Env
 from tours.models import *
+from django.http import JsonResponse
+
 
 env = Env()
 env.read_env()
@@ -55,7 +57,7 @@ def contact_page(request):
         name = request.POST.get('name')
         title = request.POST.get('title')
         email = request.POST.get('email')
-        phone_number = request.POST.get('phone_number')
+        tel = request.POST.get('tel')
         message = request.POST.get('message')
         apiToken = env.str('API_TOKEN')
         chatID = env.str('CHAT_ID')
@@ -65,6 +67,7 @@ def contact_page(request):
             response = requests.post(apiURL, json={'chat_id': chatID, 'text': f"#Вопрос от {name}\n\nЗаголовок: {title}\nЭмейл: {email}\nНомер телефона: {phone_number}\n\n{message}"})
         except Exception as e:
             print(e)
+        return JsonResponse({'success': True})
 
     context = {
         'contact': contact,

@@ -51,12 +51,9 @@
             
             <!-- Pagination Start -->
             <ul class="pagination text-center">
-                <li class="prev"><a href="#"><i class="fa-light fa-arrow-left"></i></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li class="next"><a href="#"><i class="fa-light fa-arrow-right"></i></a></li>
+                <li class="prev"><a onclick="prevPage(event)" href="#"><i class="fa-light fa-arrow-left"></i></a></li>
+                <li class="active"><a id="btn_1" onclick="setPage(1, event, this)" href="#">1</a></li>
+                <li class="next"><a onclick="nextPage(event)" href="#"><i class="fa-light fa-arrow-right"></i></a></li>
             </ul>
             <!-- Pagination End -->
         </div>
@@ -86,6 +83,75 @@
                 'X-CSRFToken': csrfToken
             },
         });
+    }
+</script>
+<script>
+    let btns_wrapper = document.querySelector('.pagination')
+    let next_btn = document.querySelector('.next')
+    let current_page = 1
+    let tours = document.querySelectorAll('.tour')
+
+    function configurePagination() {
+        let current_page = 1
+        let tours = document.querySelectorAll('.tour')
+        let pages = Math.floor((tours.length / 8))
+    
+        for (let i = 0; i < pages; i++) {
+            let new_li = document.createElement('li')
+            let new_a = document.createElement('a')
+            new_a.id = `btn_${i + 2}`
+            new_a.setAttribute('onclick', `setPage(${i+2}, event, this)`)
+            new_a.textContent = i + 2
+            new_a.href = '#'
+            new_li.append(new_a)
+            btns_wrapper.insertBefore(new_li, next_btn)
+        }
+    
+        for (let i = 0; i < 8; i++) {
+            if (tours[i]) {
+                tours[i].hidden = false
+            }
+        }
+    }
+    configurePagination()
+
+    function setPage(page, e, this_btn) {
+        e.preventDefault()
+        current_page = page
+        let index_a = current_page * 8 - 8
+        let index_b = current_page * 8
+
+        tours.forEach(function (tour) {
+            tour.hidden = true
+        })
+
+        for (let i = index_a; i < index_b; i++) {
+            if (tours[i]) {
+                tours[i].hidden = false
+            }
+        }
+
+        document.querySelector('.active').classList.remove('active')
+        this_btn.parentElement.classList.add('active')
+    }
+
+    function nextPage(e) {
+        let btn = document.querySelector(`#btn_${current_page+1}`)
+        if (current_page != Math.floor((tours.length / 8))+1) {
+            setPage(current_page+1, e, btn)
+        } else {
+            e.preventDefault()
+        }
+    }
+
+    function prevPage(e) {
+        let btn = document.querySelector(`#btn_${current_page-1}`)
+        console.log(current_page)
+        if (current_page != 1) {
+            setPage(current_page-1, e, btn)
+        } else {
+            e.preventDefault()
+        }
     }
 </script>
 <!-- Blogs End -->

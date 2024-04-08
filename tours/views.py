@@ -2,7 +2,12 @@ from django.shortcuts import render
 from east_to_west.models import *
 from .models import *
 from django.http import JsonResponse
-from django.core.serializers import serialize
+import requests
+from environs import Env
+
+
+env = Env()
+env.read_env()
 
 
 def tours_page(request):
@@ -65,9 +70,29 @@ def tour_detail_page(request, slug):
 
 def tour_booking_page(request):
     contact = Contact.objects.first()
+    destinations = Tour.objects.all()
+
+    if request.method == "POST":
+        first_name = request.POST.get('first-name')
+        last_name = request.POST.get('last-name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        print(request.POST.get('tour'))
+        tour = Tour.objects.get(slug=request.POST.get('tour')).title
+        message = request.POST.get('message')
+        apiToken = env.str('API_TOKEN')
+        chatID = env.str('CHAT_ID')
+        apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+
+        try:
+            response = requests.post(apiURL, json={'chat_id': chatID, 'text': f"#Заявка от {first_name, last_name}\n\nЭмейл: {email}\nНомер телефона: {phone_number}\nТур: {tour}\n\n{message}"})
+        except Exception as e:
+            print(e)
+        return JsonResponse({'success': True})
 
     context = {
         'contact': contact,
-        'google_map_url': contact.google_map_url.split('"')[1]
+        'google_map_url': contact.google_map_url.split('"')[1],
+        'destinations': destinations
     }
     return render(request, 'tour-booking.html', context=context)
