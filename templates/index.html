@@ -38,31 +38,31 @@
                     </div>
                     <div class="form-group white-input">
                         <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
-                            <span class="current">Select Departure</span>
+                            <span class="current">Select Passengers</span>
                             <ul id="passengers_btn_list" class="list">
-                                <li data-value="Select Departure" class="option selected disabled focus" style="font-size: 17px;">Select Departure</li>
+                                <li data-value="Select Passengers" class="option selected disabled focus" style="font-size: 17px;">Select Passengers</li>
                                 <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
                                     <p>Adults (12+ y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
                                         <p style="font-size: 17px;">1</p>
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                        <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
                                 <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
                                     <p>Children (2-11 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">0</p>
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                        <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <p style="font-size: 17px;">1</p>
+                                        <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
                                 <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
                                     <p>Babies (under 2 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">0</p>
-                                        <button type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                        <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                        <p style="font-size: 17px;">1</p>
+                                        <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -349,5 +349,10 @@
             passengers_btn.classList.add('open')
         }
     });
+</script>
+<script>
+    function plusPassenger(btn) {
+        btn.previousElementSibling
+    }
 </script>
 {% endblock %}
