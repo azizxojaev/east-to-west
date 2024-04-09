@@ -20,6 +20,80 @@
                         <div class="row booking-from">
                             <div class="col-sm-6">
                                 <div class="form-group">
+                                    <select name="departure" class="has-nice-select cus-form-control">
+                                        <option selected="selected" disabled="disabled">Select Departure</option>
+                                        {% for d in departures %}
+                                        <option {% if request.GET.departure == d.slug %}selected{% endif %} value="{{ d.slug }}">{{ d.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input value="{{ request.GET.destination }}" name="destination" id="destination_input" placeholder="Enter your destination" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input name="date" type="date" id="date_input" placeholder="Select Days">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
+                                        <span class="current" id="passengers_text">Select Passengers</span>
+                                        <ul id="passengers_btn_list" class="list">
+                                            <li data-value="Select Passengers" class="option selected disabled focus" style="font-size: 17px;">Select Passengers</li>
+                                            <li class="option d-flex justify-content-between">
+                                                <p>Adults (12+ y.o)</p>
+                                                <div class="d-flex gap-2 align-items-center">
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.0 < 2 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="main_passenger">{{ request.GET.adults }}</p>
+                                                    <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                                </div>
+                                            </li>
+                                            <hr style="color: #F95C19;">
+                                            <li class="option d-flex justify-content-between">
+                                                <p>Children (2-11 y.o)</p>
+                                                <div class="d-flex gap-2 align-items-center">
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.1 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="children">{{ request.GET.children }}</p>
+                                                    <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                                </div>
+                                            </li>
+                                            <hr style="color: #F95C19;">
+                                            <li class="option d-flex justify-content-between">
+                                                <p>Babies (under 2 y.o)</p>
+                                                <div class="d-flex gap-2 align-items-center">
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.2 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="babies">{{ request.GET.babies }}</p>
+                                                    <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
+                                                </div>
+                                            </li>
+                                            <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">Service Class</li>
+                                            <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                                <input name="economy" {% if request.GET.class == 'economy' %}checked{% endif %} type="checkbox">
+                                                <p>Economy</p>
+                                            </li>
+                                            <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                                <input name="comfort" {% if request.GET.class == 'comfort' %}checked{% endif %} type="checkbox">
+                                                <p>Comfort</p>
+                                            </li>
+                                            <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                                <input name="business" {% if request.GET.class == 'business' %}checked{% endif %} type="checkbox">
+                                                <p>Business</p>
+                                            </li>
+                                            <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                                <input name="first_grade" {% if request.GET.class == 'first_grade' %}checked{% endif %} type="checkbox">
+                                                <p>First Grade</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-sm-6">
+                                <div class="form-group">
                                     <input type="text" name="first-name" required placeholder="First Name">
                                 </div>
                             </div>
@@ -36,16 +110,6 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="tel" name="tel" required placeholder="Phone">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <select name="tour" class="has-nice-select cus-form-control">
-                                        <option selected="selected" disabled="disabled">Select Tour</option>
-                                        {% for d in destinations %}
-                                        <option value="{{ d.slug }}">{{ d.title }}</option>
-                                        {% endfor %}
-                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -86,5 +150,102 @@
         </div>
     </div>
 </section>
+<script>
+    var passengersBtn = document.getElementById('passengers_btn');
+    var passengersList = document.getElementById('passengers_btn_list');
+
+    passengersBtn.addEventListener('click', function(event) {
+        var isOpen = passengersBtn.classList.contains('open');
+        
+        if (!isOpen) {
+            passengersBtn.classList.add('open');
+        } else {
+            passengersBtn.classList.remove('open');
+        }
+
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target;
+
+        if (targetElement !== passengersList && !targetElement.closest('#passengers_btn')) {
+            passengersBtn.classList.remove('open');
+        }
+    });
+
+    passengersList.addEventListener('click', function() {
+        passengersBtn.classList.remove('open');
+    })
+
+</script>
+<script>
+    function plusPassenger(btn) {
+        let btn_text = btn.previousElementSibling
+        btn_text.textContent = parseInt(btn_text.textContent) + 1
+        if (btn_text.id != 'main_passenger') {
+            if (parseInt(btn_text.textContent) > 0) {
+                btn.parentElement.children[0].classList.remove('disabled')
+            }
+        } else {
+            if (parseInt(btn_text.textContent) > 1) {
+                btn.parentElement.children[0].classList.remove('disabled')
+            }
+        }
+    }
+    function minusPassenger(btn) {
+        let btn_text = btn.nextElementSibling
+        if (btn_text.id != 'main_passenger') {
+            if (parseInt(btn_text.textContent) > 0) {
+                btn_text.textContent = parseInt(btn_text.textContent) - 1
+                if (parseInt(btn_text.textContent) < 1) {
+                    btn.parentElement.children[0].classList.add('disabled')
+                }
+            }
+        } else {
+            if (parseInt(btn_text.textContent) > 1) {
+                btn_text.textContent = parseInt(btn_text.textContent) - 1
+                if (parseInt(btn_text.textContent) < 2) {
+                    btn.parentElement.children[0].classList.add('disabled')
+                }
+            }
+        }
+    }
+</script>
+<script>
+    function selectClass(btn, e) {
+        let input = btn.children[0]
+
+        
+        if (e.target != input) {
+            Array.from(document.querySelectorAll('.class-option')).forEach(function (i) {
+                i.children[0].checked = false
+            })
+            if (input.checked) {
+                input.checked = false
+            } else {
+                input.checked = true
+            }
+        } else {
+            if (!e.target.checked) {
+                e.target.checked = true
+            }
+            Array.from(document.querySelectorAll('.class-option')).forEach(function (i) {
+                if (i.children[0] != input) {
+                    i.children[0].checked = false
+                }
+            })
+        }
+    }
+</script>
+<script>
+    let date = "{{ request.GET.date }}".split(" to ")
+    flatpickr("#date_input", {
+        mode: "range",
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        defaultDate: [date[0], date[1]],
+    });
+</script>
 <!-- Blogs End -->
 {% endblock %}

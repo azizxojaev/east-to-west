@@ -12,6 +12,7 @@ env.read_env()
 
 def tour_booking_page(request):
     contact = Contact.objects.first()
+    departures = Departure.objects.all()
 
     if request.method == "POST":
         first_name = request.POST.get('first-name')
@@ -31,6 +32,8 @@ def tour_booking_page(request):
 
     context = {
         'contact': contact,
-        'google_map_url': contact.google_map_url.split('"')[1]
+        'google_map_url': contact.google_map_url.split('"')[1],
+        'departures': departures,
+        'passengers': [int(request.GET.get('adults')), int(request.GET.get('children')), int(request.GET.get('babies'))]
     }
     return render(request, 'tour-booking.html', context=context)

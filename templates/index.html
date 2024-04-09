@@ -8,7 +8,7 @@
     #select_passengers {
         color: white;
     }
-    #destination_input {
+    #destination_input, #date_input {
         color: #FFFCFA;
     }
     .find-banner-row .form-group {
@@ -19,11 +19,27 @@
         border: 1px solid #FFFCFA;
         width: 100%;
         background: transparent;
-        padding: 0 clamp(16px, 1.66vw, 40px);
+        padding: 15px;
         height: clamp(42px, 2.917vw, 72px);
         display: flex;
         border-radius: 0.781vw;
         align-items: center;
+    }
+    .flatpickr-day.selected,.flatpickr-day.startRange,.flatpickr-day.endRange,.flatpickr-day.selected.inRange,.flatpickr-day.startRange.inRange,.flatpickr-day.endRange.inRange,.flatpickr-day.selected:focus,.flatpickr-day.startRange:focus,.flatpickr-day.endRange:focus,.flatpickr-day.selected:hover,.flatpickr-day.startRange:hover,.flatpickr-day.endRange:hover,.flatpickr-day.selected.prevMonthDay,.flatpickr-day.startRange.prevMonthDay,.flatpickr-day.endRange.prevMonthDay,.flatpickr-day.selected.nextMonthDay,.flatpickr-day.startRange.nextMonthDay,.flatpickr-day.endRange.nextMonthDay {
+        background: #F95C19;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        border-color: #F95C19;
+    }
+    .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        -webkit-box-shadow: -10px 0 0 #F95C19;
+        box-shadow: -10px 0 0 #F95C19
+    }
+    .flatpickr-day.week.selected {
+        border-radius: 0;
+        -webkit-box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19;
+        box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19
     }
 </style>
 <section class="hero-banner-1 banner-content-parallax" id="hero">
@@ -33,10 +49,11 @@
             <div class="text-center sub-title">
                 <h3 class="font-sec color-white">Travel where your heart takes you!</h3>
             </div>
-            <form action="">
+            <form method="post" action="" class="tour-booking-form">
+                {% csrf_token %}
                 <div class="find-banner-row">
                     <div class="form-group white-input">
-                        <select name="departure" class="has-nice-select cus-form-control">
+                        <select required name="departure" class="has-nice-select cus-form-control">
                             <option selected="selected" disabled="disabled">Select Departure</option>
                             {% for d in departures %}
                             <option value="{{ d.slug }}">{{ d.title }}</option>
@@ -44,11 +61,14 @@
                         </select>
                     </div>
                     <div class="form-group white-input">
-                        <input id="destination_input" placeholder="Enter your destination" type="text">
+                        <input required name="destination" id="destination_input" placeholder="Enter your destination" type="text">
+                    </div>
+                    <div class="form-group white-input">
+                        <input required name="date" type="date" id="date_input" placeholder="Select Days">
                     </div>
                     <div class="form-group white-input">
                         <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
-                            <span class="current">Select Passengers</span>
+                            <span class="current" id="passengers_text">Select Passengers</span>
                             <ul id="passengers_btn_list" class="list">
                                 <li data-value="Select Passengers" class="option selected disabled focus" style="font-size: 17px;">Select Passengers</li>
                                 <li class="option d-flex justify-content-between">
@@ -64,7 +84,7 @@
                                     <p>Children (2-11 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">0</p>
+                                        <p style="font-size: 17px;" id="children">0</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
@@ -73,33 +93,29 @@
                                     <p>Babies (under 2 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">0</p>
+                                        <p style="font-size: 17px;" id="babies">0</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
                                 <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">Service Class</li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                    <input checked type="checkbox">
+                                    <input name="economy" checked type="checkbox">
                                     <p>Economy</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                    <input type="checkbox">
+                                    <input name="comfort" type="checkbox">
                                     <p>Comfort</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                    <input type="checkbox">
+                                    <input name="business" type="checkbox">
                                     <p>Business</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                    <input type="checkbox">
+                                    <input name="first_grade" type="checkbox">
                                     <p>First Grade</p>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="form-group white-input">
-                        <!-- <button type="button">Select Departure Day</button> -->
-                        <input type="date">
                     </div>
                     <div class="ui-btn ui-btn-primary">
                         <button type="submit" data-hover="FIND NOW">FIND NOW</button>
@@ -372,16 +388,33 @@
     <!-- Gallery End -->
 </div>
 <script>
-    let passengers_btn = document.querySelector('#passengers_btn')
-    document.addEventListener('click', function(event) {
-        var clickedElement = event.target;
-        if (clickedElement.id !== 'passengers_btn_list' && !clickedElement.closest('#passengers_btn')) {
-            passengers_btn.classList.remove('open')
+    var passengersBtn = document.getElementById('passengers_btn');
+    var passengersList = document.getElementById('passengers_btn_list');
+
+    passengersBtn.addEventListener('click', function(event) {
+        var isOpen = passengersBtn.classList.contains('open');
+        
+        if (!isOpen) {
+            passengersBtn.classList.add('open');
+        } else {
+            passengersBtn.classList.remove('open');
         }
-        if (clickedElement.closest('#passengers_btn')) {
-            passengers_btn.classList.add('open')
+
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target;
+
+        if (targetElement !== passengersList && !targetElement.closest('#passengers_btn')) {
+            passengersBtn.classList.remove('open');
         }
     });
+
+    passengersList.addEventListener('click', function() {
+        passengersBtn.classList.remove('open');
+    })
+
 </script>
 <script>
     function plusPassenger(btn) {
@@ -441,5 +474,31 @@
             })
         }
     }
+</script>
+<script>
+    flatpickr("#date_input", {
+        mode: "range",
+        dateFormat: "d-m-Y",
+        minDate: "today",
+    });
+</script>
+<script>
+    document.querySelector(".tour-booking-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+        var options = ['economy', 'business', 'comfort', 'first_grade'];
+        var availableOption = options.find(option => Object.keys(data).includes(option));
+        data['class'] = availableOption
+        
+        data['adults'] = document.querySelector("#main_passenger").textContent
+        data['children'] = document.querySelector("#children").textContent
+        data['babies'] = document.querySelector("#babies").textContent
+
+        window.location = `{% url 'tour_booking' %}?departure=${data['departure']}&destination=${data['destination']}&class=${data['class']}&date=${data['date']}&adults=${data['adults']}&children=${data['children']}&babies=${data['babies']}`
+    });    
 </script>
 {% endblock %}
