@@ -18,15 +18,6 @@ def home_page(request):
     destinations = Destination.objects.all()
     departures = Departure.objects.all()
 
-    url = "http://api.geonames.org/countryInfoJSON"
-    params = {
-        'username': 'azizxojaev',
-        'lang': 'en'
-    }
-    response = requests.get(url, params=params)
-    data = response.json()
-    countries = data['geonames']
-
     context = {
         'contact': contact,
         'our_gallery': our_gallery,
@@ -35,7 +26,6 @@ def home_page(request):
         'reviews_range': range(5),
         'destinations': destinations,
         'departures': departures,
-        'countries': countries
     }
     return render(request, 'index.html', context=context)
 
@@ -70,7 +60,7 @@ def contact_page(request):
         apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
         try:
-            response = requests.post(apiURL, json={'chat_id': chatID, 'text': f"#Вопрос от {name}\n\nЗаголовок: {title}\nЭмейл: {email}\nНомер телефона: {phone_number}\n\n{message}"})
+            response = requests.post(apiURL, json={'chat_id': chatID, 'text': f"#Вопрос от {name}\n\nЗаголовок: {title}\nЭмейл: {email}\nНомер телефона: {tel}\n\n{message}"})
         except Exception as e:
             print(e)
         return JsonResponse({'success': True})

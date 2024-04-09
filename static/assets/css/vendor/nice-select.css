@@ -184,3 +184,8 @@
   border-bottom: 2px solid #FFFCFA;
   border-right: 2px solid #FFFCFA;
 }
+.nice-select2 input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

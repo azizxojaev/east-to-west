@@ -8,6 +8,23 @@
     #select_passengers {
         color: white;
     }
+    #destination_input {
+        color: #FFFCFA;
+    }
+    .find-banner-row .form-group {
+        width: 15vw !important;
+    }
+    .form-group button {
+        color: #FFFCFA;
+        border: 1px solid #FFFCFA;
+        width: 100%;
+        background: transparent;
+        padding: 0 clamp(16px, 1.66vw, 40px);
+        height: clamp(42px, 2.917vw, 72px);
+        display: flex;
+        border-radius: 0.781vw;
+        align-items: center;
+    }
 </style>
 <section class="hero-banner-1 banner-content-parallax" id="hero">
     <div class="container-fluid">
@@ -27,46 +44,62 @@
                         </select>
                     </div>
                     <div class="form-group white-input">
-                        <input placeholder="Enter your destination" type="text" list="destinations">
-                        <datalist id="destinations">
-                            {% for c in countries %}
-                            {% if c.capital != "" %}
-                            <option value="{{ c.capital }}, {{ c.countryName }}">{{ c.capital }}, {{ c.countryName }}</option>
-                            {% endif %} 
-                            {% endfor %}
-                        </datalist>
+                        <input id="destination_input" placeholder="Enter your destination" type="text">
                     </div>
                     <div class="form-group white-input">
                         <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
                             <span class="current">Select Passengers</span>
                             <ul id="passengers_btn_list" class="list">
                                 <li data-value="Select Passengers" class="option selected disabled focus" style="font-size: 17px;">Select Passengers</li>
-                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                <li class="option d-flex justify-content-between">
                                     <p>Adults (12+ y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">1</p>
+                                        <p style="font-size: 17px;" id="main_passenger">1</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
-                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                <hr style="color: #F95C19;">
+                                <li class="option d-flex justify-content-between">
                                     <p>Children (2-11 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">1</p>
+                                        <p style="font-size: 17px;">0</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
-                                <li data-value="tashkent-uzbekistan" class="option d-flex justify-content-between">
+                                <hr style="color: #F95C19;">
+                                <li class="option d-flex justify-content-between">
                                     <p>Babies (under 2 y.o)</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
-                                        <p style="font-size: 17px;">1</p>
+                                        <p style="font-size: 17px;">0</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
+                                <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">Service Class</li>
+                                <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                    <input checked type="checkbox">
+                                    <p>Economy</p>
+                                </li>
+                                <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                    <input type="checkbox">
+                                    <p>Comfort</p>
+                                </li>
+                                <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                    <input type="checkbox">
+                                    <p>Business</p>
+                                </li>
+                                <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
+                                    <input type="checkbox">
+                                    <p>First Grade</p>
+                                </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="form-group white-input">
+                        <!-- <button type="button">Select Departure Day</button> -->
+                        <input type="date">
                     </div>
                     <div class="ui-btn ui-btn-primary">
                         <button type="submit" data-hover="FIND NOW">FIND NOW</button>
@@ -342,7 +375,7 @@
     let passengers_btn = document.querySelector('#passengers_btn')
     document.addEventListener('click', function(event) {
         var clickedElement = event.target;
-        if (clickedElement.id !== 'passengers_btn_list' && !clickedElement.closest('#passengers_btn_list')) {
+        if (clickedElement.id !== 'passengers_btn_list' && !clickedElement.closest('#passengers_btn')) {
             passengers_btn.classList.remove('open')
         }
         if (clickedElement.closest('#passengers_btn')) {
@@ -352,7 +385,61 @@
 </script>
 <script>
     function plusPassenger(btn) {
-        btn.previousElementSibling
+        let btn_text = btn.previousElementSibling
+        btn_text.textContent = parseInt(btn_text.textContent) + 1
+        if (btn_text.id != 'main_passenger') {
+            if (parseInt(btn_text.textContent) > 0) {
+                btn.parentElement.children[0].classList.remove('disabled')
+            }
+        } else {
+            if (parseInt(btn_text.textContent) > 1) {
+                btn.parentElement.children[0].classList.remove('disabled')
+            }
+        }
+    }
+    function minusPassenger(btn) {
+        let btn_text = btn.nextElementSibling
+        if (btn_text.id != 'main_passenger') {
+            if (parseInt(btn_text.textContent) > 0) {
+                btn_text.textContent = parseInt(btn_text.textContent) - 1
+                if (parseInt(btn_text.textContent) < 1) {
+                    btn.parentElement.children[0].classList.add('disabled')
+                }
+            }
+        } else {
+            if (parseInt(btn_text.textContent) > 1) {
+                btn_text.textContent = parseInt(btn_text.textContent) - 1
+                if (parseInt(btn_text.textContent) < 2) {
+                    btn.parentElement.children[0].classList.add('disabled')
+                }
+            }
+        }
+    }
+</script>
+<script>
+    function selectClass(btn, e) {
+        let input = btn.children[0]
+
+        
+        if (e.target != input) {
+            Array.from(document.querySelectorAll('.class-option')).forEach(function (i) {
+                i.children[0].checked = false
+            })
+            if (input.checked) {
+                input.checked = false
+            } else {
+                input.checked = true
+            }
+        } else {
+            if (!e.target.checked) {
+                e.target.checked = true
+            }
+            Array.from(document.querySelectorAll('.class-option')).forEach(function (i) {
+                if (i.children[0] != input) {
+                    i.children[0].checked = false
+                }
+            })
+        }
     }
 </script>
 {% endblock %}
