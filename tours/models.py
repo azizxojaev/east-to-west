@@ -24,7 +24,7 @@ class CountryHouse(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=150)
     price = models.FloatField()
-    video = models.URLField()
+    video = models.TextField()
     description = models.TextField()
     location = models.CharField(max_length=300)
     capacity = models.IntegerField()

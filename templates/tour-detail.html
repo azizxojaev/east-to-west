@@ -5,7 +5,7 @@
 {% load static %}
 <!-- Page Header Start-->
 <section class="page-header">
-    <h1 class="color-white">TOUR DETAIL</h1>
+    <h1 class="color-white">COUNTRY HOUSE DETAIL</h1>
 </section>
 <!-- Page Header End-->
 
@@ -15,31 +15,46 @@
         <div class="tour-detail">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2 class="mb-16">{{ tour.title }}</h2>
+                    <h2 class="mb-16">{{ country_house.title }}</h2>
                     <div class="price-rating mb-24">
-                        <h5 class="color-primary">${{ tour.price }}/person</h5>
+                        <h5 class="color-primary">${{ country_house.price }}/day</h5>
                     </div>
-                    <p class="mb-32">{{ tour.text }}</p>
                     <div class="box-blur-bg mb-64">
                         <div class="b-radius-20 tour-detail-features">
                             <div class="row justify-content-between">
-                                <div class="col-xl-6 col-lg-7 col-sm-7 mb-24 mb-sm-0">
-                                    <h5 class="mb-16">TRIP DETAIL</h5>
+                                <h5 class="mb-16">SERVICES PROVIDED</h5>
+                                <div class="col-xl-6 col-lg-5 col-sm-5">
                                     <ul class="unstyled">
-                                        <li class="mb-16"><p>From: Tashkent, Uzbekistan</p></li>
-                                        <li class="mb-16"><p>Destination: {{ tour.destination }}</p></li>
-                                        <li class="mb-16"><p>Departure Time: {{ tour.departure_time }}</p></li>
-                                        <li><p>Return Time: {{ tour.return_time }}</p></li>
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-map-marker"></i><p>Location: {{ country_house.location }}</p></li>
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-house"></i><p>Rooms: {{ country_house.rooms }}</p></li>
+                                        {% if country_house.have_playstation %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-gamepad"></i><p>Play Station</p></li>
+                                        {% endif %}
+                                        {% if country_house.have_tenis %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-circle"></i><p>Mini Tennis</p></li>
+                                        {% endif %}
+                                        {% if country_house.have_sauna %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-check"></i><p>Sauna</p></li>
+                                        {% endif %}
+                                        {% if country_house.have_terrace %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-check"></i><p>Terrace</p></li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                                 <div class="col-xl-6 col-lg-5 col-sm-5">
-                                    <h5 class="mb-16">SERVICES PROVIDED</h5>
                                     <ul class="unstyled">
-                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-location-crosshairs"></i><p>Departure</p></li>
-                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-calendar"></i><p>{{ tour.days }} Days</p></li>
-                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-user"></i><p>{{ tour.persons }} Person</p></li>
-                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-map-location-dot"></i><p>Guides</p></li>
-                                        <li class="d-flex align-items-center"><i class="color-primary me-2 fa-light fa-kit-medical"></i><p>First Aid</p></li>
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-phone"></i><p>Phone Number: {{ country_house.phone_number }}</p></li>
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-users"></i><p>Persons: {{ country_house.capacity }}</p></li>
+                                        {% if country_house.have_tv %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-television"></i><p>TV</p></li>
+                                        {% endif %}
+                                        {% if country_house.have_karaoke %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-microphone"></i><p>Karaoke</p></li>
+                                        {% endif %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-life-ring"></i><p>Pool: {{ country_house.pool }}</p></li>
+                                        {% if country_house.have_tapchan %}
+                                        <li class="d-flex align-items-center mb-16"><i class="color-primary me-2 fa-light fa-check"></i><p>Outdoor Day Bed</p></li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
@@ -48,15 +63,24 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="box-blur-bg mb-48" style="width: fit-content;">
-                        <img src="/media/{{ tour.image }}" alt="" class="b-radius-20">
+                        <iframe width="560" height="315" src="{{ country_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xxl-9 col-xl-10 col-md-11">
                     <h2 class="mb-24">ADDITIONAL INFO</h2>
-                    <p class="mb-64">{{ tour.descriprion }}</p>
+                    <p class="mb-64">{{ country_house.description }}</p>
                 </div>
+            </div>
+            <h2 class="mb-48">GALLERY</h2>
+            <div class="gallery-slider">
+                {% for p in country_images %}
+                <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+                {% endfor %}
+                {% for p in country_images %}
+                <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+                {% endfor %}
             </div>
         </div>
     </div>

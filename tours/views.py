@@ -103,9 +103,13 @@ def country_houses_page(request):
 def country_house_detail_page(request, slug):
     contact = Contact.objects.first()
     country_house = CountryHouse.objects.get(slug=slug)
+    country_video = country_house.video.split('"')[5]
+    country_images = HouseImage.objects.filter(house=country_house)
 
     context = {
         'contact': contact,
-        'country_house': country_house
+        'country_house': country_house,
+        'country_video': country_video,
+        'country_images': country_images
     }
     return render(request, 'tour-detail.html', context=context)
