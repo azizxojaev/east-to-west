@@ -53,14 +53,8 @@ class Review(models.Model):
         return f'Отзыв от {self.user_name}'
     
 
-class Destination(models.Model):
-    title = models.CharField(max_length=100)
-    text = models.TextField()
-    image = models.ImageField(upload_to='tours/')
-    
-    class Meta:
-        verbose_name = 'Места назначения (для главной страницы)'
-        verbose_name_plural = 'Места назначения (для главной страницы)'
-
-    def __str__(self):
-        return self.title
+class SocialMedia(models.Model):
+    instagram_url = models.URLField()
+    telegram_url = models.URLField()
+    facebook_url = models.URLField()
+    youtube_url = models.URLField()

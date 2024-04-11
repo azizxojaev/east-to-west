@@ -15,7 +15,6 @@ def home_page(request):
     our_gallery = OurGallery.objects.all()
     gallery = Gallery.objects.all()
     reviews = Review.objects.all()
-    destinations = Destination.objects.all()
     departures = Departure.objects.all()
 
     context = {
@@ -24,7 +23,6 @@ def home_page(request):
         'gallery': gallery,
         'reviews': reviews,
         'reviews_range': range(5),
-        'destinations': destinations,
         'departures': departures,
     }
     return render(request, 'index.html', context=context)

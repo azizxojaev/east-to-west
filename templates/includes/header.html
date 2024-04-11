@@ -36,14 +36,8 @@
                                     <ul class="ui-ol-menu-list">
                                         <li><a href="{% url 'home' %}">Home</a></li>
                                         <li><a href="{% url 'about' %}">About Us</a></li>
-                                        
                                         <!-- End submenu (sub-master) -->
                                         <li><a href="{% url 'tour_booking' %}">Tour Booking</a></li>
-
-                                        <!-- Begin submenu (submenu master) -->
-                                        <li><a href="{% url 'blogs' %}">Blogs</a></li>
-                                        <!-- End submenu (sub-master) -->
-
                                         <li><a href="{% url 'contact' %}">Contact</a></li>
 
                                     </ul>
@@ -60,8 +54,7 @@
 
             <!-- Being header tools -->
             <div class="ui-header-tools">
-                <a href="javascript:;" class="ui-header-tools-item search-toggler"><i class="fa-regular fa-magnifying-glass"></i></a>
-                <a href="signup.html" class="ui-header-tools-item"><i class="fa-regular fa-user"></i></a>
+                <!-- <a href="javascript:;" class="ui-header-tools-item search-toggler"><i class="fa-regular fa-magnifying-glass"></i></a> -->
                 <div class="ui-btn ui-btn-primary hide-on-mobile">
                     <a href="{% url 'tour_booking' %}" data-hover="BOOK NOW">BOOK NOW</a>
                 </div>

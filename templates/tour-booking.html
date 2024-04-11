@@ -2,6 +2,35 @@
 
 
 {% block content %}
+<style>
+    .form-group button {
+        color: #FFFCFA;
+        border: 1px solid #FFFCFA;
+        width: 100%;
+        background: transparent;
+        padding: 15px;
+        height: clamp(42px, 2.917vw, 72px);
+        display: flex;
+        border-radius: 0.781vw;
+        align-items: center;
+    }
+    .flatpickr-day.selected,.flatpickr-day.startRange,.flatpickr-day.endRange,.flatpickr-day.selected.inRange,.flatpickr-day.startRange.inRange,.flatpickr-day.endRange.inRange,.flatpickr-day.selected:focus,.flatpickr-day.startRange:focus,.flatpickr-day.endRange:focus,.flatpickr-day.selected:hover,.flatpickr-day.startRange:hover,.flatpickr-day.endRange:hover,.flatpickr-day.selected.prevMonthDay,.flatpickr-day.startRange.prevMonthDay,.flatpickr-day.endRange.prevMonthDay,.flatpickr-day.selected.nextMonthDay,.flatpickr-day.startRange.nextMonthDay,.flatpickr-day.endRange.nextMonthDay {
+        background: #F95C19;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        border-color: #F95C19;
+    }
+    .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        -webkit-box-shadow: -10px 0 0 #F95C19;
+        box-shadow: -10px 0 0 #F95C19
+    }
+    .flatpickr-day.week.selected {
+        border-radius: 0;
+        -webkit-box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19;
+        box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19
+    }
+</style>
 <!-- Page Header Start-->
 <section class="page-header">
     <h1 class="color-white">TOUR BOOKING</h1>
@@ -21,7 +50,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <select name="departure" class="has-nice-select cus-form-control">
-                                        <option selected="selected" disabled="disabled">Select Departure</option>
+                                        <option disabled>Select Departure</option>
                                         {% for d in departures %}
                                         <option {% if request.GET.departure == d.slug %}selected{% endif %} value="{{ d.slug }}">{{ d.title }}</option>
                                         {% endfor %}
@@ -30,12 +59,12 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input value="{{ request.GET.destination }}" name="destination" id="destination_input" placeholder="Enter your destination" type="text">
+                                    <input required value="{{ request.GET.destination }}" name="destination" id="destination_input" placeholder="Enter your destination" type="text">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input name="date" type="date" id="date_input" placeholder="Select Days">
+                                    <input required name="date" type="date" id="date_input" placeholder="Select Days">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -48,7 +77,7 @@
                                                 <p>Adults (12+ y.o)</p>
                                                 <div class="d-flex gap-2 align-items-center">
                                                     <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.0 < 2 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="main_passenger">{{ request.GET.adults }}</p>
+                                                    <p style="font-size: 17px;" id="main_passenger">{{ passengers.0 }}</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
@@ -57,7 +86,7 @@
                                                 <p>Children (2-11 y.o)</p>
                                                 <div class="d-flex gap-2 align-items-center">
                                                     <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.1 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="children">{{ request.GET.children }}</p>
+                                                    <p style="font-size: 17px;" id="children">{{ passengers.1 }}</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
@@ -66,7 +95,7 @@
                                                 <p>Babies (under 2 y.o)</p>
                                                 <div class="d-flex gap-2 align-items-center">
                                                     <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.2 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="babies">{{ request.GET.babies }}</p>
+                                                    <p style="font-size: 17px;" id="babies">{{ passengers.2 }}</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
@@ -118,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="ui-btn ui-btn-primary w-100">
-                                <button type="submit" data-hover="Book Tour">Book Tour</button>
+                                <button type="submit" id="booking_submit" data-hover="Book Tour">Book Tour</button>
                             </div>
                         </div>  
                         <div id="success_message"></div>

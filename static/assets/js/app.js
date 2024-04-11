@@ -578,7 +578,22 @@ var MyScroll = "";
     bookingForm: function () {
       $(".booking-form").on("submit", function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
+        
+        document.querySelector('#booking_submit').style.cursor = 'wait'
+
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+          data[key] = value;
+        });
+        var options = ['economy', 'business', 'comfort', 'first_grade'];
+        var availableOption = options.find(option => Object.keys(data).includes(option));
+        data['class'] = availableOption
+        
+        data['adults'] = document.querySelector("#main_passenger").textContent
+        data['children'] = document.querySelector("#children").textContent
+        data['babies'] = document.querySelector("#babies").textContent
+
         $.ajax({
           url: "/tour-booking/",
           type: "post",
@@ -586,6 +601,19 @@ var MyScroll = "";
           data: data,
           success: function (data) {
             $(".booking-form").trigger("reset");
+            
+            document.querySelector('#destination_input').value = ""
+            flatpickr("#date_input", {
+              mode: "range",
+              dateFormat: "d-m-Y",
+              minDate: "today",
+            });
+            document.querySelector("#main_passenger").textContent = "1"
+            document.querySelector("#children").textContent = "0"
+            document.querySelector("#babies").textContent = "0"
+            document.querySelector(".class-option").click()
+            document.querySelector('.footer-bottom-row').click()
+
             if (data.success) {
               document.getElementById("success_message").innerHTML =
                 "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
