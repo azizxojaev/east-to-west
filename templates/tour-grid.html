@@ -69,7 +69,7 @@
         let price_to = document.querySelector('.irs-to').textContent
 
         $.ajax({
-            url: "{% url 'tours' %}",
+            url: "{% url 'country_houses' %}",
             type: "post",
             data: {'destination': destination, 'tour_type': tour_type, 'price_from': price_from, 'price_to': price_to},
             success: function(response) {
