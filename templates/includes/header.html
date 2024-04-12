@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!-- Header start -->
 <header id="ui-header">
     <div class="ui-header-inner container-fluid"> 
@@ -17,18 +18,18 @@
                     <a href="#" class="ui-ol-menu-toggle-btn"><span></span></a>
                 </div>
                 <div class="ui-ol-menu-toggle-btn-text">
-                    <span class="text-menu h6 color-white" data-hover="OPEN">MENU</span>
-                    <span class="text-close h6">CLOSE</span>
+                    <span class="text-menu h6 color-white" data-hover="{% trans 'OPEN' %}">{% trans 'MENU' %}</span>
+                    <span class="text-close h6">{% trans 'CLOSE' %}</span>
                 </div>
             </div>
-            <div id="ui-ol-menu-toggle-btn-wrap">
-                <a href="{% url 'country_houses' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">COUNTRY HOUSES</a>
+            <div id="ui-ol-menu-toggle-btn-wrap" class="other_links">
+                <a href="{% url 'country_houses' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">{% trans 'COUNTRY HOUSES' %}</a>
             </div>
-            <div id="ui-ol-menu-toggle-btn-wrap">
-                <a href="{% url 'country_houses' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">VISA</a>
+            <div id="ui-ol-menu-toggle-btn-wrap" class="other_links">
+                <a href="{% url 'visa_booking' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">{% trans 'VISA' %}</a>
             </div>
-            <div id="ui-ol-menu-toggle-btn-wrap">
-                <a href="{% url 'country_houses' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">UMRAH</a>
+            <div id="ui-ol-menu-toggle-btn-wrap" class="other_links">
+                <a href="{% url 'umrah_booking' %}" class="h6 color-white ms-4" style="padding-top: 5px; padding-right: 5px; cursor: pointer;">{% trans 'UMRAH' %}</a>
             </div>
             <!-- End overlay menu toggle button -->
         </div>
@@ -43,11 +44,27 @@
                                 <div class="ui-ol-menu-content">
                                     <!-- Begin menu list -->
                                     <ul class="ui-ol-menu-list">
-                                        <li><a href="{% url 'home' %}">Home</a></li>
-                                        <li><a href="{% url 'about' %}">About Us</a></li>
+                                        <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                                        <li><a href="{% url 'about' %}">{% trans 'About Us' %}</a></li>
                                         <!-- End submenu (sub-master) -->
-                                        <li><a href="{% url 'tour_booking' %}">Tour Booking</a></li>
-                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                        <li class="ui-ol-submenu-wrap">
+                                            <div class="ui-ol-submenu-trigger">
+                                                <a href="#">{% trans 'Bookings' %}</a>
+                                                <div class="ui-ol-submenu-caret-wrap">
+                                                    <div class="ui-ol-submenu-caret"></div>
+                                                </div> 
+                                            </div>
+                                            <div class="ui-ol-submenu">
+                                                <ul class="ui-ol-submenu-list">
+                                                    <li><a href="{% url 'tour_booking' %}">{% trans 'Tour Booking' %}</a></li>
+                                                    <li><a href="{% url 'country_house_booking' %}">{% trans 'Country House Booking' %}</a></li>
+                                                    <li><a href="{% url 'visa_booking' %}">{% trans 'VISA Booking' %}</a></li>
+                                                    <li><a href="{% url 'umrah_booking' %}">{% trans 'Umrah Booking' %}</a></li>
+                                                </ul>
+                                            </div> 
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
+                                        <li><a href="{% url 'country_houses' %}">{% trans 'Country Houses' %}</a></li>
 
                                     </ul>
                                     <!-- End menu list -->
@@ -64,8 +81,25 @@
             <!-- Being header tools -->
             <div class="ui-header-tools">
                 <!-- <a href="javascript:;" class="ui-header-tools-item search-toggler"><i class="fa-regular fa-magnifying-glass"></i></a> -->
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <div>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        <select name="language" id="lang">
+                            {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ language.name_local }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <button hidden type="submit"></button>
+                    </div>
+                </form>
                 <div class="ui-btn ui-btn-primary hide-on-mobile">
-                    <a href="{% url 'tour_booking' %}" data-hover="BOOK NOW">BOOK NOW</a>
+                    <a href="{% url 'tour_booking' %}" data-hover="{% trans 'BOOK NOW' %}">{% trans 'BOOK NOW' %}</a>
                 </div>
             </div>
             <!-- End header tools -->
@@ -74,3 +108,9 @@
     </div> 
 </header>
 <!-- Header End -->
+<script>
+    let lang_select = document.querySelector('#lang')
+    lang_select.addEventListener('change', function () {
+        lang_select.nextElementSibling.click()
+    })
+</script>

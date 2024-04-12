@@ -1,14 +1,14 @@
+{% load i18n %}
 {% for t in country_houses %}
 <div hidden class="col-xxl-3 col-lg-4 col-sm-6 tour">
     <div class="tour-card mb-32">
         <img src="/media/{{ t.1.1.image }}" alt="" class="tour-img">
-        <a href="#" class="wishlist-icon"><i class="fa-light fa-heart"></i></a>
         <div class="card-info">
             <a href="{% url 'country_house_detail' t.0.slug %}" class="h5">{{ t.0.title }} {{ t.0.id }}</a>
             <div class="location"><i class="fa-light fa-location-crosshairs"></i><h6>{{ t.0.location }}</h6></div>
             <div class="info-detail">
                 <ul class="unstyled">
-                    <li><i class="fa-light fa-user"></i><p>{{ t.0.capacity }} Person</p></li>
+                    <li><i class="fa-light fa-user"></i><p>{{ t.0.capacity }} {% trans 'Person' %}</p></li>
                 </ul>
                 <div class="right-block">
                     <h6>${{ t.0.price }}</h6>

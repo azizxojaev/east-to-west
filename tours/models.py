@@ -9,8 +9,8 @@ class Departure(models.Model):
     title = models.CharField(max_length=100)
         
     class Meta:
-        verbose_name = 'Места назначения (для туров)'
-        verbose_name_plural = 'Места назначения (для туров)'
+        verbose_name = 'Места отьезда'
+        verbose_name_plural = 'Места отьезда'
 
     def __str__(self):
         return self.title
@@ -21,7 +21,7 @@ class Departure(models.Model):
 
 
 class CountryHouse(models.Model):
-    slug = models.SlugField()
+    slug = models.SlugField(blank=True)
     title = models.CharField(max_length=150)
     price = models.FloatField()
     video = models.TextField()
@@ -41,6 +41,10 @@ class CountryHouse(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Дачи'
+        verbose_name_plural = 'Дачи'
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -50,3 +54,10 @@ class CountryHouse(models.Model):
 class HouseImage(models.Model):
     image = models.ImageField(upload_to='houses/')
     house = models.ForeignKey(CountryHouse, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Фото для дачи'
+        verbose_name_plural = 'Фото для дачи'
+
+    def __str__(self):
+        return self.house.title

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load i18n %}
+<style>
+    .form-group button {
+        color: #FFFCFA;
+        border: 1px solid #FFFCFA;
+        width: 100%;
+        background: transparent;
+        padding: 15px;
+        height: clamp(42px, 2.917vw, 72px);
+        display: flex;
+        border-radius: 0.781vw;
+        align-items: center;
+    }
+    .flatpickr-day.selected,.flatpickr-day.startRange,.flatpickr-day.endRange,.flatpickr-day.selected.inRange,.flatpickr-day.startRange.inRange,.flatpickr-day.endRange.inRange,.flatpickr-day.selected:focus,.flatpickr-day.startRange:focus,.flatpickr-day.endRange:focus,.flatpickr-day.selected:hover,.flatpickr-day.startRange:hover,.flatpickr-day.endRange:hover,.flatpickr-day.selected.prevMonthDay,.flatpickr-day.startRange.prevMonthDay,.flatpickr-day.endRange.prevMonthDay,.flatpickr-day.selected.nextMonthDay,.flatpickr-day.startRange.nextMonthDay,.flatpickr-day.endRange.nextMonthDay {
+        background: #F95C19;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        border-color: #F95C19;
+    }
+    .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        -webkit-box-shadow: -10px 0 0 #F95C19;
+        box-shadow: -10px 0 0 #F95C19
+    }
+    .flatpickr-day.week.selected {
+        border-radius: 0;
+        -webkit-box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19;
+        box-shadow: -5px 0 0 #F95C19,5px 0 0 #F95C19
+    }
+</style>
+<!-- Page Header Start-->
+<section class="page-header">
+    <h1 class="color-white">{% trans 'COUNTRY HOUSE BOOKING' %}</h1>
+</section>
+<!-- Page Header End-->
+
+<!-- Blogs Start -->
+<section class="py-64">
+    <div class="container-fluid">
+        <div class="tour-booking">
+            <div class="row">
+                <div class="col-xl-5 mb-48 mb-xl-0">
+                    <h3 class="text-uppercase mb-48">{% trans 'Please fill out the form to book your country house' %}</h3>
+                    <form action="{% url 'country_house_booking' %}" class="house-booking-form">
+                        {% csrf_token %}
+                        <div class="row booking-from">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select name="country_house" class="has-nice-select cus-form-control">
+                                        <option disabled>{% trans 'Select Country House' %}</option>
+                                        {% for c in country_houses %}
+                                        <option {% if request.GET.country_house == c.slug %}selected{% endif %} value="{{ c.slug }}">{{ c.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input required name="date" type="date" id="date_input" placeholder="{% trans 'Select Days' %}">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="full-name" required placeholder="{% trans 'Full Name' %}">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="tel" name="tel" required placeholder="{% trans 'Phone' %}">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <textarea name="message" rows="5" placeholder="{% trans 'Additional message' %}"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" id="booking_submit" class="ui-btn ui-btn-primary w-100">
+                                <span data-hover="{% trans 'Book Country House' %}">{% trans 'Book Country House' %}</span>
+                            </button>
+                        </div>  
+                        <div id="success_message"></div>
+                    </form>
+                </div>
+                <div class="col-xl-7">
+                    <div class="box-blur-bg">
+                        <div class="b-radius-20 bg-white p-24 contact-block">
+                            <div class="contact-info">
+                                <div class="mb-48">
+                                    <h5 class="mb-12">{% trans 'CONTACT INFO' %}</h5>
+                                    <p>P: <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></p>
+                                    <p>E: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                                </div>
+                                <div class="mb-48">
+                                    <h5 class="mb-12">{% trans 'LOCATION' %}</h5>
+                                    <p>L: {{ contact.location }}</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-12">{% trans 'OPENING HOUR' %}</h5>
+                                    <p><span class="me-5">{{ contact.working_days }}</span>{{ contact.working_hours }}<span></span></p>
+                                </div>
+                            </div>
+                            <iframe src="{{ google_map_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let date = "{{ request.GET.date }}".split(" to ")
+    flatpickr("#date_input", {
+        mode: "range",
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        defaultDate: [date[0], date[1]],
+    });
+</script>
+<!-- Blogs End -->
+{% endblock %}

@@ -34,7 +34,7 @@
 </style>
 <!-- Page Header Start-->
 <section class="page-header">
-    <h1 class="color-white">{% trans 'TOUR BOOKING' %}</h1>
+    <h1 class="color-white">{% trans 'UMRAH BOOKING' %}</h1>
 </section>
 <!-- Page Header End-->
 
@@ -44,25 +44,10 @@
         <div class="tour-booking">
             <div class="row">
                 <div class="col-xl-5 mb-48 mb-xl-0">
-                    <h3 class="text-uppercase mb-48">{% trans 'Please fill out the form to book your tour' %}</h3>
-                    <form action="{% url 'tour_booking' %}" class="booking-form">
+                    <h3 class="text-uppercase mb-48">{% trans 'Please fill out the form to book your Umrah trip' %}</h3>
+                    <form action="{% url 'country_house_booking' %}" class="umrah-booking-form">
                         {% csrf_token %}
                         <div class="row booking-from">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <select name="departure" class="has-nice-select cus-form-control">
-                                        <option disabled>{% trans 'Select Departure' %}</option>
-                                        {% for d in departures %}
-                                        <option {% if request.GET.departure == d.slug %}selected{% endif %} value="{{ d.slug }}">{{ d.title }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input required value="{{ request.GET.destination }}" name="destination" id="destination_input" placeholder="{% trans 'Enter your destination' %}" type="text">
-                                </div>
-                            </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input required name="date" type="date" id="date_input" placeholder="{% trans 'Select Days' %}">
@@ -77,8 +62,8 @@
                                             <li class="option d-flex justify-content-between">
                                                 <p>{% trans 'Adults (12+ y.o)' %}</p>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.0 < 2 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="main_passenger">{{ passengers.0 }}</p>
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="main_passenger">1</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
@@ -86,8 +71,8 @@
                                             <li class="option d-flex justify-content-between">
                                                 <p>{% trans 'Children (2-11 y.o)' %}</p>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.1 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="children">{{ passengers.1 }}</p>
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="children">0</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
@@ -95,33 +80,32 @@
                                             <li class="option d-flex justify-content-between">
                                                 <p>{% trans 'Babies (under 2 y.o)' %}</p>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 {% if passengers.2 < 1 %}disabled{% endif %}" style="height: 32px; width: 32px;">-</button>
-                                                    <p style="font-size: 17px;" id="babies">{{ passengers.2 }}</p>
+                                                    <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
+                                                    <p style="font-size: 17px;" id="babies">0</p>
                                                     <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                                 </div>
                                             </li>
                                             <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">{% trans 'Service Class' %}</li>
                                             <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                                <input name="economy" {% if request.GET.class == 'economy' %}checked{% endif %} {% if not request.GET.class %}checked{% endif %} type="checkbox">
+                                                <input name="economy" checked type="checkbox">
                                                 <p>{% trans 'Economy' %}</p>
                                             </li>
                                             <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                                <input name="comfort" {% if request.GET.class == 'comfort' %}checked{% endif %} type="checkbox">
+                                                <input name="comfort" type="checkbox">
                                                 <p>{% trans 'Comfort' %}</p>
                                             </li>
                                             <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                                <input name="business" {% if request.GET.class == 'business' %}checked{% endif %} type="checkbox">
+                                                <input name="business" type="checkbox">
                                                 <p>{% trans 'Business' %}</p>
                                             </li>
                                             <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
-                                                <input name="first_grade" {% if request.GET.class == 'first_grade' %}checked{% endif %} type="checkbox">
+                                                <input name="first_grade" type="checkbox">
                                                 <p>{% trans 'First Grade' %}</p>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="full-name" required placeholder="{% trans 'Full Name' %}">
@@ -138,7 +122,7 @@
                                 </div>
                             </div>
                             <button type="submit" id="booking_submit" class="ui-btn ui-btn-primary w-100">
-                                <span data-hover="{% trans 'Book Tour' %}">{% trans 'Book Tour' %}</span>
+                                <span data-hover="{% trans 'Book Umrah Trip' %}">{% trans 'Book Umrah Trip' %}</span>
                             </button>
                         </div>  
                         <div id="success_message"></div>
@@ -170,6 +154,15 @@
         </div>
     </div>
 </section>
+<script>
+    let date = "{{ request.GET.date }}".split(" to ")
+    flatpickr("#date_input", {
+        mode: "range",
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        defaultDate: [date[0], date[1]],
+    });
+</script>
 <script>
     var passengersBtn = document.getElementById('passengers_btn');
     var passengersList = document.getElementById('passengers_btn_list');
@@ -257,15 +250,6 @@
             })
         }
     }
-</script>
-<script>
-    let date = "{{ request.GET.date }}".split(" to ")
-    flatpickr("#date_input", {
-        mode: "range",
-        dateFormat: "d-m-Y",
-        minDate: "today",
-        defaultDate: [date[0], date[1]],
-    });
 </script>
 <!-- Blogs End -->
 {% endblock %}

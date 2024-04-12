@@ -33,6 +33,9 @@ var MyScroll = "";
       Init.videoJS();
       Init.contactForm();
       Init.bookingForm();
+      Init.contryHouseBookingForm();
+      Init.VISAbookingForm();
+      Init.UmrahBookingForm();
       Init.filterToggle();
     },
 
@@ -613,6 +616,157 @@ var MyScroll = "";
             document.querySelector("#babies").textContent = "0"
             document.querySelector(".class-option").click()
             document.querySelector('.footer-bottom-row').click()
+
+            if (data.success) {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
+            } else {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
+            }
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
+            setTimeout(function () {
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
+            }, 3000);
+          }
+        });
+      });
+    },
+    // =======================
+    //  Umrah Booking Form
+    // =======================
+    UmrahBookingForm: function () {
+      $(".umrah-booking-form").on("submit", function (e) {
+        e.preventDefault();
+        
+        document.querySelector('#booking_submit').style.cursor = 'wait'
+
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+          data[key] = value;
+        });
+        var options = ['economy', 'business', 'comfort', 'first_grade'];
+        var availableOption = options.find(option => Object.keys(data).includes(option));
+        data['class'] = availableOption
+        
+        data['adults'] = document.querySelector("#main_passenger").textContent
+        data['children'] = document.querySelector("#children").textContent
+        data['babies'] = document.querySelector("#babies").textContent
+
+        $.ajax({
+          url: "/umrah-booking/",
+          type: "post",
+          dataType: "json",
+          data: data,
+          success: function (data) {
+            $(".umrah-booking-form").trigger("reset");
+            
+            document.querySelector('#destination_input').value = ""
+            flatpickr("#date_input", {
+              mode: "range",
+              dateFormat: "d-m-Y",
+              minDate: "today",
+            });
+            document.querySelector("#main_passenger").textContent = "1"
+            document.querySelector("#children").textContent = "0"
+            document.querySelector("#babies").textContent = "0"
+            document.querySelector(".class-option").click()
+            document.querySelector('.footer-bottom-row').click()
+
+            if (data.success) {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
+            } else {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
+            }
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
+            setTimeout(function () {
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
+            }, 3000);
+          }
+        });
+      });
+    },
+    // =======================
+    //  Country House Booking Form
+    // =======================
+    contryHouseBookingForm: function () {
+      $(".house-booking-form").on("submit", function (e) {
+        e.preventDefault();
+        
+        document.querySelector('#booking_submit').style.cursor = 'wait'
+
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+          data[key] = value;
+        });
+
+        $.ajax({
+          url: "/country-house-booking/",
+          type: "post",
+          dataType: "json",
+          data: data,
+          success: function (data) {
+            $(".house-booking-form").trigger("reset");
+            
+            flatpickr("#date_input", {
+              mode: "range",
+              dateFormat: "d-m-Y",
+              minDate: "today",
+            });
+
+            if (data.success) {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
+            } else {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
+            }
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
+            setTimeout(function () {
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
+            }, 3000);
+          }
+        });
+      });
+    },
+    // =======================
+    //  VISA Booking Form
+    // =======================
+    VISAbookingForm: function () {
+      $(".visa-booking-form").on("submit", function (e) {
+        e.preventDefault();
+        
+        document.querySelector('#booking_submit').style.cursor = 'wait'
+
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+          data[key] = value;
+        });
+
+        $.ajax({
+          url: "/visa-booking/",
+          type: "post",
+          dataType: "json",
+          data: data,
+          success: function (data) {
+            $(".visa-booking-form").trigger("reset");
+            
+            flatpickr("#date_input", {
+              mode: "range",
+              dateFormat: "d-m-Y",
+              minDate: "today",
+            });
 
             if (data.success) {
               document.getElementById("success_message").innerHTML =

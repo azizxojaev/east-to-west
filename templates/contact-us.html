@@ -2,9 +2,10 @@
 
 
 {% block content %}
+{% load i18n %}
 <!-- Page Header Start-->
 <section class="page-header">
-    <h1 class="color-white">CONTACT</h1>
+    <h1 class="color-white">{% trans 'CONTACT' %}</h1>
 </section>
 <!-- Page Header End-->
 
@@ -17,33 +18,33 @@
                 <div class="row form-block">
                     <div class="col-lg-5 col-md-6">
                         <div class="field-block">
-                            <label for="name" class="h4">Hi My Name is</label>
-                            <input type="text" name="name" id="name" required placeholder="Enter Your Name">
+                            <label for="name" class="h4">{% trans 'Hi My Name is' %}</label>
+                            <input type="text" name="name" id="name" required placeholder="{% trans 'Enter Your Name' %}">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="field-block">
-                            <label for="title" class="h4">and I want to ask about</label>
-                            <input type="text" name="title" id="title" required placeholder="Title">
+                            <label for="title" class="h4">{% trans 'and I want to ask about' %}</label>
+                            <input type="text" name="title" id="title" required placeholder="{% trans 'Title' %}">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="field-block">
-                            <label for="email" class="h4">You can contact me via</label>
-                            <input type="email" name="email" id="email" required placeholder="enter your email">
+                            <label for="email" class="h4">{% trans 'You can contact me via' %}</label>
+                            <input type="email" name="email" id="email" required placeholder="{% trans 'enter your email' %}">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <div class="field-block">
-                            <label for="tel" class="h4">or</label>
-                            <input type="tel" name="phone_number" id="tel" placeholder="enter your number (optional)">
+                            <label for="tel" class="h4">{% trans 'or' %}</label>
+                            <input type="tel" name="phone_number" id="tel" placeholder="{% trans 'enter your number (optional)' %}">
                         </div>
                     </div>
                     <div class="field-block">
-                        <label for="message" class="h4">and i would like<br> to know</label>
-                        <input type="text" name="message" id="message"  placeholder="enter your messages">
+                        <label for="message" class="h4">{% trans 'and i would like' %}<br> {% trans 'to know' %}</label>
+                        <input type="text" name="message" id="message"  placeholder="{% trans 'enter your messages' %}">
                         <div class="ui-btn ui-btn-primary">
-                            <button type="submit" data-hover="SEND MESSAGE">SEND MESSAGE</button>
+                            <button type="submit" data-hover="{% trans 'SEND MESSAGE' %}">{% trans 'SEND MESSAGE' %}</button>
                         </div>
                     </div>
                 </div>
@@ -54,16 +55,16 @@
                 <div class="b-radius-20 bg-white p-24 contact-block">
                     <div class="contact-info">
                         <div class="mb-48">
-                            <h5 class="mb-12">CONTACT INFO</h5>
+                            <h5 class="mb-12">{% trans 'CONTACT INFO' %}</h5>
                             <p>P: <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></p>
                             <p>E: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
                         </div>
                         <div class="mb-48">
-                            <h5 class="mb-12">LOCATION</h5>
+                            <h5 class="mb-12">{% trans 'LOCATION' %}</h5>
                             <p>{{ contact.location }}</p>
                         </div>
                         <div>
-                            <h5 class="mb-12">OPENING HOUR</h5>
+                            <h5 class="mb-12">{% trans 'OPENING HOUR' %}</h5>
                             <p><span class="me-5">{{ contact.working_days }}</span>{{ contact.working_hours }}<span></span></p>
                         </div>
                     </div>

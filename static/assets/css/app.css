@@ -4300,3 +4300,96 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 #page-content::before {
   height: 200vh;
 }
+
+
+@media (max-width: 1445px) {
+  #passengers_btn_list {
+    width: 150% !important;
+  }
+  .find-banner-row {
+    width: 700px !important;
+  }
+  .find-banner-row .ui-btn-primary {
+    width: 90%;
+  }
+  .hero-banner-1 .title {
+    top: 60%;
+  }
+  .hero-banner-1 .content {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 1030px) {
+  .hero-banner-1 .mask-layer.mask-layer-tab {
+    bottom: -45vw;
+  }
+  .footer-main .col-xl-5, .footer-main .col-xl-6, .footer-right-content .col-sm-4 {
+    width: 50% ;
+  }
+  .box-blur-bg .b-radius-20 {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 775px) {
+  .hero-banner-1 .mask-layer.mask-layer-tab {
+    bottom: -33vw;
+  }
+  .footer-main .row {
+    display: flex;
+  }
+  .footer-main .row .col-xl-5 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-main .row .col-xl-5 p {
+    text-align: center;
+  }
+  .footer-main .row .col-xl-6 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-main .row .col-xl-6 .footer-right-content {
+    width: 100%;
+  }
+}
+@media (max-width: 430px) {
+  .footer-logo img {
+    height: auto !important;
+  }
+  .banner-title-parallax {
+    width: 90vw;
+    word-wrap: break-word;
+    text-align: center;
+  }
+  .hero-banner-1 .mask-layer.mask-layer-phone {
+    bottom: -50vw;
+  }
+  .find-banner-row {
+    width: 90vw !important;
+  }
+  .box-blur-bg .img {
+    object-fit: cover;
+  }
+  .footer-main .col-xl-5, .footer-main .col-xl-6, .footer-right-content .col-sm-4 li a {
+    word-wrap: break-word;
+    width: 100%;
+  }
+  .other_links {
+    display: none !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero-banner-1 .mask-layer.mask-layer-phone {
+    bottom: -40vw;
+  }
+}
+@media (max-width: 325px) {
+  .hero-banner-1 .mask-layer.mask-layer-phone {
+    bottom: -30vw;
+  }
+}

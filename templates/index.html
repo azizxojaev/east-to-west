@@ -3,6 +3,7 @@
 
 {% block content %}
 {% load static %}
+{% load i18n %}
 <!-- Hero Section Start -->
 <style>
     #select_passengers {
@@ -13,6 +14,16 @@
     }
     .find-banner-row .form-group {
         width: 15vw !important;
+    }
+    @media (max-width: 1445px) {
+        .find-banner-row .form-group {
+            width: 45% !important;
+        }
+    }
+    @media (max-width: 430px) {
+        .find-banner-row .form-group {
+            width: 100% !important;
+          }
     }
     .form-group button {
         color: #FFFCFA;
@@ -47,32 +58,32 @@
         <h1 class="title banner-caption-title ph-appear">EAST2WEST</h1>
         <div class="content">
             <div class="text-center sub-title">
-                <h3 class="font-sec color-white">Travel where your heart takes you!</h3>
+                <h3 class="font-sec color-white">{% trans 'Travel where your heart takes you!' %}</h3>
             </div>
             <form method="post" action="" class="tour-booking-form">
                 {% csrf_token %}
                 <div class="find-banner-row">
                     <div class="form-group white-input">
                         <select name="departure" class="has-nice-select cus-form-control">
-                            <option disabled>Select Departure</option>
+                            <option disabled>{% trans 'Select Departure' %}</option>
                             {% for d in departures %}
                             <option value="{{ d.slug }}">{{ d.title }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group white-input">
-                        <input required name="destination" id="destination_input" placeholder="Enter your destination" type="text">
+                        <input required name="destination" id="destination_input" placeholder="{% trans 'Enter your destination' %}" type="text">
                     </div>
                     <div class="form-group white-input">
-                        <input required name="date" type="date" id="date_input" placeholder="Select Days">
+                        <input required name="date" type="date" id="date_input" placeholder="{% trans 'Select Days' %}">
                     </div>
                     <div class="form-group white-input">
                         <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
-                            <span class="current" id="passengers_text">Select Passengers</span>
+                            <span class="current" id="passengers_text">{% trans 'Select Passengers' %}</span>
                             <ul id="passengers_btn_list" class="list">
-                                <li data-value="Select Passengers" class="option selected disabled focus" style="font-size: 17px;">Select Passengers</li>
+                                <li data-value="{% trans 'Select Passengers' %}" class="option selected disabled focus" style="font-size: 17px;">{% trans 'Select Passengers' %}</li>
                                 <li class="option d-flex justify-content-between">
-                                    <p>Adults (12+ y.o)</p>
+                                    <p>{% trans 'Adults (12+ y.o)' %}</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
                                         <p style="font-size: 17px;" id="main_passenger">1</p>
@@ -81,7 +92,7 @@
                                 </li>
                                 <hr style="color: #F95C19;">
                                 <li class="option d-flex justify-content-between">
-                                    <p>Children (2-11 y.o)</p>
+                                    <p>{% trans 'Children (2-11 y.o)' %}</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
                                         <p style="font-size: 17px;" id="children">0</p>
@@ -90,35 +101,35 @@
                                 </li>
                                 <hr style="color: #F95C19;">
                                 <li class="option d-flex justify-content-between">
-                                    <p>Babies (under 2 y.o)</p>
+                                    <p>{% trans 'Babies (under 2 y.o)' %}</p>
                                     <div class="d-flex gap-2 align-items-center">
                                         <button onclick="minusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0 disabled" style="height: 32px; width: 32px;">-</button>
                                         <p style="font-size: 17px;" id="babies">0</p>
                                         <button onclick="plusPassenger(this)" type="button" class="ui-btn ui-btn-primary mx-auto ms-md-0" style="height: 32px; width: 32px;">+</button>
                                     </div>
                                 </li>
-                                <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">Service Class</li>
+                                <li data-value="Service Class" class="option selected disabled focus" style="font-size: 17px;">{% trans 'Service Class' %}</li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="economy" checked type="checkbox">
-                                    <p>Economy</p>
+                                    <p>{% trans 'Economy' %}</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="comfort" type="checkbox">
-                                    <p>Comfort</p>
+                                    <p>{% trans 'Comfort' %}</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="business" type="checkbox">
-                                    <p>Business</p>
+                                    <p>{% trans 'Business' %}</p>
                                 </li>
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="first_grade" type="checkbox">
-                                    <p>First Grade</p>
+                                    <p>{% trans 'First Grade' %}</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="ui-btn ui-btn-primary">
-                        <button type="submit" data-hover="FIND NOW">FIND NOW</button>
+                        <button type="submit" data-hover="{% trans 'FIND NOW' %}">{% trans 'FIND NOW' %}</button>
                     </div>
                 </div>
                 <p style="font-size: 20px;" id="danger" class="text-danger m-3"></p>
@@ -139,10 +150,10 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-7">
                         <div class="text-block text-md-start text-center">
-                            <h3 class="mb-8 font-sec color-primary">about us :</h3>
-                            <h2 class="mb-24">WHERE PASSION<br> MEETS ADVENTURE,<br> FUELING YOUR<br> WANDERLUST DESIRES</h2>
+                            <h3 class="mb-8 font-sec color-primary">{% trans 'about us' %} :</h3>
+                            <h2 class="mb-24">{% trans 'WHERE PASSION MEETS ADVENTURE, FUELING YOUR WANDERLUST DESIRES' %}</h2>
                             <div class="ui-btn ui-btn-primary mx-auto ms-md-0">
-                                <a href="{% url 'about' %}" data-hover="LEARN MORE">LEARN MORE</a>
+                                <a href="{% url 'about' %}" data-hover="{% trans 'LEARN MORE' %}">{% trans 'LEARN MORE' %}</a>
                             </div>
                         </div>
                     </div>
@@ -167,13 +178,13 @@
     <section class=" position-relative z-2 py-64">
         <div class="container-fluid">
             <div class="heading mb-48">
-                <h3 class="font-sec color-primary">destinations :</h3>
-                <h2>BEST TRAVEL PLACES</h2>
+                <h3 class="font-sec color-primary">{% trans 'destinations' %} :</h3>
+                <h2>{% trans 'BEST TRAVEL PLACES' %}</h2>
             </div>
             <div class="row py-64 align-items-center">
                 <div class="col-lg-5 order-lg-1 order-2">
-                    <h2 class="mb-8">TURKEY</h2>
-                    <p class="pe-sm-5">Explore the enchanting world of Turkey, where ancient history meets vibrant culture. From the iconic landmarks of Istanbul to the stunning landscapes of Cappadocia, Turkey offers a diverse array of experiences for every traveler. Discover the beauty of its pristine beaches, bustling markets, and rich heritage. Welcome to Turkey – where every moment is an adventure waiting to be discovered.</p>
+                    <h2 class="mb-8">{% trans 'TURKEY' %}</h2>
+                    <p class="pe-sm-5">{% trans 'Explore the enchanting world of Turkey, where ancient history meets vibrant culture. From the iconic landmarks of Istanbul to the stunning landscapes of Cappadocia, Turkey offers a diverse array of experiences for every traveler. Discover the beauty of its pristine beaches, bustling markets, and rich heritage. Welcome to Turkey – where every moment is an adventure waiting to be discovered.' %}</p>
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
@@ -188,14 +199,14 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <h2 class="mb-8">UNITED ARAB EMIRATES</h2>
-                    <p class="pe-sm-5">Discover the enchanting Emirates – a fusion of tradition and modernity in the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai to the cultural heritage of Abu Dhabi, the Emirates offer a tapestry of experiences. Indulge in luxury shopping, thrilling desert safaris, and world-class dining. Welcome to the Emirates – where tradition meets innovation in an unforgettable journey.</p>
+                    <h2 class="mb-8">{% trans 'UNITED ARAB EMIRATES' %}</h2>
+                    <p class="pe-sm-5">{% trans 'Discover the enchanting Emirates – a fusion of tradition and modernity in the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai to the cultural heritage of Abu Dhabi, the Emirates offer a tapestry of experiences. Indulge in luxury shopping, thrilling desert safaris, and world-class dining. Welcome to the Emirates – where tradition meets innovation in an unforgettable journey.' %}</p>
                 </div>
             </div>
             <div class="row py-64 align-items-center">
                 <div class="col-lg-5 order-lg-1 order-2">
-                    <h2 class="mb-8">EGYPT</h2>
-                    <p class="pe-sm-5">Explore the timeless wonders of Egypt – where ancient treasures meet stunning landscapes. From the majestic pyramids of Giza to the tranquil waters of the Red Sea, Egypt beckons with its rich history and natural beauty. Dive into vibrant bazaars, cruise the Nile, or unwind on pristine beaches. Welcome to Egypt – a land of endless fascination.</p>
+                    <h2 class="mb-8">{% trans 'EGYPT' %}</h2>
+                    <p class="pe-sm-5">{% trans 'Explore the timeless wonders of Egypt – where ancient treasures meet stunning landscapes. From the majestic pyramids of Giza to the tranquil waters of the Red Sea, Egypt beckons with its rich history and natural beauty. Dive into vibrant bazaars, cruise the Nile, or unwind on pristine beaches. Welcome to Egypt – a land of endless fascination.' %}</p>
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
@@ -210,14 +221,14 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <h2 class="mb-8">MALAYSIA</h2>
-                    <p class="pe-sm-5">Discover Malaysia's diverse beauty, where bustling cities blend with pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the lush rainforests of Borneo, Malaysia offers a rich tapestry of experiences. Indulge in vibrant street food, explore ancient temples, or relax on idyllic beaches. Welcome to Malaysia – where every moment is a delightful adventure.</p>
+                    <h2 class="mb-8">{% trans 'MALAYSIA' %}</h2>
+                    <p class="pe-sm-5">{% trans "Discover Malaysia's diverse beauty, where bustling cities blend with pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the lush rainforests of Borneo, Malaysia offers a rich tapestry of experiences. Indulge in vibrant street food, explore ancient temples, or relax on idyllic beaches. Welcome to Malaysia – where every moment is a delightful adventure." %}</p>
                 </div>
             </div>
             <div class="row py-64 align-items-center">
                 <div class="col-lg-5 order-lg-1 order-2">
-                    <h2 class="mb-8">BALI</h2>
-                    <p class="pe-sm-5">Explore the paradise of Bali – an island of serene beauty and vibrant culture. From lush rice terraces to pristine beaches, Bali offers a retreat for every traveler. Immerse yourself in spiritual traditions at ancient temples, indulge in Balinese cuisine, or unwind with a yoga session overlooking breathtaking landscapes. Welcome to Bali – where tranquility meets adventure in perfect harmony.</p>
+                    <h2 class="mb-8">{% trans 'BALI' %}</h2>
+                    <p class="pe-sm-5">{% trans 'Explore the paradise of Bali – an island of serene beauty and vibrant culture. From lush rice terraces to pristine beaches, Bali offers a retreat for every traveler. Immerse yourself in spiritual traditions at ancient temples, indulge in Balinese cuisine, or unwind with a yoga session overlooking breathtaking landscapes. Welcome to Bali – where tranquility meets adventure in perfect harmony.' %}</p>
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
@@ -306,8 +317,8 @@
     <!-- Gallery Start -->
     <section class="py-64" style="position: relative; z-index: 2;">
         <div class="heading mb-48">
-            <h3 class="font-sec color-primary">instagram :</h3>
-            <h2>TRAVEL GALLERIES</h2>
+            <h3 class="font-sec color-primary">{% trans 'instagram' %} :</h3>
+            <h2>{% trans 'TRAVEL GALLERIES' %}</h2>
         </div>
         <div class="gallery-slider">
             {% for p in gallery %}
@@ -436,14 +447,26 @@
             window.location = `{% url 'tour_booking' %}?departure=${data['departure']}&destination=${data['destination']}&class=${data['class']}&date=${data['date']}&adults=${data['adults']}&children=${data['children']}&babies=${data['babies']}`
         } else {
             let date_danger_input = document.querySelector('#date_input')
-            date_danger_input.placeholder = "You should select days!";
+            date_danger_input.placeholder = "{% trans 'You should select days' %}!";
             date_danger_input.click()
             
             setTimeout(function() {
-                date_danger_input.placeholder = "Select Days";
+                date_danger_input.placeholder = "{% trans 'Select Days' %}";
                 date_danger_input.classList.remove('text-danger')
             }, 3000);
         }
     });    
+</script>
+<script>
+    let element = document.querySelector('#page-content');
+    let height = window.getComputedStyle(document.body).height;
+
+    let style = document.createElement('style');
+    style.innerHTML = `
+        #page-content::before {
+            height: ${height};
+        }
+    `;
+    document.head.appendChild(style);
 </script>
 {% endblock %}
