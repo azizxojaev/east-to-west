@@ -10,7 +10,7 @@
     <title>East2West</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/media/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/media/logo.png' %}">
 
     <!-- All CSS files -->
     <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css' %}">
@@ -83,6 +83,23 @@
     <script src="{% static 'assets/js/vendor/slick.min.js' %}"></script>
     <script src="{% static 'assets/js/app.js' %}"></script>
     
+    <script>
+        let lang_select = document.querySelector('#lang')
+        
+        lang_select.nextElementSibling.querySelectorAll('.option:not(.disabled)').forEach(function (option) {
+            option.addEventListener('click', function () {
+                if (lang_select.value != option.getAttribute('data-value')) {
+                    lang_select.value = option.getAttribute('data-value');
+                    lang_select.nextElementSibling.nextElementSibling.click()
+                }
+            })
+        })
+    </script>
+    <script>
+        if (window.location.pathname.includes('ru')) {
+            document.querySelector('html').setAttribute('lang', 'ru');
+        }
+    </script>
 </body>
 
 </html>
