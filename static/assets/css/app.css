@@ -87,6 +87,7 @@ ol.list-style li::marker {
 -------------------------*/
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
