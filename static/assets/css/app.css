@@ -2262,7 +2262,7 @@ Elements
 /*----------------------------------------*/
 #preloader {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: grid;
   align-items: center;
@@ -4301,6 +4301,13 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 
 /*# sourceMappingURL=app.css.map */
 
+.gallery-img-block {
+  aspect-ratio: 1;
+}
+.gallery-img-block img {
+  width: 100%;
+}
+
 #page-content::before {
   height: 200vh;
 }
@@ -4362,16 +4369,22 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   }
 }
 @media (max-width: 430px) {
+  .ui-header-col:last-child {
+    display: none !important;
+  }
   .footer-logo img {
     height: auto !important;
   }
-  .banner-title-parallax {
-    width: 90vw;
+  .hero-banner-1 .title {
+    top: 50%;
+  }
+  .banner-caption-title {
     word-wrap: break-word;
     text-align: center;
+    width: 90vw;
   }
   .hero-banner-1 .mask-layer.mask-layer-phone {
-    bottom: -50vw;
+    bottom: -40vw;
   }
   .find-banner-row {
     width: 90vw !important;
@@ -4389,11 +4402,11 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 }
 @media (max-width: 380px) {
   .hero-banner-1 .mask-layer.mask-layer-phone {
-    bottom: -40vw;
+    bottom: -20vw;
   }
 }
 @media (max-width: 325px) {
   .hero-banner-1 .mask-layer.mask-layer-phone {
-    bottom: -30vw;
+    bottom: 0;
   }
 }

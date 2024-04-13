@@ -137,8 +137,8 @@
         </div>
     </div>
     <img src="{% static 'assets/media/banner/mask-layer.png' %}" alt="" style="width: 100%;" class="mask-layer mask-layer-desktop">
-    <img src="{% static 'assets/media/banner/tabmask.png' %}" alt="" class="mask-layer mask-layer-tab">
-    <img src="{% static 'assets/media/banner/mobilemask.png' %}" alt="" class="mask-layer mask-layer-phone">
+    <img src="{% static 'assets/media/banner/tabmask.png' %}" alt="" style="width: 100%;" class="mask-layer mask-layer-tab">
+    <img src="{% static 'assets/media/banner/mobilemask.png' %}" alt="" style="width: 100%;" class="mask-layer mask-layer-phone">
 </section>
 <!-- Hero Section End --> 
 
@@ -188,14 +188,14 @@
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img style="width: 1158px; height: 568px;" src="/media/tours/tour_destination_1_vQKVbOE.png" alt="" class="b-radius-20">
+                        <img style="width: 100%; height: 100%;" src="/media/tours/tour_destination_1_vQKVbOE.png" alt="" class="b-radius-20">
                     </div>
                 </div>
             </div>
             <div class="row py-64 align-items-center">
                 <div class="col-lg-6 ">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img style="width: 1158px; height: 568px;" src="/media/tours/tour_destination_2_4bbn3Uv.png" alt="" class="b-radius-20">
+                        <img style="width: 100%; height: 100%;" src="/media/tours/tour_destination_2_4bbn3Uv.png" alt="" class="b-radius-20">
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
@@ -210,14 +210,14 @@
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img style="width: 1158px; height: 568px;" src="/media/tours/tour_destination_3_ytAiMva.png" alt="" class="b-radius-20">
+                        <img style="width: 100%; height: 100%;" src="/media/tours/tour_destination_3_ytAiMva.png" alt="" class="b-radius-20">
                     </div>
                 </div>
             </div>
             <div class="row py-64 align-items-center">
                 <div class="col-lg-6 ">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img style="width: 1158px; height: 568px;" src="/media/tours/1529064668malaysia-image-one.jpg" alt="" class="b-radius-20">
+                        <img style="width: 100%; height: 100%;" src="/media/tours/1529064668malaysia-image-one.jpg" alt="" class="b-radius-20">
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
@@ -232,7 +232,7 @@
                 </div>
                 <div class="col-lg-6 offset-lg-1 order-lg-2 order-1">
                     <div class="box-blur-bg mb-16 mb-lg-0">
-                        <img style="width: 1158px; height: 568px;" src="/media/tours/8994658f-13ad-4106-bde4-856450359f47-1200x675.jpg" alt="" class="b-radius-20">
+                        <img style="width: 100%; height: 100%;" src="/media/tours/8994658f-13ad-4106-bde4-856450359f47-1200x675.jpg" alt="" class="b-radius-20">
                     </div>
                 </div>
             </div>
@@ -322,10 +322,10 @@
         </div>
         <div class="gallery-slider">
             {% for p in gallery %}
-            <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+            <div class="gallery-img-block"><img src="/media/{{ p.image }}" alt=""></div>
             {% endfor %}
             {% for p in gallery %}
-            <div class="gallery-img-block" style="cursor: pointer;"><img src="/media/{{ p.image }}" alt=""></div>
+            <div class="gallery-img-block"><img src="/media/{{ p.image }}" alt=""></div>
             {% endfor %}
         </div>
     </section>
