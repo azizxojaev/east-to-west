@@ -4302,6 +4302,10 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 
 /*# sourceMappingURL=app.css.map */
 
+.ui-no-scroll {
+  overflow-y: hidden;
+}
+
 .gallery-img-block {
   aspect-ratio: 1;
 }
@@ -4370,8 +4374,8 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   }
 }
 @media (max-width: 430px) {
-  .ui-header-col:last-child {
-    display: none !important;
+  #passengers_btn_list {
+    width: 100% !important;
   }
   .footer-logo img {
     height: auto !important;
