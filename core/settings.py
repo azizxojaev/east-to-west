@@ -128,6 +128,7 @@ LOCALE_PATHS = [BASE_DIR/'locale']
 LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
+    ('uz', _('Uzbek')),
 ]
 
 
