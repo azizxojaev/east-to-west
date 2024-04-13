@@ -4083,6 +4083,17 @@ body.ui-search-open .scrollbar-track {
   }
 }
 
+.gallery-slider2 .gallery-img-block {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+@media (max-width: 492px) {
+  .gallery-slider2 .gallery-img-block {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
 /*----------------------------------------*/
 /*  FOOTER CSS START
 /*----------------------------------------*/
@@ -4317,6 +4328,14 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   height: 200vh;
 }
 
+.ui-header-tools .option, .nice-select span {
+  text-transform: capitalize;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
 
 @media (max-width: 1445px) {
   #passengers_btn_list {
@@ -4376,6 +4395,9 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 @media (max-width: 430px) {
   #passengers_btn_list {
     width: 100% !important;
+  }
+  .show-on-mobile {
+    display: flex;
   }
   .footer-logo img {
     height: auto !important;

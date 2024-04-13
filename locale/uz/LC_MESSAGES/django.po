@@ -49,7 +49,7 @@ msgid ""
 "unforgettable memories with us. Tailored journeys for your dreams. Start "
 "your adventure today. Our dedicated team crafts personalized journeys, "
 "ensuring every detail reflects your dreams. Start your adventure today."
-msgstr "QIZILTOPARLARINGIZNI ESHITISH, JASHNAVİY MADANİYATLARGA HAM ALOHİDA AYLANTRISH VA YODGORLANISHGA CHIQISH. SIZNING ORINBOSARINGIZ UCHUN BIZGA MANZUMLANGAN SAYOHATLAR. BUGUN SIZNING SAROGINGIZNI BOSHLAN. BIZNING MAHSULOTCHI JAMOAMIZ SHAXSIY SAYOHATLARNI TASHKIL QILADI, HAR BIR TAFSİLOT SIZNING ORINBOSARINGIZNI ATRAB QOLADIGAN SAYOHATLAR."
+msgstr "Qiziltoparlingizni eshitish, jashnaviy madaniyatlarga ham alohida aylantrish va yodgorlanishga chiqish. Sizning orinbosaringiz uchun bizga manzumlangan sayohatlar. Bugun sizning sarogingizni boshlan. Bizning mahsulotchi jamoamiz shaxsiy sayohatlarni tashkil qiladi, har bir tafsilot sizning orinbosaringizni atrab qoladigan sayohatlar."
 
 #: .\templates\about.html:53
 msgid "WE WANT TO GIVE THE BEST TOURS"
@@ -323,47 +323,47 @@ msgstr "Chaqaloqlar (2 yoshgacha)"
 #: .\templates\index.html:111 .\templates\tour-booking.html:103
 #: .\templates\umrah-booking.html:88
 msgid "Service Class"
-msgstr ""
+msgstr "Xizmat Klassi"
 
 #: .\templates\index.html:114 .\templates\tour-booking.html:106
 #: .\templates\umrah-booking.html:91
 msgid "Economy"
-msgstr ""
+msgstr "Ekonom"
 
 #: .\templates\index.html:118 .\templates\tour-booking.html:110
 #: .\templates\umrah-booking.html:95
 msgid "Comfort"
-msgstr ""
+msgstr "Komfort"
 
 #: .\templates\index.html:122 .\templates\tour-booking.html:114
 #: .\templates\umrah-booking.html:99
 msgid "Business"
-msgstr ""
+msgstr "Bizness"
 
 #: .\templates\index.html:126 .\templates\tour-booking.html:118
 #: .\templates\umrah-booking.html:103
 msgid "First Grade"
-msgstr ""
+msgstr "Birinchi Klass"
 
 #: .\templates\index.html:132
 msgid "FIND NOW"
-msgstr ""
+msgstr "HOZIR TOPING"
 
 #: .\templates\index.html:156
 msgid "LEARN MORE"
-msgstr ""
+msgstr "BATAFSIL MA'LUMOT"
 
 #: .\templates\index.html:181
 msgid "destinations"
-msgstr ""
+msgstr "manzillar"
 
 #: .\templates\index.html:182
 msgid "BEST TRAVEL PLACES"
-msgstr ""
+msgstr "ENG YAXSHI SAYOXAT JOYLARI"
 
 #: .\templates\index.html:186
 msgid "TURKEY"
-msgstr ""
+msgstr "TURKIYA"
 
 #: .\templates\index.html:187
 msgid ""
@@ -373,11 +373,11 @@ msgid ""
 "Discover the beauty of its pristine beaches, bustling markets, and rich "
 "heritage. Welcome to Turkey – where every moment is an adventure waiting to "
 "be discovered."
-msgstr ""
+msgstr "Turkiyaning g'aroyib dunyasini tadqiq qiling, qadimiy tarixning jonli san'ati bilan uchrashadi. Istanbulning ramz bo'lgan manzillari va Cappadociya ning ajoyib manzaralari bilan Turkia har bir sayohatkor uchun murakkab tajribalar to'plamini taklif qiladi. Uning nozik qumli plajlarining, chalar bozorlarining va boy bog'liq merosiylarining go'zaligini toping. Turkia - har bir dam, topilmasini kutayotgan bir qishloq - xush kelibsiz."
 
 #: .\templates\index.html:202
 msgid "UNITED ARAB EMIRATES"
-msgstr ""
+msgstr "BIRLASHGAN ARAB EMIRATLAR"
 
 #: .\templates\index.html:203
 msgid ""
@@ -387,11 +387,11 @@ msgid ""
 "experiences. Indulge in luxury shopping, thrilling desert safaris, and world-"
 "class dining. Welcome to the Emirates – where tradition meets innovation in "
 "an unforgettable journey."
-msgstr ""
+msgstr "Qizil barmoqlar Emiratlarining g'aroyib dunyasini toping - Arabian yarimorolining markazida an'anaviylik va zamonaviyligi bir qilish. Dubayning yoqut mo'jizalariidan Abu-Dabi muorifoti, Emiratlar tajribalar panjara taklif qiladi. Lux sotib olishga tushishingizni, thrilling desert safari-larini va dunyo xalqaro daraxt sirlari ovqatlanishini mazkur qiling. Emiratlarga xush kelibsiz - an'anaviylar inovatsiyaga ega bo'lishi yodga qolgan sayohatda."
 
 #: .\templates\index.html:208
 msgid "EGYPT"
-msgstr ""
+msgstr "MISR"
 
 #: .\templates\index.html:209
 msgid ""
@@ -400,11 +400,11 @@ msgid ""
 "waters of the Red Sea, Egypt beckons with its rich history and natural "
 "beauty. Dive into vibrant bazaars, cruise the Nile, or unwind on pristine "
 "beaches. Welcome to Egypt – a land of endless fascination."
-msgstr ""
+msgstr "Eski qadimiy qimmatlarning hayajonlari bilan tanishing – Egiptning chekkan manzaralari bilan uchrashadi. Giza piramidalari kabi nizomiy joylardan Qizil Daryo ning sokin sullari gacha, Egipt tarixi va tabiiy go'zalligi bilan odamlarni chaqiradi. Qizil bozorlarga tushishingiz, Nil daryosida kruiz qilishingiz yoki nozik plajlarda dam olishingiz mumkin. Egiptga xush kelibsiz – chekkan hayronliklar diyori."
 
 #: .\templates\index.html:224
 msgid "MALAYSIA"
-msgstr ""
+msgstr "MALAYSIYA"
 
 #: .\templates\index.html:225
 msgid ""
@@ -413,11 +413,11 @@ msgid ""
 "lush rainforests of Borneo, Malaysia offers a rich tapestry of experiences. "
 "Indulge in vibrant street food, explore ancient temples, or relax on idyllic "
 "beaches. Welcome to Malaysia – where every moment is a delightful adventure."
-msgstr ""
+msgstr "Malayziyaning murakkab go'zalligini toping, aholi tashqi tumanlarini nozik tabiat bilan biriktiradi. Kuala Lumpurdagi ramzli Petronas Twin Towersdan Borneo ning o'tkir yong'iliklariga, Malayziya zengin tajribalar panjara taklif qiladi. Chekkan ko'chalar ovqatlariga tushishingiz, eski ibodatxonalarini o'rganishingiz yoki idilli plajlarda dam olishingiz mumkin. Malayziyaga xush kelibsiz - har bir daqiqa layli hayotiy sayohat."
 
 #: .\templates\index.html:230
 msgid "BALI"
-msgstr ""
+msgstr "BALI"
 
 #: .\templates\index.html:231
 msgid ""
@@ -427,131 +427,131 @@ msgid ""
 "temples, indulge in Balinese cuisine, or unwind with a yoga session "
 "overlooking breathtaking landscapes. Welcome to Bali – where tranquility "
 "meets adventure in perfect harmony."
-msgstr ""
+msgstr "Bali jannatini tadqiq qiling - sokin go'zallik va zo'ravon madaniyat oroli. Yashil osh xo'lari dan nozik plajlarga qadar, Bali har bir sayohatchiga xonadon taklif qiladi. Qadimiy ibodatxonalar bo'yicha ruhoniy an'analar bilan o'zini shug'ullaning, Balidagi ovqatlanishdan zavqlaning, yoki havo manzaralarini ko'rib turgan yogada yengilish uchun o'zingizni bo'ling. Bali'ga xush kelibsiz - sokinlik sarguzashtda moslashtirilgan yolg'onchilikga yuzaga keldi."
 
 #: .\templates\index.html:450
 msgid "You should select days"
-msgstr ""
+msgstr "Siz kunlarni tanlashingiz kerak"
 
 #: .\templates\tour-booking.html:37
 msgid "TOUR BOOKING"
-msgstr ""
+msgstr "TURLARNI BRONLASH"
 
 #: .\templates\tour-booking.html:47
 msgid "Please fill out the form to book your tour"
-msgstr ""
+msgstr "Iltimos, sayohatingizni bron qilish uchun malumotlaringizni kiriting"
 
 #: .\templates\tour-booking.html:141
 msgid "Book Tour"
-msgstr ""
+msgstr "Turni Bron Qilish"
 
 #: .\templates\tour-detail.html:9
 msgid "COUNTRY HOUSE DETAIL"
-msgstr ""
+msgstr "DACHA"
 
 #: .\templates\tour-detail.html:22
 msgid "APPLY"
-msgstr ""
+msgstr "TANLASH"
 
 #: .\templates\tour-detail.html:26
 msgid "day"
-msgstr ""
+msgstr "kun"
 
 #: .\templates\tour-detail.html:31
 msgid "SERVICES PROVIDED"
-msgstr ""
+msgstr "SERVISLAR"
 
 #: .\templates\tour-detail.html:34
 msgid "Location"
-msgstr ""
+msgstr "Lokatsiya"
 
 #: .\templates\tour-detail.html:35
 msgid "Rooms"
-msgstr ""
+msgstr "Xonalar"
 
 #: .\templates\tour-detail.html:37
 msgid "Play Station"
-msgstr ""
+msgstr "Play Station"
 
 #: .\templates\tour-detail.html:40
 msgid "Mini Tennis"
-msgstr ""
+msgstr "Mini Tennis"
 
 #: .\templates\tour-detail.html:43
 msgid "Sauna"
-msgstr ""
+msgstr "Sauna"
 
 #: .\templates\tour-detail.html:46
 msgid "Terrace"
-msgstr ""
+msgstr "Terrasa"
 
 #: .\templates\tour-detail.html:52
 msgid "Phone Number"
-msgstr ""
+msgstr "Telefon Raqam"
 
 #: .\templates\tour-detail.html:53
 msgid "Persons"
-msgstr ""
+msgstr "Odamlar"
 
 #: .\templates\tour-detail.html:55
 msgid "TV"
-msgstr ""
+msgstr "Televisor"
 
 #: .\templates\tour-detail.html:58
 msgid "Karaoke"
-msgstr ""
+msgstr "Karaoke"
 
 #: .\templates\tour-detail.html:60
 msgid "Pool"
-msgstr ""
+msgstr "Basseyn"
 
 #: .\templates\tour-detail.html:62
 msgid "Outdoor Day Bed"
-msgstr ""
+msgstr "Tapchan"
 
 #: .\templates\tour-detail.html:78
 msgid "ADDITIONAL INFO"
-msgstr ""
+msgstr "QOSHIMCHA INFORMATSIYA"
 
 #: .\templates\tour-detail.html:82
 msgid "GALLERY"
-msgstr ""
+msgstr "GALLEGALEREYARE"
 
 #: .\templates\tour-grid.html:9
 msgid "COUNTRY HOUSES LIST"
-msgstr ""
+msgstr "DACHALAR"
 
 #: .\templates\umrah-booking.html:37
 msgid "UMRAH BOOKING"
-msgstr ""
+msgstr "UMRA NI BRON QILISH"
 
 #: .\templates\umrah-booking.html:47
 msgid "Please fill out the form to book your Umrah trip"
-msgstr ""
+msgstr "Umra safarini bron qilish uchun anketani to‘ldiring"
 
 #: .\templates\umrah-booking.html:125
 msgid "Book Umrah Trip"
-msgstr ""
+msgstr "Umra Safarini Bronlash"
 
 #: .\templates\visa-booking.html:37
 msgid "VISA BOOKING"
-msgstr ""
+msgstr "VISA Bronlash"
 
 #: .\templates\visa-booking.html:47
 msgid "Please fill out the form to book your visa"
-msgstr ""
+msgstr "Iltimos, VIZAni bron qilish uchun shaklni to'ldiring"
 
 #: .\templates\visa-booking.html:63
 msgid "Rezidence Country For Visa"
-msgstr ""
+msgstr "Fuqarolik"
 
 #: .\templates\visa-booking.html:68
 msgid "Visiting Country For Visa"
-msgstr ""
+msgstr "Borish Manzili"
 
 #: .\templates\visa-booking.html:77
 msgid "Book VISA"
-msgstr ""
+msgstr "VIZA Bronlash"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"

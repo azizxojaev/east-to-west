@@ -116,57 +116,6 @@ var MyScroll = "";
         }
       }
 
-      
-      // About 1
-      if ($(".about-trigger-1").length ) {
-        var sideAnimation1 = gsap.timeline({ default: { ease: "power2.inOut" }, });
-        sideAnimation1.to(".about-1 .images-area .v-4", { rotation: 21, duration: 0.3 });
-        sideAnimation1.to(".about-1 .images-area .v-3", { x: '0', duration: 0.3 }, '<');
-  
-        sideAnimation1.to(".about-1 .images-area .v-3", { rotation: 15, duration: 0.3 });
-        sideAnimation1.to(".about-1 .images-area .v-2", { x: '0', }, '<')
-  
-        sideAnimation1.to(".about-1 .images-area .v-2", { rotation: 7, duration: 0.3 });
-        sideAnimation1.to(".about-1 .images-area .v-1", { x: '0', duration: 0.3 }, '<')
-  
-        sideAnimation1.to(".about-1 .images-area .v-1", { rotation: 2, duration: 0.3 });
-
-        ScrollTrigger.create({
-          trigger: ".about-trigger-1",
-          scrub: true,
-          pin: true,
-          markers: false,
-          start: "top top",
-          end: "+=300%",
-          animation: sideAnimation1,
-        });
-      }
-
-      // About 2 
-      if ($(".about-trigger-2").length) {
-        var sideAnimation3 = gsap.timeline({ default: { ease: "power2.inOut" }, });
-        sideAnimation3.to(".about-2 .images-area .v-4", { rotation: -21, duration: 0.3 });
-        sideAnimation3.to(".about-2 .images-area .v-3", { x: '0', duration: 0.3 }, '<');
-  
-        sideAnimation3.to(".about-2 .images-area .v-3", { rotation: -15, duration: 0.3 });
-        sideAnimation3.to(".about-2 .images-area .v-2", { x: '0', }, '<')
-  
-        sideAnimation3.to(".about-2 .images-area .v-2", { rotation: -7, duration: 0.3 });
-        sideAnimation3.to(".about-2 .images-area .v-1", { x: '0', duration: 0.3 }, '<')
-  
-        sideAnimation3.to(".about-2 .images-area .v-1", { rotation: -2, duration: 0.3 });
-
-        ScrollTrigger.create({
-          trigger: ".about-trigger-2",
-          scrub: true,
-          pin: true,
-          markers: false,
-          start: "top top",
-          end: "+=300%",
-          animation: sideAnimation3,
-        });
-      }
-
       //  Ui Header ================
       
         // Header tools (If ui-Header tools exist)
@@ -479,6 +428,58 @@ var MyScroll = "";
       if ($(".gallery-slider").length) {
         $(".gallery-slider").slick({
           slidesToShow: 6,
+          arrows: false,
+          dots: false,
+          infinite: true,
+          autoplay: true,
+          cssEase: "linear",
+          autoplaySpeed: 0,
+          speed: 6000,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+          responsive: [
+            {
+              breakpoint: 1399,
+              settings: {
+                slidesToShow: 5,
+              },
+            },
+            {
+              breakpoint: 1199,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 492,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 340,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      }
+      if ($(".gallery-slider2").length) {
+        $(".gallery-slider2").slick({
+          slidesToShow: 2,
           arrows: false,
           dots: false,
           infinite: true,

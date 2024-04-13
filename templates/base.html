@@ -84,21 +84,23 @@
     <script src="{% static 'assets/js/app.js' %}"></script>
     
     <script>
-        let lang_select = document.querySelector('#lang')
-        
-        lang_select.nextElementSibling.querySelectorAll('.option:not(.disabled)').forEach(function (option) {
-            option.addEventListener('click', function () {
-                if (lang_select.value != option.getAttribute('data-value')) {
-                    lang_select.value = option.getAttribute('data-value');
-                    lang_select.nextElementSibling.nextElementSibling.click()
-                }
-            })
-        })
-    </script>
-    <script>
         if (window.location.pathname.includes('ru')) {
             document.querySelector('html').setAttribute('lang', 'ru');
         }
+    </script>
+    <script>
+        let lang_select = document.querySelector('#lang')
+        
+        document.querySelectorAll('.option:not(.disabled)').forEach(function (option) {
+            if (option.parentElement.parentElement.previousElementSibling.id == 'lang') {
+                option.addEventListener('click', function () {
+                    if (lang_select.value != option.getAttribute('data-value')) {
+                        lang_select.value = option.getAttribute('data-value');
+                        lang_select.nextElementSibling.nextElementSibling.click()
+                    }
+                })
+            }
+        })
     </script>
 </body>
 
