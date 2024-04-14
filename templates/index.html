@@ -386,6 +386,8 @@
                 if (parseInt(btn_text.textContent) < 1) {
                     btn.parentElement.children[0].classList.add('disabled')
                 }
+                let top_passengers = btn.parentElement.parentElement.parentElement.previousElementSibling.children[0]
+                top_passengers.textContent = parseInt(top_passengers.textContent) - 1
             }
         } else {
             if (parseInt(btn_text.textContent) > 1) {
@@ -393,9 +395,9 @@
                 if (parseInt(btn_text.textContent) < 2) {
                     btn.parentElement.children[0].classList.add('disabled')
                 }
+                let top_passengers = btn.parentElement.parentElement.parentElement.previousElementSibling.children[0]
+                top_passengers.textContent = parseInt(top_passengers.textContent) - 1
             }
-            let top_passengers = btn.parentElement.parentElement.parentElement.previousElementSibling.children[0]
-            top_passengers.textContent = parseInt(top_passengers.textContent) - 1
         }
     }
 </script>
