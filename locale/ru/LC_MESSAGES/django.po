@@ -309,7 +309,7 @@ msgstr "Выбрать Место Прибытия"
 #: .\templates\tour-booking.html:74 .\templates\tour-booking.html:76
 #: .\templates\umrah-booking.html:59 .\templates\umrah-booking.html:61
 msgid "Select Passengers"
-msgstr "Выбрать Пассажиров"
+msgstr "Количество Пассажиров"
 
 #: .\templates\index.html:86 .\templates\tour-booking.html:78
 #: .\templates\umrah-booking.html:63
@@ -344,7 +344,7 @@ msgstr "Комфорт"
 #: .\templates\index.html:122 .\templates\tour-booking.html:114
 #: .\templates\umrah-booking.html:99
 msgid "Business"
-msgstr "Бизнесс"
+msgstr "Бизнес"
 
 #: .\templates\index.html:126 .\templates\tour-booking.html:118
 #: .\templates\umrah-booking.html:103
