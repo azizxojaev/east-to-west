@@ -4336,6 +4336,10 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   display: none;
 }
 
+#destination_input, #date_input, .find-banner-row .nice-select2, .find-banner-row select {
+  height: clamp(65px, 2.917vw, 72px) !important;
+}
+
 
 @media (max-width: 1445px) {
   #passengers_btn_list {

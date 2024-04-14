@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group white-input">
                         <div class="nice-select2 cus-form-control" id="passengers_btn" tabindex="0">
-                            <span class="current" id="passengers_text">{% trans 'Select Passengers' %}</span>
+                            <span class="current" id="passengers_text"><span>1</span> <span>{% trans 'Passenger' %}</span><br><span>{% trans 'Economy' %}</span></span>
                             <ul id="passengers_btn_list" class="list">
                                 <li data-value="{% trans 'Select Passengers' %}" class="option selected disabled focus" style="font-size: 17px;">{% trans 'Select Passengers' %}</li>
                                 <li class="option d-flex justify-content-between">
@@ -113,14 +113,17 @@
                                     <input name="economy" checked type="checkbox">
                                     <p>{% trans 'Economy' %}</p>
                                 </li>
+                                <hr style="color: #F95C19;">
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="comfort" type="checkbox">
                                     <p>{% trans 'Comfort' %}</p>
                                 </li>
+                                <hr style="color: #F95C19;">
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="business" type="checkbox">
                                     <p>{% trans 'Business' %}</p>
                                 </li>
+                                <hr style="color: #F95C19;">
                                 <li onclick="selectClass(this, event)" class="class-option option d-flex flex-row-reverse justify-content-between align-items-center">
                                     <input name="first_grade" type="checkbox">
                                     <p>{% trans 'First Grade' %}</p>
@@ -372,6 +375,8 @@
                 btn.parentElement.children[0].classList.remove('disabled')
             }
         }
+        let top_passengers = btn.parentElement.parentElement.parentElement.previousElementSibling.children[0]
+        top_passengers.textContent = parseInt(top_passengers.textContent) + 1
     }
     function minusPassenger(btn) {
         let btn_text = btn.nextElementSibling
@@ -389,6 +394,8 @@
                     btn.parentElement.children[0].classList.add('disabled')
                 }
             }
+            let top_passengers = btn.parentElement.parentElement.parentElement.previousElementSibling.children[0]
+            top_passengers.textContent = parseInt(top_passengers.textContent) - 1
         }
     }
 </script>
@@ -416,6 +423,8 @@
                 }
             })
         }
+        let top_class = btn.parentElement.previousElementSibling.children[3]
+        top_class.textContent = input.nextElementSibling.textContent
     }
 </script>
 <script>
