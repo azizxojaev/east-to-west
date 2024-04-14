@@ -308,7 +308,7 @@ msgstr "Выбрать Место Прибытия"
 #: .\templates\index.html:82 .\templates\index.html:84
 #: .\templates\tour-booking.html:74 .\templates\tour-booking.html:76
 #: .\templates\umrah-booking.html:59 .\templates\umrah-booking.html:61
-msgid "Select Passengers"
+msgid "Passenger"
 msgstr "Количество Пассажиров"
 
 #: .\templates\index.html:86 .\templates\tour-booking.html:78
