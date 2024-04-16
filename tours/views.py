@@ -166,3 +166,12 @@ def country_house_detail_page(request, slug):
         'country_images': country_images
     }
     return render(request, 'tour-detail.html', context=context)
+
+
+def create_country_house_page(request):
+    contact = Contact.objects.first()
+
+    context = {
+        'contact': contact
+    }
+    return render(request, 'create-country-house.html', context=context)
