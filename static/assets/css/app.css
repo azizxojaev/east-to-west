@@ -4335,6 +4335,7 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 
 #page-content::before {
   height: 200vh;
+  opacity: 0.25;
 }
 
 .ui-header-tools .option, .nice-select span {

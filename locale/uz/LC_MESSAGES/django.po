@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 21:45+0500\n"
+"POT-Creation-Date: 2024-04-17 22:45+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,21 +70,32 @@ msgid ""
 "breathtaking landscapes. Whether you seek adventure, relaxation, or cultural "
 "exploration, we're here to make your travel dreams a reality. Let's explore "
 "the world together!"
-msgstr "Salom, Sayohatchilar! East2West ga xush kelibsiz! Men bosh direktori sifatida, sizni biz bilan unutulmaz sayohatlar uchun taklif etmoqdaman. Bizning sayohatga bo'lgan munosibatimiz, sizni murakkab madaniyatlar va hayratlanadigan manzaralar bilan tanishtirib, ajoyib tajribalarni yaratishga yana bir qarorli bo'ldi. Siz qayd etgan, har qanday qobiliyat, dam olish yoki madaniy tajribaga qiziqish, biz sizning sayohat xayollaringizni amalga oshiramiz. Hayotimizni birga tajribachilar bilan tahlil qilaylik!"
+msgstr ""
+"Salom, Sayohatchilar! East2West ga xush kelibsiz! Men bosh direktori "
+"sifatida, sizni biz bilan unutulmaz sayohatlar uchun taklif etmoqdaman. "
+"Bizning sayohatga bo'lgan munosibatimiz, sizni murakkab madaniyatlar va "
+"hayratlanadigan manzaralar bilan tanishtirib, ajoyib tajribalarni yaratishga "
+"yana bir qarorli bo'ldi. Siz qayd etgan, har qanday qobiliyat, dam olish "
+"yoki madaniy tajribaga qiziqish, biz sizning sayohat xayollaringizni amalga "
+"oshiramiz. Hayotimizni birga tajribachilar bilan tahlil qilaylik!"
 
-#: .\templates\about.html:54
+#: .\templates\about.html:53
+msgid "Find me on Facebook"
+msgstr "Men bilan Facebook orqali bog'laning"
+
+#: .\templates\about.html:55
 msgid "Warm regards,"
 msgstr "Ishtirok etganingiz uchun minnatdorchilik bildiraman,"
 
-#: .\templates\about.html:54
+#: .\templates\about.html:55
 msgid "Sayidillyos Khakimov Saidaziz"
 msgstr "Sayidillyos Khakimov Saidaziz og'li"
 
-#: .\templates\about.html:126 .\templates\index.html:152
+#: .\templates\about.html:127 .\templates\index.html:152
 msgid "instagram"
 msgstr "instagram"
 
-#: .\templates\about.html:127 .\templates\index.html:153
+#: .\templates\about.html:128 .\templates\index.html:153
 msgid "TRAVEL GALLERIES"
 msgstr "SAYOHAT GALEREYALARI"
 
