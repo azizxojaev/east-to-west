@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 19:41+0500\n"
+"POT-Creation-Date: 2024-04-17 21:45+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,11 +35,11 @@ msgid "ABOUT US"
 msgstr "BIZ HAQIMIZDA"
 
 #: .\templates\about.html:21 .\templates\about.html:50
-#: .\templates\index.html:156
+#: .\templates\index.html:313
 msgid "about us"
 msgstr "biz haqimizda"
 
-#: .\templates\about.html:22 .\templates\index.html:157
+#: .\templates\about.html:22 .\templates\index.html:314
 msgid "WHERE PASSION MEETS ADVENTURE, FUELING YOUR WANDERLUST DESIRES"
 msgstr ""
 "MANOT VA MASLAK BIRQAROR BULADIGAN JOYANGA TOMONLASHUV QADRIYATLARINGIZGA "
@@ -59,26 +59,32 @@ msgstr ""
 "orinbosaringizni atrab qoladigan sayohatlar."
 
 #: .\templates\about.html:51
-msgid "WE WANT TO GIVE THE BEST TOURS"
-msgstr "BIZ ENG YAXSHI SAYOHALARNI BERISHNI HOHLAYMIZ."
+msgid "MESSAGE FROM THE CEO"
+msgstr "DIREKTOR"
 
 #: .\templates\about.html:52
 msgid ""
-"At East2West, our mission is to deliver unparalleled tour experiences. With "
-"a commitment to excellence, we meticulously design each journey to exceed "
-"your expectations. Let us transform your travel aspirations into "
-"extraordinary adventures."
-msgstr ""
-"East2West da, bizning maqsadimiz sharoatli sayohat tajribalarini tahliil "
-"qilish. Ma'lum bir sharoit bilan, har bir sayohatni kutinigizdan yuqori meva "
-"qilish uchun biz yakkanchi dizayn qilamiz. Bizga sayohat hamkorligingizni "
-"farzandlashtiring va farzandlashtiring."
+"Welcome to East2West! As CEO, I'm thrilled to invite you to embark on "
+"unforgettable journeys with us. Our passion for travel drives us to create "
+"extraordinary experiences that immerse you in diverse cultures and "
+"breathtaking landscapes. Whether you seek adventure, relaxation, or cultural "
+"exploration, we're here to make your travel dreams a reality. Let's explore "
+"the world together!"
+msgstr "Salom, Sayohatchilar! East2West ga xush kelibsiz! Men bosh direktori sifatida, sizni biz bilan unutulmaz sayohatlar uchun taklif etmoqdaman. Bizning sayohatga bo'lgan munosibatimiz, sizni murakkab madaniyatlar va hayratlanadigan manzaralar bilan tanishtirib, ajoyib tajribalarni yaratishga yana bir qarorli bo'ldi. Siz qayd etgan, har qanday qobiliyat, dam olish yoki madaniy tajribaga qiziqish, biz sizning sayohat xayollaringizni amalga oshiramiz. Hayotimizni birga tajribachilar bilan tahlil qilaylik!"
 
-#: .\templates\about.html:124 .\templates\index.html:322
+#: .\templates\about.html:54
+msgid "Warm regards,"
+msgstr "Ishtirok etganingiz uchun minnatdorchilik bildiraman,"
+
+#: .\templates\about.html:54
+msgid "Sayidillyos Khakimov Saidaziz"
+msgstr "Sayidillyos Khakimov Saidaziz og'li"
+
+#: .\templates\about.html:126 .\templates\index.html:152
 msgid "instagram"
 msgstr "instagram"
 
-#: .\templates\about.html:125 .\templates\index.html:323
+#: .\templates\about.html:127 .\templates\index.html:153
 msgid "TRAVEL GALLERIES"
 msgstr "SAYOHAT GALEREYALARI"
 
@@ -438,10 +444,6 @@ msgstr "Umra ga Sayohat ni Bron Qilish"
 msgid "Contact"
 msgstr "ALOQA"
 
-#: .\templates\includes\header.html:120
-msgid "BOOK NOW"
-msgstr "BRONLASH"
-
 #: .\templates\includes\tours.html:11
 msgid "Person"
 msgstr "Odam"
@@ -514,23 +516,19 @@ msgstr "Birinchi Klass"
 msgid "FIND NOW"
 msgstr "HOZIR TOPING"
 
-#: .\templates\index.html:159
-msgid "LEARN MORE"
-msgstr "BATAFSIL MA'LUMOT"
-
-#: .\templates\index.html:183
+#: .\templates\index.html:170
 msgid "destinations"
 msgstr "manzillar"
 
-#: .\templates\index.html:184
+#: .\templates\index.html:171
 msgid "BEST TRAVEL PLACES"
 msgstr "ENG YAXSHI SAYOXAT JOYLARI"
 
-#: .\templates\index.html:188
+#: .\templates\index.html:175
 msgid "TURKEY"
 msgstr "TURKIYA"
 
-#: .\templates\index.html:189
+#: .\templates\index.html:176
 msgid ""
 "Explore the enchanting world of Turkey, where ancient history meets vibrant "
 "culture. From the iconic landmarks of Istanbul to the stunning landscapes of "
@@ -547,11 +545,11 @@ msgstr ""
 "go'zaligini toping. Turkia - har bir dam, topilmasini kutayotgan bir qishloq "
 "- xush kelibsiz."
 
-#: .\templates\index.html:204
+#: .\templates\index.html:191
 msgid "UNITED ARAB EMIRATES"
 msgstr "BIRLASHGAN ARAB EMIRATLAR"
 
-#: .\templates\index.html:205
+#: .\templates\index.html:192
 msgid ""
 "Discover the enchanting Emirates – a fusion of tradition and modernity in "
 "the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai "
@@ -568,11 +566,11 @@ msgstr ""
 "Emiratlarga xush kelibsiz - an'anaviylar inovatsiyaga ega bo'lishi yodga "
 "qolgan sayohatda."
 
-#: .\templates\index.html:210
+#: .\templates\index.html:197
 msgid "EGYPT"
 msgstr "MISR"
 
-#: .\templates\index.html:211
+#: .\templates\index.html:198
 msgid ""
 "Explore the timeless wonders of Egypt – where ancient treasures meet "
 "stunning landscapes. From the majestic pyramids of Giza to the tranquil "
@@ -587,11 +585,11 @@ msgstr ""
 "qilishingiz yoki nozik plajlarda dam olishingiz mumkin. Egiptga xush "
 "kelibsiz – chekkan hayronliklar diyori."
 
-#: .\templates\index.html:226
+#: .\templates\index.html:213
 msgid "MALAYSIA"
 msgstr "MALAYSIYA"
 
-#: .\templates\index.html:227
+#: .\templates\index.html:214
 msgid ""
 "Discover Malaysia's diverse beauty, where bustling cities blend with "
 "pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the "
@@ -606,11 +604,11 @@ msgstr ""
 "ibodatxonalarini o'rganishingiz yoki idilli plajlarda dam olishingiz mumkin. "
 "Malayziyaga xush kelibsiz - har bir daqiqa layli hayotiy sayohat."
 
-#: .\templates\index.html:232
+#: .\templates\index.html:219
 msgid "BALI"
 msgstr "BALI"
 
-#: .\templates\index.html:233
+#: .\templates\index.html:220
 msgid ""
 "Explore the paradise of Bali – an island of serene beauty and vibrant "
 "culture. From lush rice terraces to pristine beaches, Bali offers a retreat "
@@ -626,6 +624,10 @@ msgstr ""
 "manzaralarini ko'rib turgan yogada yengilish uchun o'zingizni bo'ling. "
 "Bali'ga xush kelibsiz - sokinlik sarguzashtda moslashtirilgan "
 "yolg'onchilikga yuzaga keldi."
+
+#: .\templates\index.html:316
+msgid "LEARN MORE"
+msgstr "BATAFSIL MA'LUMOT"
 
 #: .\templates\index.html:460
 msgid "You should select days"
@@ -1948,6 +1950,23 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "WE WANT TO GIVE THE BEST TOURS"
+#~ msgstr "BIZ ENG YAXSHI SAYOHALARNI BERISHNI HOHLAYMIZ."
+
+#~ msgid ""
+#~ "At East2West, our mission is to deliver unparalleled tour experiences. "
+#~ "With a commitment to excellence, we meticulously design each journey to "
+#~ "exceed your expectations. Let us transform your travel aspirations into "
+#~ "extraordinary adventures."
+#~ msgstr ""
+#~ "East2West da, bizning maqsadimiz sharoatli sayohat tajribalarini tahliil "
+#~ "qilish. Ma'lum bir sharoit bilan, har bir sayohatni kutinigizdan yuqori "
+#~ "meva qilish uchun biz yakkanchi dizayn qilamiz. Bizga sayohat "
+#~ "hamkorligingizni farzandlashtiring va farzandlashtiring."
+
+#~ msgid "BOOK NOW"
+#~ msgstr "BRONLASH"
 
 #~ msgid "158 Muqimiy, Chilanzar,"
 #~ msgstr "158 Muqimiy, Chilanzar,"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 19:41+0500\n"
+"POT-Creation-Date: 2024-04-17 21:45+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,11 @@ msgid "ABOUT US"
 msgstr "О НАС"
 
 #: .\templates\about.html:21 .\templates\about.html:50
-#: .\templates\index.html:156
+#: .\templates\index.html:313
 msgid "about us"
 msgstr "о нас"
 
-#: .\templates\about.html:22 .\templates\index.html:157
+#: .\templates\about.html:22 .\templates\index.html:314
 msgid "WHERE PASSION MEETS ADVENTURE, FUELING YOUR WANDERLUST DESIRES"
 msgstr ""
 "ГДЕ СТРАСТЬ ВСТРЕЧАЕТСЯ С ПРИКЛЮЧЕНИЯМИ, ПИТАЯ ВАШЕ ЖЕЛАНИЕ СТРАНСТВИЙ."
@@ -60,26 +60,32 @@ msgstr ""
 "мечты. Начните свое приключение сегодня."
 
 #: .\templates\about.html:51
-msgid "WE WANT TO GIVE THE BEST TOURS"
-msgstr "МЫ ХОТИМ ПРЕДОСТАВИТЬ ЛУЧШИЕ ТУРЫ"
+msgid "MESSAGE FROM THE CEO"
+msgstr "СООБЩЕНИЕ ОТ ДИРЕКТОРА"
 
 #: .\templates\about.html:52
 msgid ""
-"At East2West, our mission is to deliver unparalleled tour experiences. With "
-"a commitment to excellence, we meticulously design each journey to exceed "
-"your expectations. Let us transform your travel aspirations into "
-"extraordinary adventures."
-msgstr ""
-"В East2West наша миссия - предоставить непревзойденные туристические "
-"впечатления. С обязательством к качеству мы тщательно разрабатываем каждое "
-"путешествие, чтобы превзойти ваши ожидания. Позвольте нам превратить ваши "
-"путешественнические амбиции в невероятные приключения."
+"Welcome to East2West! As CEO, I'm thrilled to invite you to embark on "
+"unforgettable journeys with us. Our passion for travel drives us to create "
+"extraordinary experiences that immerse you in diverse cultures and "
+"breathtaking landscapes. Whether you seek adventure, relaxation, or cultural "
+"exploration, we're here to make your travel dreams a reality. Let's explore "
+"the world together!"
+msgstr "Добро пожаловать в East2West! Как генеральный директор, я рад пригласить вас отправиться в незабываемые путешествия с нами. Наша страсть к путешествиям побуждает нас создавать удивительные впечатления, погружая вас в разнообразные культуры и захватывающие пейзажи. Будь то приключения, отдых или культурное погружение, мы здесь, чтобы сделать ваши путешественные мечты реальностью. Давайте исследуем мир вместе!"
 
-#: .\templates\about.html:124 .\templates\index.html:322
+#: .\templates\about.html:54
+msgid "Warm regards,"
+msgstr "С теплыми пожеланиями,"
+
+#: .\templates\about.html:54
+msgid "Sayidillyos Khakimov Saidaziz"
+msgstr "Саидилёс Хакимов Саидазиз"
+
+#: .\templates\about.html:126 .\templates\index.html:152
 msgid "instagram"
 msgstr "фотографии"
 
-#: .\templates\about.html:125 .\templates\index.html:323
+#: .\templates\about.html:127 .\templates\index.html:153
 msgid "TRAVEL GALLERIES"
 msgstr "ГАЛЕРЕИ ПУТЕШЕСТВИЙ"
 
@@ -440,10 +446,6 @@ msgstr "Бронирования Умры"
 msgid "Contact"
 msgstr "Контакты"
 
-#: .\templates\includes\header.html:120
-msgid "BOOK NOW"
-msgstr "ЗАБРОНИРОВАТЬ СЕЙЧАС"
-
 #: .\templates\includes\tours.html:11
 msgid "Person"
 msgstr "Людей"
@@ -516,23 +518,19 @@ msgstr "Первый Класс"
 msgid "FIND NOW"
 msgstr "НАЙТИ СЕЙЧАС"
 
-#: .\templates\index.html:159
-msgid "LEARN MORE"
-msgstr "ЧИТАТЬ БОЛЬШЕ"
-
-#: .\templates\index.html:183
+#: .\templates\index.html:170
 msgid "destinations"
 msgstr "места прибытия"
 
-#: .\templates\index.html:184
+#: .\templates\index.html:171
 msgid "BEST TRAVEL PLACES"
 msgstr "ЛУЧШИЕ МЕСТА ДЛЯ ПУТЕШЕСТВИЙ"
 
-#: .\templates\index.html:188
+#: .\templates\index.html:175
 msgid "TURKEY"
 msgstr "ТУРЦИЯ"
 
-#: .\templates\index.html:189
+#: .\templates\index.html:176
 msgid ""
 "Explore the enchanting world of Turkey, where ancient history meets vibrant "
 "culture. From the iconic landmarks of Istanbul to the stunning landscapes of "
@@ -548,11 +546,11 @@ msgstr ""
 "богатого наследия. Добро пожаловать в Турцию - где каждый момент - это "
 "приключение, ждущее своего открытия."
 
-#: .\templates\index.html:204
+#: .\templates\index.html:191
 msgid "UNITED ARAB EMIRATES"
 msgstr "ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ"
 
-#: .\templates\index.html:205
+#: .\templates\index.html:192
 msgid ""
 "Discover the enchanting Emirates – a fusion of tradition and modernity in "
 "the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai "
@@ -568,11 +566,11 @@ msgstr ""
 "ужины на уровне мирового класса. Добро пожаловать в Эмираты - место, где "
 "традиция встречается с инновациями в незабываемом путешествии."
 
-#: .\templates\index.html:210
+#: .\templates\index.html:197
 msgid "EGYPT"
 msgstr "ЭГИПЕТ"
 
-#: .\templates\index.html:211
+#: .\templates\index.html:198
 msgid ""
 "Explore the timeless wonders of Egypt – where ancient treasures meet "
 "stunning landscapes. From the majestic pyramids of Giza to the tranquil "
@@ -586,11 +584,11 @@ msgstr ""
 "Погрузитесь в живописные базары, прокатитесь по Нилу или отдохните на чистых "
 "пляжах. Добро пожаловать в Египет - страну бесконечного очарования."
 
-#: .\templates\index.html:226
+#: .\templates\index.html:213
 msgid "MALAYSIA"
 msgstr "МАЛАЙЗИЯ"
 
-#: .\templates\index.html:227
+#: .\templates\index.html:214
 msgid ""
 "Discover Malaysia's diverse beauty, where bustling cities blend with "
 "pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the "
@@ -605,11 +603,11 @@ msgstr ""
 "исследуйте древние храмы или расслабьтесь на идиллических пляжах. Добро "
 "пожаловать в Малайзию - где каждый момент - это восхитительное приключение."
 
-#: .\templates\index.html:232
+#: .\templates\index.html:219
 msgid "BALI"
 msgstr "БАЛИ"
 
-#: .\templates\index.html:233
+#: .\templates\index.html:220
 msgid ""
 "Explore the paradise of Bali – an island of serene beauty and vibrant "
 "culture. From lush rice terraces to pristine beaches, Bali offers a retreat "
@@ -624,6 +622,10 @@ msgstr ""
 "древних храмах, насладитесь балийской кухней или расслабьтесь на йога-сессии "
 "с видом на захватывающие пейзажи. Добро пожаловать на Бали - место, где "
 "спокойствие встречает приключение в идеальном симбиозе."
+
+#: .\templates\index.html:316
+msgid "LEARN MORE"
+msgstr "ЧИТАТЬ БОЛЬШЕ"
 
 #: .\templates\index.html:460
 msgid "You should select days"
@@ -1946,3 +1948,20 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "WE WANT TO GIVE THE BEST TOURS"
+#~ msgstr "МЫ ХОТИМ ПРЕДОСТАВИТЬ ЛУЧШИЕ ТУРЫ"
+
+#~ msgid ""
+#~ "At East2West, our mission is to deliver unparalleled tour experiences. "
+#~ "With a commitment to excellence, we meticulously design each journey to "
+#~ "exceed your expectations. Let us transform your travel aspirations into "
+#~ "extraordinary adventures."
+#~ msgstr ""
+#~ "В East2West наша миссия - предоставить непревзойденные туристические "
+#~ "впечатления. С обязательством к качеству мы тщательно разрабатываем "
+#~ "каждое путешествие, чтобы превзойти ваши ожидания. Позвольте нам "
+#~ "превратить ваши путешественнические амбиции в невероятные приключения."
+
+#~ msgid "BOOK NOW"
+#~ msgstr "ЗАБРОНИРОВАТЬ СЕЙЧАС"
