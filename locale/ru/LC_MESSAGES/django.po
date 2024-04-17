@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 14:35+0500\n"
+"POT-Creation-Date: 2024-04-17 16:57+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,6 +153,52 @@ msgstr "ЛОКАЦИЯ"
 #: .\templates\umrah-booking.html:145 .\templates\visa-booking.html:97
 msgid "OPENING HOUR"
 msgstr "ЧАСЫ РАБОТЫ"
+
+#: .\templates\contact-us.html:71 .\templates\country-house-booking.html:106
+#: .\templates\includes\footer.html:52 .\templates\tour-booking.html:168
+#: .\templates\umrah-booking.html:149 .\templates\visa-booking.html:101
+#, fuzzy
+#| msgid "COUNTRY HOUSE DETAIL"
+msgid "COMPANY DETAILS"
+msgstr "ДАЧА"
+
+#: .\templates\contact-us.html:72 .\templates\country-house-booking.html:107
+#: .\templates\includes\footer.html:54 .\templates\tour-booking.html:169
+#: .\templates\umrah-booking.html:150 .\templates\visa-booking.html:102
+#, fuzzy
+#| msgid "\"East2West\" MChJ"
+msgid "LLC \"East2West\""
+msgstr "\"East2West\" MChJ"
+
+#: .\templates\contact-us.html:73 .\templates\country-house-booking.html:108
+#: .\templates\tour-booking.html:170 .\templates\umrah-booking.html:151
+#: .\templates\visa-booking.html:103
+msgid "158 Mukumiy, Chilanzar"
+msgstr ""
+
+#: .\templates\contact-us.html:74 .\templates\country-house-booking.html:109
+#: .\templates\includes\footer.html:56 .\templates\tour-booking.html:171
+#: .\templates\umrah-booking.html:152 .\templates\visa-booking.html:104
+msgid "Tashkent, 100043"
+msgstr ""
+
+#: .\templates\contact-us.html:75 .\templates\country-house-booking.html:110
+#: .\templates\includes\footer.html:57 .\templates\tour-booking.html:172
+#: .\templates\umrah-booking.html:153 .\templates\visa-booking.html:105
+msgid "АО «Anor Bank» MFO code: 01183"
+msgstr ""
+
+#: .\templates\contact-us.html:76 .\templates\country-house-booking.html:111
+#: .\templates\includes\footer.html:58 .\templates\tour-booking.html:173
+#: .\templates\umrah-booking.html:154 .\templates\visa-booking.html:106
+msgid "20208000905593005001"
+msgstr ""
+
+#: .\templates\contact-us.html:77 .\templates\country-house-booking.html:112
+#: .\templates\includes\footer.html:59 .\templates\tour-booking.html:174
+#: .\templates\umrah-booking.html:155 .\templates\visa-booking.html:107
+msgid "STIR 310055757"
+msgstr ""
 
 #: .\templates\country-house-booking.html:37
 msgid "COUNTRY HOUSE BOOKING"
@@ -338,7 +384,11 @@ msgstr "Бронирование ВИЗЫ"
 msgid "Umrah Booking Page"
 msgstr "Бронирование поездки в Умру"
 
-#: .\templates\includes\footer.html:58
+#: .\templates\includes\footer.html:55
+msgid "158 Mukumiy, Chilanzar,"
+msgstr ""
+
+#: .\templates\includes\footer.html:70
 msgid "All Rights Reserved"
 msgstr "Все Права Защищены"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-13 15:15+0500\n"
+"POT-Creation-Date: 2024-04-17 16:57+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,14 +34,16 @@ msgstr "O'zbek"
 msgid "ABOUT US"
 msgstr "BIZ HAQIMIZDA"
 
-#: .\templates\about.html:21 .\templates\about.html:52
-#: .\templates\index.html:153
+#: .\templates\about.html:21 .\templates\about.html:50
+#: .\templates\index.html:156
 msgid "about us"
 msgstr "biz haqimizda"
 
-#: .\templates\about.html:22 .\templates\index.html:154
+#: .\templates\about.html:22 .\templates\index.html:157
 msgid "WHERE PASSION MEETS ADVENTURE, FUELING YOUR WANDERLUST DESIRES"
-msgstr "MANOT VA MASLAK BIRQAROR BULADIGAN JOYANGA TOMONLASHUV QADRIYATLARINGIZGA ENERGIYA BERADI."
+msgstr ""
+"MANOT VA MASLAK BIRQAROR BULADIGAN JOYANGA TOMONLASHUV QADRIYATLARINGIZGA "
+"ENERGIYA BERADI."
 
 #: .\templates\about.html:23
 msgid ""
@@ -49,25 +51,34 @@ msgid ""
 "unforgettable memories with us. Tailored journeys for your dreams. Start "
 "your adventure today. Our dedicated team crafts personalized journeys, "
 "ensuring every detail reflects your dreams. Start your adventure today."
-msgstr "Qiziltoparlingizni eshitish, jashnaviy madaniyatlarga ham alohida aylantrish va yodgorlanishga chiqish. Sizning orinbosaringiz uchun bizga manzumlangan sayohatlar. Bugun sizning sarogingizni boshlan. Bizning mahsulotchi jamoamiz shaxsiy sayohatlarni tashkil qiladi, har bir tafsilot sizning orinbosaringizni atrab qoladigan sayohatlar."
+msgstr ""
+"Qiziltoparlingizni eshitish, jashnaviy madaniyatlarga ham alohida aylantrish "
+"va yodgorlanishga chiqish. Sizning orinbosaringiz uchun bizga manzumlangan "
+"sayohatlar. Bugun sizning sarogingizni boshlan. Bizning mahsulotchi jamoamiz "
+"shaxsiy sayohatlarni tashkil qiladi, har bir tafsilot sizning "
+"orinbosaringizni atrab qoladigan sayohatlar."
 
-#: .\templates\about.html:53
+#: .\templates\about.html:51
 msgid "WE WANT TO GIVE THE BEST TOURS"
 msgstr "BIZ ENG YAXSHI SAYOHALARNI BERISHNI HOHLAYMIZ."
 
-#: .\templates\about.html:54
+#: .\templates\about.html:52
 msgid ""
 "At East2West, our mission is to deliver unparalleled tour experiences. With "
 "a commitment to excellence, we meticulously design each journey to exceed "
 "your expectations. Let us transform your travel aspirations into "
 "extraordinary adventures."
-msgstr "East2West da, bizning maqsadimiz sharoatli sayohat tajribalarini tahliil qilish. Ma'lum bir sharoit bilan, har bir sayohatni kutinigizdan yuqori meva qilish uchun biz yakkanchi dizayn qilamiz. Bizga sayohat hamkorligingizni farzandlashtiring va farzandlashtiring."
+msgstr ""
+"East2West da, bizning maqsadimiz sharoatli sayohat tajribalarini tahliil "
+"qilish. Ma'lum bir sharoit bilan, har bir sayohatni kutinigizdan yuqori meva "
+"qilish uchun biz yakkanchi dizayn qilamiz. Bizga sayohat hamkorligingizni "
+"farzandlashtiring va farzandlashtiring."
 
-#: .\templates\about.html:128 .\templates\index.html:320
+#: .\templates\about.html:124 .\templates\index.html:322
 msgid "instagram"
 msgstr "instagram"
 
-#: .\templates\about.html:129 .\templates\index.html:321
+#: .\templates\about.html:125 .\templates\index.html:323
 msgid "TRAVEL GALLERIES"
 msgstr "SAYOHAT GALEREYALARI"
 
@@ -125,22 +136,66 @@ msgid "SEND MESSAGE"
 msgstr "XABAR YUBORISH"
 
 #: .\templates\contact-us.html:58 .\templates\country-house-booking.html:93
-#: .\templates\includes\footer.html:37 .\templates\tour-booking.html:152
+#: .\templates\includes\footer.html:37 .\templates\tour-booking.html:155
 #: .\templates\umrah-booking.html:136 .\templates\visa-booking.html:88
 msgid "CONTACT INFO"
 msgstr "ALOQA MA'LUMOTI"
 
 #: .\templates\contact-us.html:63 .\templates\country-house-booking.html:98
-#: .\templates\tour-booking.html:157 .\templates\umrah-booking.html:141
+#: .\templates\tour-booking.html:160 .\templates\umrah-booking.html:141
 #: .\templates\visa-booking.html:93
 msgid "LOCATION"
 msgstr "MANZIL"
 
 #: .\templates\contact-us.html:67 .\templates\country-house-booking.html:102
-#: .\templates\includes\footer.html:44 .\templates\tour-booking.html:161
+#: .\templates\includes\footer.html:44 .\templates\tour-booking.html:164
 #: .\templates\umrah-booking.html:145 .\templates\visa-booking.html:97
 msgid "OPENING HOUR"
 msgstr "ISHLASH VAQTI"
+
+#: .\templates\contact-us.html:71 .\templates\country-house-booking.html:106
+#: .\templates\includes\footer.html:52 .\templates\tour-booking.html:168
+#: .\templates\umrah-booking.html:149 .\templates\visa-booking.html:101
+#, fuzzy
+#| msgid "COUNTRY HOUSE DETAIL"
+msgid "COMPANY DETAILS"
+msgstr "DACHA"
+
+#: .\templates\contact-us.html:72 .\templates\country-house-booking.html:107
+#: .\templates\includes\footer.html:54 .\templates\tour-booking.html:169
+#: .\templates\umrah-booking.html:150 .\templates\visa-booking.html:102
+msgid "LLC \"East2West\""
+msgstr ""
+
+#: .\templates\contact-us.html:73 .\templates\country-house-booking.html:108
+#: .\templates\tour-booking.html:170 .\templates\umrah-booking.html:151
+#: .\templates\visa-booking.html:103
+msgid "158 Mukumiy, Chilanzar"
+msgstr ""
+
+#: .\templates\contact-us.html:74 .\templates\country-house-booking.html:109
+#: .\templates\includes\footer.html:56 .\templates\tour-booking.html:171
+#: .\templates\umrah-booking.html:152 .\templates\visa-booking.html:104
+msgid "Tashkent, 100043"
+msgstr ""
+
+#: .\templates\contact-us.html:75 .\templates\country-house-booking.html:110
+#: .\templates\includes\footer.html:57 .\templates\tour-booking.html:172
+#: .\templates\umrah-booking.html:153 .\templates\visa-booking.html:105
+msgid "АО «Anor Bank» MFO code: 01183"
+msgstr ""
+
+#: .\templates\contact-us.html:76 .\templates\country-house-booking.html:111
+#: .\templates\includes\footer.html:58 .\templates\tour-booking.html:173
+#: .\templates\umrah-booking.html:154 .\templates\visa-booking.html:106
+msgid "20208000905593005001"
+msgstr ""
+
+#: .\templates\contact-us.html:77 .\templates\country-house-booking.html:112
+#: .\templates\includes\footer.html:59 .\templates\tour-booking.html:174
+#: .\templates\umrah-booking.html:155 .\templates\visa-booking.html:107
+msgid "STIR 310055757"
+msgstr ""
 
 #: .\templates\country-house-booking.html:37
 msgid "COUNTRY HOUSE BOOKING"
@@ -155,22 +210,22 @@ msgid "Select Country House"
 msgstr "Dacha Tanlang"
 
 #: .\templates\country-house-booking.html:63 .\templates\index.html:78
-#: .\templates\index.html:454 .\templates\tour-booking.html:68
+#: .\templates\index.html:464 .\templates\tour-booking.html:68
 #: .\templates\umrah-booking.html:53
 msgid "Select Days"
 msgstr "Kunlarni Tanlang"
 
-#: .\templates\country-house-booking.html:68 .\templates\tour-booking.html:127
+#: .\templates\country-house-booking.html:68 .\templates\tour-booking.html:130
 #: .\templates\umrah-booking.html:111 .\templates\visa-booking.html:53
 msgid "Full Name"
 msgstr "Familiya Ismingiz"
 
-#: .\templates\country-house-booking.html:73 .\templates\tour-booking.html:132
+#: .\templates\country-house-booking.html:73 .\templates\tour-booking.html:135
 #: .\templates\umrah-booking.html:116 .\templates\visa-booking.html:58
 msgid "Phone"
 msgstr "Telefon Nomer"
 
-#: .\templates\country-house-booking.html:78 .\templates\tour-booking.html:137
+#: .\templates\country-house-booking.html:78 .\templates\tour-booking.html:140
 #: .\templates\umrah-booking.html:121 .\templates\visa-booking.html:73
 msgid "Additional message"
 msgstr "Qoshimcha Malumot"
@@ -179,13 +234,117 @@ msgstr "Qoshimcha Malumot"
 msgid "Book Country House"
 msgstr "Dacha Bron Qilish"
 
+#: .\templates\create-country-house.html:37
+#, fuzzy
+#| msgid "COUNTRY HOUSES"
+msgid "CREATE COUNTRY HOUSE"
+msgstr "DACHALAR"
+
+#: .\templates\create-country-house.html:47
+#, fuzzy
+#| msgid "Please fill out the form to book your country house"
+msgid "Fill out the form to create country house"
+msgstr "Iltimos, dacha bron qilish uchun malumotlaringizni kiriting"
+
+#: .\templates\create-country-house.html:53
+#, fuzzy
+#| msgid "Full Name"
+msgid "Name"
+msgstr "Familiya Ismingiz"
+
+#: .\templates\create-country-house.html:58
+msgid "Price"
+msgstr ""
+
+#: .\templates\create-country-house.html:63
+msgid "Video URL"
+msgstr ""
+
+#: .\templates\create-country-house.html:68
+#, fuzzy
+#| msgid "destinations"
+msgid "Description"
+msgstr "manzillar"
+
+#: .\templates\create-country-house.html:73 .\templates\tour-detail.html:34
+msgid "Location"
+msgstr "Lokatsiya"
+
+#: .\templates\create-country-house.html:78
+msgid "Capacity"
+msgstr ""
+
+#: .\templates\create-country-house.html:83
+#: .\templates\create-country-house.html:88 .\templates\tour-detail.html:35
+msgid "Rooms"
+msgstr "Xonalar"
+
+#: .\templates\create-country-house.html:93
+#, fuzzy
+#| msgid "Pool"
+msgid "Pools"
+msgstr "Basseyn"
+
+#: .\templates\create-country-house.html:98 .\templates\tour-detail.html:52
+msgid "Phone Number"
+msgstr "Telefon Raqam"
+
+#: .\templates\create-country-house.html:104
+msgid "Has TV?"
+msgstr ""
+
+#: .\templates\create-country-house.html:112
+#, fuzzy
+#| msgid "Play Station"
+msgid "Has PlayStation?"
+msgstr "Play Station"
+
+#: .\templates\create-country-house.html:120
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Karaoke?"
+msgstr "Karaoke"
+
+#: .\templates\create-country-house.html:128
+#, fuzzy
+#| msgid "Mini Tennis"
+msgid "Has Tennis?"
+msgstr "Mini Tennis"
+
+#: .\templates\create-country-house.html:136
+msgid "Has Outdoor Garden Table?"
+msgstr ""
+
+#: .\templates\create-country-house.html:144
+#, fuzzy
+#| msgid "Sauna"
+msgid "Has Sauna?"
+msgstr "Sauna"
+
+#: .\templates\create-country-house.html:152
+#, fuzzy
+#| msgid "Terrace"
+msgid "Has Terrace?"
+msgstr "Terrasa"
+
+#: .\templates\create-country-house.html:158
+#, fuzzy
+#| msgid "Country Houses"
+msgid "Add Country House"
+msgstr "Dachalar"
+
 #: .\templates\includes\footer.html:14
 msgid ""
 "Welcome to our travel agency! We specialize in creating unforgettable "
 "journeys worldwide. From relaxing beach vacations to thrilling adventures, "
 "we make your travel dreams a reality. Let's embark on your next adventure "
 "together!"
-msgstr "Xush kelibsiz, bizning sayohat agentligimizga! Biz dunyodagi unutulmaz sayohatlarni yaratishda mutaxassislik qilamiz. Dam olishga mo'ljallangan dengiz sahillaridan tortib-ketadigan sarguzashtlarga qadar, biz sayohat orzularingizni haqiqiylikka aylantiramiz. Keyinroq sayohatimizni birga boshlaymiz!"
+msgstr ""
+"Xush kelibsiz, bizning sayohat agentligimizga! Biz dunyodagi unutulmaz "
+"sayohatlarni yaratishda mutaxassislik qilamiz. Dam olishga mo'ljallangan "
+"dengiz sahillaridan tortib-ketadigan sarguzashtlarga qadar, biz sayohat "
+"orzularingizni haqiqiylikka aylantiramiz. Keyinroq sayohatimizni birga "
+"boshlaymiz!"
 
 #: .\templates\includes\footer.html:22
 msgid "SITE MAP"
@@ -223,7 +382,11 @@ msgstr "VISA Bron Qilish"
 msgid "Umrah Booking Page"
 msgstr "Umra ga Sayohatni Bron Qilish"
 
-#: .\templates\includes\footer.html:58
+#: .\templates\includes\footer.html:55
+msgid "158 Mukumiy, Chilanzar,"
+msgstr ""
+
+#: .\templates\includes\footer.html:70
 msgid "All Rights Reserved"
 msgstr "Barcha Huquqlar Himoyalangan"
 
@@ -279,7 +442,7 @@ msgstr "Umra ga Sayohat ni Bron Qilish"
 msgid "Contact"
 msgstr "ALOQA"
 
-#: .\templates\includes\header.html:103
+#: .\templates\includes\header.html:120
 msgid "BOOK NOW"
 msgstr "BRONLASH"
 
@@ -299,8 +462,19 @@ msgstr "Qayerdan Ketishni Tanlang"
 msgid "Enter your destination"
 msgstr "Manzil ni Tanlang"
 
-#: .\templates\index.html:82 .\templates\index.html:84
-#: .\templates\tour-booking.html:74 .\templates\tour-booking.html:76
+#: .\templates\index.html:82 .\templates\tour-booking.html:74
+#, fuzzy
+#| msgid "Select Passengers"
+msgid "Passenger"
+msgstr "Yo'lovchilarni Tanlang"
+
+#: .\templates\index.html:82 .\templates\index.html:114
+#: .\templates\tour-booking.html:74 .\templates\tour-booking.html:106
+#: .\templates\umrah-booking.html:91
+msgid "Economy"
+msgstr "Ekonom"
+
+#: .\templates\index.html:84 .\templates\tour-booking.html:76
 #: .\templates\umrah-booking.html:59 .\templates\umrah-booking.html:61
 msgid "Select Passengers"
 msgstr "Yo'lovchilarni Tanlang"
@@ -325,47 +499,42 @@ msgstr "Chaqaloqlar (2 yoshgacha)"
 msgid "Service Class"
 msgstr "Xizmat Klassi"
 
-#: .\templates\index.html:114 .\templates\tour-booking.html:106
-#: .\templates\umrah-booking.html:91
-msgid "Economy"
-msgstr "Ekonom"
-
-#: .\templates\index.html:118 .\templates\tour-booking.html:110
+#: .\templates\index.html:119 .\templates\tour-booking.html:111
 #: .\templates\umrah-booking.html:95
 msgid "Comfort"
 msgstr "Komfort"
 
-#: .\templates\index.html:122 .\templates\tour-booking.html:114
+#: .\templates\index.html:124 .\templates\tour-booking.html:116
 #: .\templates\umrah-booking.html:99
 msgid "Business"
 msgstr "Bizness"
 
-#: .\templates\index.html:126 .\templates\tour-booking.html:118
+#: .\templates\index.html:129 .\templates\tour-booking.html:121
 #: .\templates\umrah-booking.html:103
 msgid "First Grade"
 msgstr "Birinchi Klass"
 
-#: .\templates\index.html:132
+#: .\templates\index.html:135
 msgid "FIND NOW"
 msgstr "HOZIR TOPING"
 
-#: .\templates\index.html:156
+#: .\templates\index.html:159
 msgid "LEARN MORE"
 msgstr "BATAFSIL MA'LUMOT"
 
-#: .\templates\index.html:181
+#: .\templates\index.html:183
 msgid "destinations"
 msgstr "manzillar"
 
-#: .\templates\index.html:182
+#: .\templates\index.html:184
 msgid "BEST TRAVEL PLACES"
 msgstr "ENG YAXSHI SAYOXAT JOYLARI"
 
-#: .\templates\index.html:186
+#: .\templates\index.html:188
 msgid "TURKEY"
 msgstr "TURKIYA"
 
-#: .\templates\index.html:187
+#: .\templates\index.html:189
 msgid ""
 "Explore the enchanting world of Turkey, where ancient history meets vibrant "
 "culture. From the iconic landmarks of Istanbul to the stunning landscapes of "
@@ -373,13 +542,20 @@ msgid ""
 "Discover the beauty of its pristine beaches, bustling markets, and rich "
 "heritage. Welcome to Turkey – where every moment is an adventure waiting to "
 "be discovered."
-msgstr "Turkiyaning g'aroyib dunyasini tadqiq qiling, qadimiy tarixning jonli san'ati bilan uchrashadi. Istanbulning ramz bo'lgan manzillari va Cappadociya ning ajoyib manzaralari bilan Turkia har bir sayohatkor uchun murakkab tajribalar to'plamini taklif qiladi. Uning nozik qumli plajlarining, chalar bozorlarining va boy bog'liq merosiylarining go'zaligini toping. Turkia - har bir dam, topilmasini kutayotgan bir qishloq - xush kelibsiz."
+msgstr ""
+"Turkiyaning g'aroyib dunyasini tadqiq qiling, qadimiy tarixning jonli "
+"san'ati bilan uchrashadi. Istanbulning ramz bo'lgan manzillari va "
+"Cappadociya ning ajoyib manzaralari bilan Turkia har bir sayohatkor uchun "
+"murakkab tajribalar to'plamini taklif qiladi. Uning nozik qumli "
+"plajlarining, chalar bozorlarining va boy bog'liq merosiylarining "
+"go'zaligini toping. Turkia - har bir dam, topilmasini kutayotgan bir qishloq "
+"- xush kelibsiz."
 
-#: .\templates\index.html:202
+#: .\templates\index.html:204
 msgid "UNITED ARAB EMIRATES"
 msgstr "BIRLASHGAN ARAB EMIRATLAR"
 
-#: .\templates\index.html:203
+#: .\templates\index.html:205
 msgid ""
 "Discover the enchanting Emirates – a fusion of tradition and modernity in "
 "the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai "
@@ -387,39 +563,58 @@ msgid ""
 "experiences. Indulge in luxury shopping, thrilling desert safaris, and world-"
 "class dining. Welcome to the Emirates – where tradition meets innovation in "
 "an unforgettable journey."
-msgstr "Qizil barmoqlar Emiratlarining g'aroyib dunyasini toping - Arabian yarimorolining markazida an'anaviylik va zamonaviyligi bir qilish. Dubayning yoqut mo'jizalariidan Abu-Dabi muorifoti, Emiratlar tajribalar panjara taklif qiladi. Lux sotib olishga tushishingizni, thrilling desert safari-larini va dunyo xalqaro daraxt sirlari ovqatlanishini mazkur qiling. Emiratlarga xush kelibsiz - an'anaviylar inovatsiyaga ega bo'lishi yodga qolgan sayohatda."
+msgstr ""
+"Qizil barmoqlar Emiratlarining g'aroyib dunyasini toping - Arabian "
+"yarimorolining markazida an'anaviylik va zamonaviyligi bir qilish. Dubayning "
+"yoqut mo'jizalariidan Abu-Dabi muorifoti, Emiratlar tajribalar panjara "
+"taklif qiladi. Lux sotib olishga tushishingizni, thrilling desert safari-"
+"larini va dunyo xalqaro daraxt sirlari ovqatlanishini mazkur qiling. "
+"Emiratlarga xush kelibsiz - an'anaviylar inovatsiyaga ega bo'lishi yodga "
+"qolgan sayohatda."
 
-#: .\templates\index.html:208
+#: .\templates\index.html:210
 msgid "EGYPT"
 msgstr "MISR"
 
-#: .\templates\index.html:209
+#: .\templates\index.html:211
 msgid ""
 "Explore the timeless wonders of Egypt – where ancient treasures meet "
 "stunning landscapes. From the majestic pyramids of Giza to the tranquil "
 "waters of the Red Sea, Egypt beckons with its rich history and natural "
 "beauty. Dive into vibrant bazaars, cruise the Nile, or unwind on pristine "
 "beaches. Welcome to Egypt – a land of endless fascination."
-msgstr "Eski qadimiy qimmatlarning hayajonlari bilan tanishing – Egiptning chekkan manzaralari bilan uchrashadi. Giza piramidalari kabi nizomiy joylardan Qizil Daryo ning sokin sullari gacha, Egipt tarixi va tabiiy go'zalligi bilan odamlarni chaqiradi. Qizil bozorlarga tushishingiz, Nil daryosida kruiz qilishingiz yoki nozik plajlarda dam olishingiz mumkin. Egiptga xush kelibsiz – chekkan hayronliklar diyori."
+msgstr ""
+"Eski qadimiy qimmatlarning hayajonlari bilan tanishing – Egiptning chekkan "
+"manzaralari bilan uchrashadi. Giza piramidalari kabi nizomiy joylardan Qizil "
+"Daryo ning sokin sullari gacha, Egipt tarixi va tabiiy go'zalligi bilan "
+"odamlarni chaqiradi. Qizil bozorlarga tushishingiz, Nil daryosida kruiz "
+"qilishingiz yoki nozik plajlarda dam olishingiz mumkin. Egiptga xush "
+"kelibsiz – chekkan hayronliklar diyori."
 
-#: .\templates\index.html:224
+#: .\templates\index.html:226
 msgid "MALAYSIA"
 msgstr "MALAYSIYA"
 
-#: .\templates\index.html:225
+#: .\templates\index.html:227
 msgid ""
 "Discover Malaysia's diverse beauty, where bustling cities blend with "
 "pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the "
 "lush rainforests of Borneo, Malaysia offers a rich tapestry of experiences. "
 "Indulge in vibrant street food, explore ancient temples, or relax on idyllic "
 "beaches. Welcome to Malaysia – where every moment is a delightful adventure."
-msgstr "Malayziyaning murakkab go'zalligini toping, aholi tashqi tumanlarini nozik tabiat bilan biriktiradi. Kuala Lumpurdagi ramzli Petronas Twin Towersdan Borneo ning o'tkir yong'iliklariga, Malayziya zengin tajribalar panjara taklif qiladi. Chekkan ko'chalar ovqatlariga tushishingiz, eski ibodatxonalarini o'rganishingiz yoki idilli plajlarda dam olishingiz mumkin. Malayziyaga xush kelibsiz - har bir daqiqa layli hayotiy sayohat."
+msgstr ""
+"Malayziyaning murakkab go'zalligini toping, aholi tashqi tumanlarini nozik "
+"tabiat bilan biriktiradi. Kuala Lumpurdagi ramzli Petronas Twin Towersdan "
+"Borneo ning o'tkir yong'iliklariga, Malayziya zengin tajribalar panjara "
+"taklif qiladi. Chekkan ko'chalar ovqatlariga tushishingiz, eski "
+"ibodatxonalarini o'rganishingiz yoki idilli plajlarda dam olishingiz mumkin. "
+"Malayziyaga xush kelibsiz - har bir daqiqa layli hayotiy sayohat."
 
-#: .\templates\index.html:230
+#: .\templates\index.html:232
 msgid "BALI"
 msgstr "BALI"
 
-#: .\templates\index.html:231
+#: .\templates\index.html:233
 msgid ""
 "Explore the paradise of Bali – an island of serene beauty and vibrant "
 "culture. From lush rice terraces to pristine beaches, Bali offers a retreat "
@@ -427,9 +622,16 @@ msgid ""
 "temples, indulge in Balinese cuisine, or unwind with a yoga session "
 "overlooking breathtaking landscapes. Welcome to Bali – where tranquility "
 "meets adventure in perfect harmony."
-msgstr "Bali jannatini tadqiq qiling - sokin go'zallik va zo'ravon madaniyat oroli. Yashil osh xo'lari dan nozik plajlarga qadar, Bali har bir sayohatchiga xonadon taklif qiladi. Qadimiy ibodatxonalar bo'yicha ruhoniy an'analar bilan o'zini shug'ullaning, Balidagi ovqatlanishdan zavqlaning, yoki havo manzaralarini ko'rib turgan yogada yengilish uchun o'zingizni bo'ling. Bali'ga xush kelibsiz - sokinlik sarguzashtda moslashtirilgan yolg'onchilikga yuzaga keldi."
+msgstr ""
+"Bali jannatini tadqiq qiling - sokin go'zallik va zo'ravon madaniyat oroli. "
+"Yashil osh xo'lari dan nozik plajlarga qadar, Bali har bir sayohatchiga "
+"xonadon taklif qiladi. Qadimiy ibodatxonalar bo'yicha ruhoniy an'analar "
+"bilan o'zini shug'ullaning, Balidagi ovqatlanishdan zavqlaning, yoki havo "
+"manzaralarini ko'rib turgan yogada yengilish uchun o'zingizni bo'ling. "
+"Bali'ga xush kelibsiz - sokinlik sarguzashtda moslashtirilgan "
+"yolg'onchilikga yuzaga keldi."
 
-#: .\templates\index.html:450
+#: .\templates\index.html:460
 msgid "You should select days"
 msgstr "Siz kunlarni tanlashingiz kerak"
 
@@ -441,7 +643,7 @@ msgstr "TURLARNI BRONLASH"
 msgid "Please fill out the form to book your tour"
 msgstr "Iltimos, sayohatingizni bron qilish uchun malumotlaringizni kiriting"
 
-#: .\templates\tour-booking.html:141
+#: .\templates\tour-booking.html:144
 msgid "Book Tour"
 msgstr "Turni Bron Qilish"
 
@@ -461,14 +663,6 @@ msgstr "kun"
 msgid "SERVICES PROVIDED"
 msgstr "SERVISLAR"
 
-#: .\templates\tour-detail.html:34
-msgid "Location"
-msgstr "Lokatsiya"
-
-#: .\templates\tour-detail.html:35
-msgid "Rooms"
-msgstr "Xonalar"
-
 #: .\templates\tour-detail.html:37
 msgid "Play Station"
 msgstr "Play Station"
@@ -484,10 +678,6 @@ msgstr "Sauna"
 #: .\templates\tour-detail.html:46
 msgid "Terrace"
 msgstr "Terrasa"
-
-#: .\templates\tour-detail.html:52
-msgid "Phone Number"
-msgstr "Telefon Raqam"
 
 #: .\templates\tour-detail.html:53
 msgid "Persons"
@@ -552,6 +742,280 @@ msgstr "Borish Manzili"
 #: .\templates\visa-booking.html:77
 msgid "Book VISA"
 msgstr "VIZA Bronlash"
+
+#: .\venv\Lib\site-packages\click\_termui_impl.py:518
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_termui_impl.py:522
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1120
+msgid "Aborted!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1309
+#: .\venv\Lib\site-packages\click\decorators.py:559
+msgid "Show this message and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1340
+#: .\venv\Lib\site-packages\click\core.py:1370
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1387
+msgid "Options"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1413
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\core.py:1429
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1636
+msgid "Commands"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1668
+msgid "Missing command."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1746
+msgid "No such command {name!r}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2310
+msgid "Value must be an iterable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2331
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\core.py:2778
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2808
+msgid "(dynamic)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2821
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2834
+msgid "required"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\decorators.py:528
+msgid "Show the version and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:44
+#: .\venv\Lib\site-packages\click\exceptions.py:80
+#, fuzzy, python-brace-format
+#| msgid "enter your messages"
+msgid "Error: {message}"
+msgstr "Savolingizni Kiriting"
+
+#: .\venv\Lib\site-packages\click\exceptions.py:72
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:121
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:123
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:179
+msgid "Missing argument"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:181
+msgid "Missing option"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:183
+msgid "Missing parameter"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:185
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:192
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:212
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:224
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:262
+msgid "unknown error"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:269
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\shell_completion.py:319
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\shell_completion.py:326
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:266
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:298
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\types.py:392
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+
+#: .\venv\Lib\site-packages\click\types.py:414
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:470
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:611
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:635
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:822
+msgid "file"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:824
+msgid "directory"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:826
+msgid "path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:877
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:886
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:894
+#, python-brace-format
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:903
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:912
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:921
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:988
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
