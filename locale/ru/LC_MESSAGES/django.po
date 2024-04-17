@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-12 17:05+0500\n"
+"POT-Creation-Date: 2024-04-16 14:35+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,30 +20,31 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\core\settings.py:127
+#: .\core\settings.py:129
 msgid "English"
 msgstr "Английский"
 
-#: .\core\settings.py:128
-msgid "Uzbek"
-msgstr "Узбекский"
-
-#: .\core\settings.py:129
+#: .\core\settings.py:130
 msgid "Russian"
 msgstr "Русский"
+
+#: .\core\settings.py:131
+msgid "Uzbek"
+msgstr "Узбекский"
 
 #: .\templates\about.html:9
 msgid "ABOUT US"
 msgstr "О НАС"
 
-#: .\templates\about.html:21 .\templates\about.html:52
-#: .\templates\index.html:153
+#: .\templates\about.html:21 .\templates\about.html:50
+#: .\templates\index.html:156
 msgid "about us"
 msgstr "о нас"
 
-#: .\templates\about.html:22 .\templates\index.html:154
+#: .\templates\about.html:22 .\templates\index.html:157
 msgid "WHERE PASSION MEETS ADVENTURE, FUELING YOUR WANDERLUST DESIRES"
-msgstr "ГДЕ СТРАСТЬ ВСТРЕЧАЕТСЯ С ПРИКЛЮЧЕНИЯМИ, ПИТАЯ ВАШЕ ЖЕЛАНИЕ СТРАНСТВИЙ."
+msgstr ""
+"ГДЕ СТРАСТЬ ВСТРЕЧАЕТСЯ С ПРИКЛЮЧЕНИЯМИ, ПИТАЯ ВАШЕ ЖЕЛАНИЕ СТРАНСТВИЙ."
 
 #: .\templates\about.html:23
 msgid ""
@@ -51,13 +52,18 @@ msgid ""
 "unforgettable memories with us. Tailored journeys for your dreams. Start "
 "your adventure today. Our dedicated team crafts personalized journeys, "
 "ensuring every detail reflects your dreams. Start your adventure today."
-msgstr "Исследуйте захватывающие пейзажи, погрузитесь в живые культуры и создайте незабываемые воспоминания с нами. Индивидуальные путешествия для ваших мечтаний. Начните свое приключение сегодня. Наш преданный коллектив создает персонализированные путешествия, гарантируя, что каждая деталь отражает ваши мечты. Начните свое приключение сегодня."
+msgstr ""
+"Исследуйте захватывающие пейзажи, погрузитесь в живые культуры и создайте "
+"незабываемые воспоминания с нами. Индивидуальные путешествия для ваших "
+"мечтаний. Начните свое приключение сегодня. Наш преданный коллектив создает "
+"персонализированные путешествия, гарантируя, что каждая деталь отражает ваши "
+"мечты. Начните свое приключение сегодня."
 
-#: .\templates\about.html:53
+#: .\templates\about.html:51
 msgid "WE WANT TO GIVE THE BEST TOURS"
 msgstr "МЫ ХОТИМ ПРЕДОСТАВИТЬ ЛУЧШИЕ ТУРЫ"
 
-#: .\templates\about.html:54
+#: .\templates\about.html:52
 msgid ""
 "At East2West, our mission is to deliver unparalleled tour experiences. With "
 "a commitment to excellence, we meticulously design each journey to exceed "
@@ -69,11 +75,11 @@ msgstr ""
 "путешествие, чтобы превзойти ваши ожидания. Позвольте нам превратить ваши "
 "путешественнические амбиции в невероятные приключения."
 
-#: .\templates\about.html:128 .\templates\index.html:320
+#: .\templates\about.html:124 .\templates\index.html:322
 msgid "instagram"
 msgstr "фотографии"
 
-#: .\templates\about.html:129 .\templates\index.html:321
+#: .\templates\about.html:125 .\templates\index.html:323
 msgid "TRAVEL GALLERIES"
 msgstr "ГАЛЕРЕИ ПУТЕШЕСТВИЙ"
 
@@ -131,20 +137,20 @@ msgid "SEND MESSAGE"
 msgstr "ОТПРАВИТЬ СООБЩЕНИЕ"
 
 #: .\templates\contact-us.html:58 .\templates\country-house-booking.html:93
-#: .\templates\includes\footer.html:37 .\templates\tour-booking.html:152
-#: .\templates\umrah-booking.html:136 .\templates\visa-booking.html:83
+#: .\templates\includes\footer.html:37 .\templates\tour-booking.html:155
+#: .\templates\umrah-booking.html:136 .\templates\visa-booking.html:88
 msgid "CONTACT INFO"
 msgstr "КОНТАКТНАЯ ИНФОРМАЦИЯ"
 
 #: .\templates\contact-us.html:63 .\templates\country-house-booking.html:98
-#: .\templates\tour-booking.html:157 .\templates\umrah-booking.html:141
-#: .\templates\visa-booking.html:88
+#: .\templates\tour-booking.html:160 .\templates\umrah-booking.html:141
+#: .\templates\visa-booking.html:93
 msgid "LOCATION"
 msgstr "ЛОКАЦИЯ"
 
 #: .\templates\contact-us.html:67 .\templates\country-house-booking.html:102
-#: .\templates\includes\footer.html:44 .\templates\tour-booking.html:161
-#: .\templates\umrah-booking.html:145 .\templates\visa-booking.html:92
+#: .\templates\includes\footer.html:44 .\templates\tour-booking.html:164
+#: .\templates\umrah-booking.html:145 .\templates\visa-booking.html:97
 msgid "OPENING HOUR"
 msgstr "ЧАСЫ РАБОТЫ"
 
@@ -161,23 +167,23 @@ msgid "Select Country House"
 msgstr "Выберите Дачу"
 
 #: .\templates\country-house-booking.html:63 .\templates\index.html:78
-#: .\templates\index.html:454 .\templates\tour-booking.html:68
+#: .\templates\index.html:464 .\templates\tour-booking.html:68
 #: .\templates\umrah-booking.html:53
 msgid "Select Days"
 msgstr "Выберите Дни"
 
-#: .\templates\country-house-booking.html:68 .\templates\tour-booking.html:127
+#: .\templates\country-house-booking.html:68 .\templates\tour-booking.html:130
 #: .\templates\umrah-booking.html:111 .\templates\visa-booking.html:53
 msgid "Full Name"
 msgstr "Ф.И"
 
-#: .\templates\country-house-booking.html:73 .\templates\tour-booking.html:132
+#: .\templates\country-house-booking.html:73 .\templates\tour-booking.html:135
 #: .\templates\umrah-booking.html:116 .\templates\visa-booking.html:58
 msgid "Phone"
 msgstr "Номер Телефона"
 
-#: .\templates\country-house-booking.html:78 .\templates\tour-booking.html:137
-#: .\templates\umrah-booking.html:121 .\templates\visa-booking.html:68
+#: .\templates\country-house-booking.html:78 .\templates\tour-booking.html:140
+#: .\templates\umrah-booking.html:121 .\templates\visa-booking.html:73
 msgid "Additional message"
 msgstr "Дополнительное Сообщение"
 
@@ -185,13 +191,116 @@ msgstr "Дополнительное Сообщение"
 msgid "Book Country House"
 msgstr "Забронировать Дачу"
 
+#: .\templates\create-country-house.html:37
+#, fuzzy
+#| msgid "COUNTRY HOUSES"
+msgid "CREATE COUNTRY HOUSE"
+msgstr "ДАЧИ"
+
+#: .\templates\create-country-house.html:47
+#, fuzzy
+#| msgid "Please fill out the form to book your country house"
+msgid "Fill out the form to create country house"
+msgstr "Пожалуйста, заполните форму для бронирования дачи."
+
+#: .\templates\create-country-house.html:53
+#, fuzzy
+#| msgid "Full Name"
+msgid "Name"
+msgstr "Ф.И"
+
+#: .\templates\create-country-house.html:58
+msgid "Price"
+msgstr ""
+
+#: .\templates\create-country-house.html:63
+msgid "Video URL"
+msgstr ""
+
+#: .\templates\create-country-house.html:68
+#, fuzzy
+#| msgid "destinations"
+msgid "Description"
+msgstr "места прибытия"
+
+#: .\templates\create-country-house.html:73 .\templates\tour-detail.html:34
+msgid "Location"
+msgstr "Локация"
+
+#: .\templates\create-country-house.html:78
+msgid "Capacity"
+msgstr ""
+
+#: .\templates\create-country-house.html:83
+#: .\templates\create-country-house.html:88 .\templates\tour-detail.html:35
+msgid "Rooms"
+msgstr "Комнаты"
+
+#: .\templates\create-country-house.html:93
+#, fuzzy
+#| msgid "Pool"
+msgid "Pools"
+msgstr "Бассейн"
+
+#: .\templates\create-country-house.html:98 .\templates\tour-detail.html:52
+msgid "Phone Number"
+msgstr "Номер Телефона"
+
+#: .\templates\create-country-house.html:104
+msgid "Has TV?"
+msgstr ""
+
+#: .\templates\create-country-house.html:112
+#, fuzzy
+#| msgid "Play Station"
+msgid "Has PlayStation?"
+msgstr "Play Station"
+
+#: .\templates\create-country-house.html:120
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Karaoke?"
+msgstr "Караоке"
+
+#: .\templates\create-country-house.html:128
+#, fuzzy
+#| msgid "Mini Tennis"
+msgid "Has Tennis?"
+msgstr "Настольный Теннис"
+
+#: .\templates\create-country-house.html:136
+msgid "Has Outdoor Garden Table?"
+msgstr ""
+
+#: .\templates\create-country-house.html:144
+#, fuzzy
+#| msgid "Sauna"
+msgid "Has Sauna?"
+msgstr "Сауна"
+
+#: .\templates\create-country-house.html:152
+#, fuzzy
+#| msgid "Terrace"
+msgid "Has Terrace?"
+msgstr "Терраса"
+
+#: .\templates\create-country-house.html:158
+#, fuzzy
+#| msgid "Country Houses"
+msgid "Add Country House"
+msgstr "Дачи"
+
 #: .\templates\includes\footer.html:14
 msgid ""
 "Welcome to our travel agency! We specialize in creating unforgettable "
 "journeys worldwide. From relaxing beach vacations to thrilling adventures, "
 "we make your travel dreams a reality. Let's embark on your next adventure "
 "together!"
-msgstr "Добро пожаловать в наше туристическое агентство! Мы специализируемся на создании незабываемых путешествий по всему миру. От спокойного пляжного отдыха до захватывающих приключений, мы превращаем ваши туристические мечты в реальность. Давайте отправимся в следующее приключение вместе!"
+msgstr ""
+"Добро пожаловать в наше туристическое агентство! Мы специализируемся на "
+"создании незабываемых путешествий по всему миру. От спокойного пляжного "
+"отдыха до захватывающих приключений, мы превращаем ваши туристические мечты "
+"в реальность. Давайте отправимся в следующее приключение вместе!"
 
 #: .\templates\includes\footer.html:22
 msgid "SITE MAP"
@@ -285,7 +394,7 @@ msgstr "Бронирования Умры"
 msgid "Contact"
 msgstr "Контакты"
 
-#: .\templates\includes\header.html:85
+#: .\templates\includes\header.html:120
 msgid "BOOK NOW"
 msgstr "ЗАБРОНИРОВАТЬ СЕЙЧАС"
 
@@ -305,10 +414,21 @@ msgstr "Выбрать Место Выезда"
 msgid "Enter your destination"
 msgstr "Выбрать Место Прибытия"
 
-#: .\templates\index.html:82 .\templates\index.html:84
-#: .\templates\tour-booking.html:74 .\templates\tour-booking.html:76
-#: .\templates\umrah-booking.html:59 .\templates\umrah-booking.html:61
+#: .\templates\index.html:82 .\templates\tour-booking.html:74
 msgid "Passenger"
+msgstr "Пассажир"
+
+#: .\templates\index.html:82 .\templates\index.html:114
+#: .\templates\tour-booking.html:74 .\templates\tour-booking.html:106
+#: .\templates\umrah-booking.html:91
+msgid "Economy"
+msgstr "Эконом"
+
+#: .\templates\index.html:84 .\templates\tour-booking.html:76
+#: .\templates\umrah-booking.html:59 .\templates\umrah-booking.html:61
+#, fuzzy
+#| msgid "Passenger"
+msgid "Select Passengers"
 msgstr "Пассажир"
 
 #: .\templates\index.html:86 .\templates\tour-booking.html:78
@@ -331,47 +451,42 @@ msgstr "Младенцы (младше 2 лет)"
 msgid "Service Class"
 msgstr "Класс Обслуживания"
 
-#: .\templates\index.html:114 .\templates\tour-booking.html:106
-#: .\templates\umrah-booking.html:91
-msgid "Economy"
-msgstr "Эконом"
-
-#: .\templates\index.html:118 .\templates\tour-booking.html:110
+#: .\templates\index.html:119 .\templates\tour-booking.html:111
 #: .\templates\umrah-booking.html:95
 msgid "Comfort"
 msgstr "Комфорт"
 
-#: .\templates\index.html:122 .\templates\tour-booking.html:114
+#: .\templates\index.html:124 .\templates\tour-booking.html:116
 #: .\templates\umrah-booking.html:99
 msgid "Business"
 msgstr "Бизнес"
 
-#: .\templates\index.html:126 .\templates\tour-booking.html:118
+#: .\templates\index.html:129 .\templates\tour-booking.html:121
 #: .\templates\umrah-booking.html:103
 msgid "First Grade"
 msgstr "Первый Класс"
 
-#: .\templates\index.html:132
+#: .\templates\index.html:135
 msgid "FIND NOW"
 msgstr "НАЙТИ СЕЙЧАС"
 
-#: .\templates\index.html:156
+#: .\templates\index.html:159
 msgid "LEARN MORE"
 msgstr "ЧИТАТЬ БОЛЬШЕ"
 
-#: .\templates\index.html:181
+#: .\templates\index.html:183
 msgid "destinations"
 msgstr "места прибытия"
 
-#: .\templates\index.html:182
+#: .\templates\index.html:184
 msgid "BEST TRAVEL PLACES"
 msgstr "ЛУЧШИЕ МЕСТА ДЛЯ ПУТЕШЕСТВИЙ"
 
-#: .\templates\index.html:186
+#: .\templates\index.html:188
 msgid "TURKEY"
 msgstr "ТУРЦИЯ"
 
-#: .\templates\index.html:187
+#: .\templates\index.html:189
 msgid ""
 "Explore the enchanting world of Turkey, where ancient history meets vibrant "
 "culture. From the iconic landmarks of Istanbul to the stunning landscapes of "
@@ -379,13 +494,19 @@ msgid ""
 "Discover the beauty of its pristine beaches, bustling markets, and rich "
 "heritage. Welcome to Turkey – where every moment is an adventure waiting to "
 "be discovered."
-msgstr "Исследуйте волшебный мир Турции, где древняя история встречает яркую культуру. От символических достопримечательностей Стамбула до захватывающих пейзажей Каппадокии, Турция предлагает разнообразные впечатления для каждого путешественника. Откройте красоту ее безупречных пляжей, оживленных рынков и богатого наследия. Добро пожаловать в Турцию - где каждый момент - это приключение, ждущее своего открытия."
+msgstr ""
+"Исследуйте волшебный мир Турции, где древняя история встречает яркую "
+"культуру. От символических достопримечательностей Стамбула до захватывающих "
+"пейзажей Каппадокии, Турция предлагает разнообразные впечатления для каждого "
+"путешественника. Откройте красоту ее безупречных пляжей, оживленных рынков и "
+"богатого наследия. Добро пожаловать в Турцию - где каждый момент - это "
+"приключение, ждущее своего открытия."
 
-#: .\templates\index.html:202
+#: .\templates\index.html:204
 msgid "UNITED ARAB EMIRATES"
 msgstr "ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ"
 
-#: .\templates\index.html:203
+#: .\templates\index.html:205
 msgid ""
 "Discover the enchanting Emirates – a fusion of tradition and modernity in "
 "the heart of the Arabian Peninsula. From the gleaming skyscrapers of Dubai "
@@ -393,39 +514,56 @@ msgid ""
 "experiences. Indulge in luxury shopping, thrilling desert safaris, and world-"
 "class dining. Welcome to the Emirates – where tradition meets innovation in "
 "an unforgettable journey."
-msgstr "Откройте для себя волшебные Эмираты - сочетание традиции и современности в сердце Аравийского полуострова. От сверкающих небоскребов Дубая до культурного наследия Абу-Даби, Эмираты предлагают множество удивительных впечатлений. Распустите роскошные шопинги, захватывающие сафари по пустыне и ужины на уровне мирового класса. Добро пожаловать в Эмираты - место, где традиция встречается с инновациями в незабываемом путешествии."
+msgstr ""
+"Откройте для себя волшебные Эмираты - сочетание традиции и современности в "
+"сердце Аравийского полуострова. От сверкающих небоскребов Дубая до "
+"культурного наследия Абу-Даби, Эмираты предлагают множество удивительных "
+"впечатлений. Распустите роскошные шопинги, захватывающие сафари по пустыне и "
+"ужины на уровне мирового класса. Добро пожаловать в Эмираты - место, где "
+"традиция встречается с инновациями в незабываемом путешествии."
 
-#: .\templates\index.html:208
+#: .\templates\index.html:210
 msgid "EGYPT"
 msgstr "ЭГИПЕТ"
 
-#: .\templates\index.html:209
+#: .\templates\index.html:211
 msgid ""
 "Explore the timeless wonders of Egypt – where ancient treasures meet "
 "stunning landscapes. From the majestic pyramids of Giza to the tranquil "
 "waters of the Red Sea, Egypt beckons with its rich history and natural "
 "beauty. Dive into vibrant bazaars, cruise the Nile, or unwind on pristine "
 "beaches. Welcome to Egypt – a land of endless fascination."
-msgstr "Исследуйте вечные чудеса Египта - место, где древние сокровища встречают потрясающие пейзажи. От величественных пирамид Гизы до спокойных вод Красного моря, Египет манит своей богатой историей и природной красотой. Погрузитесь в живописные базары, прокатитесь по Нилу или отдохните на чистых пляжах. Добро пожаловать в Египет - страну бесконечного очарования."
+msgstr ""
+"Исследуйте вечные чудеса Египта - место, где древние сокровища встречают "
+"потрясающие пейзажи. От величественных пирамид Гизы до спокойных вод "
+"Красного моря, Египет манит своей богатой историей и природной красотой. "
+"Погрузитесь в живописные базары, прокатитесь по Нилу или отдохните на чистых "
+"пляжах. Добро пожаловать в Египет - страну бесконечного очарования."
 
-#: .\templates\index.html:224
+#: .\templates\index.html:226
 msgid "MALAYSIA"
 msgstr "МАЛАЙЗИЯ"
 
-#: .\templates\index.html:225
+#: .\templates\index.html:227
 msgid ""
 "Discover Malaysia's diverse beauty, where bustling cities blend with "
 "pristine nature. From the iconic Petronas Twin Towers in Kuala Lumpur to the "
 "lush rainforests of Borneo, Malaysia offers a rich tapestry of experiences. "
 "Indulge in vibrant street food, explore ancient temples, or relax on idyllic "
 "beaches. Welcome to Malaysia – where every moment is a delightful adventure."
-msgstr "Откройте для себя разнообразную красоту Малайзии, где оживленные города переплетаются с нетронутой природой. От символических башен-близнецов Петронас в Куала-Лумпуре до пышных дождевых лесов Борнео, Малайзия предлагает богатый набор впечатлений. Насладитесь яркой уличной едой, исследуйте древние храмы или расслабьтесь на идиллических пляжах. Добро пожаловать в Малайзию - где каждый момент - это восхитительное приключение."
+msgstr ""
+"Откройте для себя разнообразную красоту Малайзии, где оживленные города "
+"переплетаются с нетронутой природой. От символических башен-близнецов "
+"Петронас в Куала-Лумпуре до пышных дождевых лесов Борнео, Малайзия "
+"предлагает богатый набор впечатлений. Насладитесь яркой уличной едой, "
+"исследуйте древние храмы или расслабьтесь на идиллических пляжах. Добро "
+"пожаловать в Малайзию - где каждый момент - это восхитительное приключение."
 
-#: .\templates\index.html:230
+#: .\templates\index.html:232
 msgid "BALI"
 msgstr "БАЛИ"
 
-#: .\templates\index.html:231
+#: .\templates\index.html:233
 msgid ""
 "Explore the paradise of Bali – an island of serene beauty and vibrant "
 "culture. From lush rice terraces to pristine beaches, Bali offers a retreat "
@@ -433,9 +571,15 @@ msgid ""
 "temples, indulge in Balinese cuisine, or unwind with a yoga session "
 "overlooking breathtaking landscapes. Welcome to Bali – where tranquility "
 "meets adventure in perfect harmony."
-msgstr "Исследуйте райский остров Бали - место умиротворенной красоты и живой культуры. От пышных рисовых террас до безупречных пляжей, Бали предлагает убежище для каждого путешественника. Погрузитесь в духовные традиции в древних храмах, насладитесь балийской кухней или расслабьтесь на йога-сессии с видом на захватывающие пейзажи. Добро пожаловать на Бали - место, где спокойствие встречает приключение в идеальном симбиозе."
+msgstr ""
+"Исследуйте райский остров Бали - место умиротворенной красоты и живой "
+"культуры. От пышных рисовых террас до безупречных пляжей, Бали предлагает "
+"убежище для каждого путешественника. Погрузитесь в духовные традиции в "
+"древних храмах, насладитесь балийской кухней или расслабьтесь на йога-сессии "
+"с видом на захватывающие пейзажи. Добро пожаловать на Бали - место, где "
+"спокойствие встречает приключение в идеальном симбиозе."
 
-#: .\templates\index.html:450
+#: .\templates\index.html:460
 msgid "You should select days"
 msgstr "Вы должны выбрать дни"
 
@@ -447,7 +591,7 @@ msgstr "БРОНИРОВАНИЕ ТУРОВ"
 msgid "Please fill out the form to book your tour"
 msgstr "Пожалуйста, заполните форму для бронирования тура."
 
-#: .\templates\tour-booking.html:141
+#: .\templates\tour-booking.html:144
 msgid "Book Tour"
 msgstr "Забронировать Тур"
 
@@ -467,14 +611,6 @@ msgstr "день"
 msgid "SERVICES PROVIDED"
 msgstr "ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ"
 
-#: .\templates\tour-detail.html:34
-msgid "Location"
-msgstr "Локация"
-
-#: .\templates\tour-detail.html:35
-msgid "Rooms"
-msgstr "Комнаты"
-
 #: .\templates\tour-detail.html:37
 msgid "Play Station"
 msgstr "Play Station"
@@ -490,10 +626,6 @@ msgstr "Сауна"
 #: .\templates\tour-detail.html:46
 msgid "Terrace"
 msgstr "Терраса"
-
-#: .\templates\tour-detail.html:52
-msgid "Phone Number"
-msgstr "Номер Телефона"
 
 #: .\templates\tour-detail.html:53
 msgid "Persons"
@@ -555,7 +687,7 @@ msgstr "Ваша Страна"
 msgid "Visiting Country For Visa"
 msgstr "Страна Для Получении ВИЗЫ"
 
-#: .\templates\visa-booking.html:72
+#: .\templates\visa-booking.html:77
 msgid "Book VISA"
 msgstr "ЗАБРОНИРОВАТЬ ВИЗУ"
 
