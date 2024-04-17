@@ -117,7 +117,7 @@
                     </div>
                 </form>
                 <div class="ui-btn ui-btn-primary hide-on-mobile">
-                    <a href="{% url 'tour_booking' %}" data-hover="{% trans 'BOOK NOW' %}">{% trans 'BOOK NOW' %}</a>
+                    <a href="tel:{{ contact.phone_number }}" data-hover="{{ contact.phone_number }}">{{ contact.phone_number }}</a>
                 </div>
             </div>
             <!-- End header tools -->

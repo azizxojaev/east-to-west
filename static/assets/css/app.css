@@ -1197,7 +1197,7 @@ html[lang='ru'] .font-sec {
 }
 
 .py-64 {
-  padding: 64px 0;
+  padding: 200px 0;
 }
 @media (max-width: 1599px) {
   .py-64 {
@@ -3025,7 +3025,7 @@ body.ui-search-open .scrollbar-track {
   line-height: 120%;
   letter-spacing: -0.308vw;
   z-index: 1;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -56%);
 }
@@ -3050,7 +3050,7 @@ body.ui-search-open .scrollbar-track {
   }
 }
 .hero-banner-1 .content .sub-title {
-  margin-bottom: clamp(16px, 1.66vw, 40px);
+  margin-bottom: clamp(300px, 1.66vw, 40px);
 }
 .hero-banner-1 .find-banner-row {
   display: flex;
@@ -4469,10 +4469,10 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   animation: 1.4s linear infinite loader-spin;
 }
 .cal-loader__plane {
-  fill: #F95C19;
+  fill: black;
 }
 .cal-loader__path {
-  stroke: #ffa500;
+  stroke: black;
   animation: 1.4s ease-in-out infinite loader-path;
 }
 @keyframes loader-spin {
