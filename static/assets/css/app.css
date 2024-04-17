@@ -2271,8 +2271,9 @@ Elements
   position: fixed;
   width: 100vw;
   height: 100vh;
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   background: #FFFCFA;
   z-index: 9999999;
@@ -3094,7 +3095,7 @@ body.ui-search-open .scrollbar-track {
   z-index: 2;
 }
 .hero-banner-1 .mask-layer.mask-layer-desktop {
-  bottom: -7.031vw;
+  bottom: -11vw;
 }
 @media (max-width: 1199px) {
   .hero-banner-1 .mask-layer.mask-layer-desktop {
@@ -4328,6 +4329,8 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 }
 .gallery-img-block img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #page-content::before {
@@ -4342,7 +4345,7 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   display: none;
 }
 
-#destination_input, #date_input, .find-banner-row .nice-select2, .find-banner-row select {
+#destination_input, #date_input, .find-banner-row .nice-select2, .find-banner-row .nice-select {
   height: clamp(65px, 2.917vw, 72px) !important;
 }
 
@@ -4358,15 +4361,18 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
     width: 90%;
   }
   .hero-banner-1 .title {
-    top: 60%;
+    top: 55%;
   }
   .hero-banner-1 .content {
     padding-bottom: 0;
   }
+  .hero-banner-1 .mask-layer.mask-layer-desktop {
+    bottom: -8vw;
+  }
 }
 @media (max-width: 1030px) {
   .hero-banner-1 .mask-layer.mask-layer-tab {
-    bottom: -45vw;
+    bottom: -54vw;
   }
   .footer-main .col-xl-5, .footer-main .col-xl-6, .footer-right-content .col-sm-4 {
     width: 50% ;
@@ -4378,7 +4384,13 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 }
 @media (max-width: 775px) {
   .hero-banner-1 .mask-layer.mask-layer-tab {
-    bottom: -33vw;
+    bottom: -15vw;
+  }
+  .hero-banner-1 .title {
+    z-index: 3;
+  }
+  .hero-banner-1 {
+    background-position: bottom;
   }
   .footer-main .row {
     display: flex;
@@ -4445,5 +4457,37 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
 @media (max-width: 325px) {
   .hero-banner-1 .mask-layer.mask-layer-phone {
     bottom: 0;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+.svg-calLoader {
+  width: 230px;
+  height: 230px;
+  transform-origin: 115px 115px;
+  animation: 1.4s linear infinite loader-spin;
+}
+.cal-loader__plane {
+  fill: #F95C19;
+}
+.cal-loader__path {
+  stroke: #ffa500;
+  animation: 1.4s ease-in-out infinite loader-path;
+}
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-path {
+  0% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+  }
+  50% {
+    stroke-dasharray: 0, 450, 10, 30, 10, 30, 10, 30, 10;
+  }
+  100% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
   }
 }

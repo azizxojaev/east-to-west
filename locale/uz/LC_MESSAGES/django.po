@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 16:57+0500\n"
+"POT-Creation-Date: 2024-04-17 19:41+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,37 +165,37 @@ msgstr "DACHA"
 #: .\templates\includes\footer.html:54 .\templates\tour-booking.html:169
 #: .\templates\umrah-booking.html:150 .\templates\visa-booking.html:102
 msgid "LLC \"East2West\""
-msgstr ""
+msgstr "\"East2West\" MChj"
 
 #: .\templates\contact-us.html:73 .\templates\country-house-booking.html:108
-#: .\templates\tour-booking.html:170 .\templates\umrah-booking.html:151
-#: .\templates\visa-booking.html:103
-msgid "158 Mukumiy, Chilanzar"
-msgstr ""
+#: .\templates\includes\footer.html:55 .\templates\tour-booking.html:170
+#: .\templates\umrah-booking.html:151 .\templates\visa-booking.html:103
+msgid "158 Muqimiy, Chilanzar"
+msgstr "158 Muqimiy, Chilanzar"
 
 #: .\templates\contact-us.html:74 .\templates\country-house-booking.html:109
 #: .\templates\includes\footer.html:56 .\templates\tour-booking.html:171
 #: .\templates\umrah-booking.html:152 .\templates\visa-booking.html:104
 msgid "Tashkent, 100043"
-msgstr ""
+msgstr "Toshkent, 100043"
 
 #: .\templates\contact-us.html:75 .\templates\country-house-booking.html:110
 #: .\templates\includes\footer.html:57 .\templates\tour-booking.html:172
 #: .\templates\umrah-booking.html:153 .\templates\visa-booking.html:105
 msgid "АО «Anor Bank» MFO code: 01183"
-msgstr ""
+msgstr "АО «Anor Bank» MFO kod: 01183"
 
 #: .\templates\contact-us.html:76 .\templates\country-house-booking.html:111
 #: .\templates\includes\footer.html:58 .\templates\tour-booking.html:173
 #: .\templates\umrah-booking.html:154 .\templates\visa-booking.html:106
 msgid "20208000905593005001"
-msgstr ""
+msgstr "20208000905593005001"
 
 #: .\templates\contact-us.html:77 .\templates\country-house-booking.html:112
 #: .\templates\includes\footer.html:59 .\templates\tour-booking.html:174
 #: .\templates\umrah-booking.html:155 .\templates\visa-booking.html:107
 msgid "STIR 310055757"
-msgstr ""
+msgstr "INN 310055757"
 
 #: .\templates\country-house-booking.html:37
 msgid "COUNTRY HOUSE BOOKING"
@@ -254,11 +254,11 @@ msgstr "Familiya Ismingiz"
 
 #: .\templates\create-country-house.html:58
 msgid "Price"
-msgstr ""
+msgstr "Narx"
 
 #: .\templates\create-country-house.html:63
 msgid "Video URL"
-msgstr ""
+msgstr "Video Ssilkasi"
 
 #: .\templates\create-country-house.html:68
 #, fuzzy
@@ -272,7 +272,7 @@ msgstr "Lokatsiya"
 
 #: .\templates\create-country-house.html:78
 msgid "Capacity"
-msgstr ""
+msgstr "Sig'im"
 
 #: .\templates\create-country-house.html:83
 #: .\templates\create-country-house.html:88 .\templates\tour-detail.html:35
@@ -291,7 +291,7 @@ msgstr "Telefon Raqam"
 
 #: .\templates\create-country-house.html:104
 msgid "Has TV?"
-msgstr ""
+msgstr "Televizor bormi?"
 
 #: .\templates\create-country-house.html:112
 #, fuzzy
@@ -313,7 +313,7 @@ msgstr "Mini Tennis"
 
 #: .\templates\create-country-house.html:136
 msgid "Has Outdoor Garden Table?"
-msgstr ""
+msgstr "Tapchan bormi?"
 
 #: .\templates\create-country-house.html:144
 #, fuzzy
@@ -381,10 +381,6 @@ msgstr "VISA Bron Qilish"
 #: .\templates\includes\footer.html:31
 msgid "Umrah Booking Page"
 msgstr "Umra ga Sayohatni Bron Qilish"
-
-#: .\templates\includes\footer.html:55
-msgid "158 Mukumiy, Chilanzar,"
-msgstr ""
 
 #: .\templates\includes\footer.html:70
 msgid "All Rights Reserved"
@@ -742,280 +738,6 @@ msgstr "Borish Manzili"
 #: .\templates\visa-booking.html:77
 msgid "Book VISA"
 msgstr "VIZA Bronlash"
-
-#: .\venv\Lib\site-packages\click\_termui_impl.py:518
-#, python-brace-format
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\_termui_impl.py:522
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1120
-msgid "Aborted!"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1309
-#: .\venv\Lib\site-packages\click\decorators.py:559
-msgid "Show this message and exit."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1340
-#: .\venv\Lib\site-packages\click\core.py:1370
-#, python-brace-format
-msgid "(Deprecated) {text}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1387
-msgid "Options"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1413
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\core.py:1429
-msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1636
-msgid "Commands"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1668
-msgid "Missing command."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:1746
-msgid "No such command {name!r}."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:2310
-msgid "Value must be an iterable."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:2331
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\core.py:2778
-#, python-brace-format
-msgid "env var: {var}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:2808
-msgid "(dynamic)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:2821
-#, python-brace-format
-msgid "default: {default}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\core.py:2834
-msgid "required"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\decorators.py:528
-msgid "Show the version and exit."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:44
-#: .\venv\Lib\site-packages\click\exceptions.py:80
-#, fuzzy, python-brace-format
-#| msgid "enter your messages"
-msgid "Error: {message}"
-msgstr "Savolingizni Kiriting"
-
-#: .\venv\Lib\site-packages\click\exceptions.py:72
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:121
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:123
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:179
-msgid "Missing argument"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:181
-msgid "Missing option"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:183
-msgid "Missing parameter"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:185
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:192
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:212
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:224
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:262
-msgid "unknown error"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\exceptions.py:269
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\parser.py:231
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\parser.py:413
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\parser.py:474
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\shell_completion.py:319
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\shell_completion.py:326
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:158
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:174
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:176
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:187
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:243
-msgid "Error: invalid input"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\termui.py:773
-msgid "Press any key to continue..."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:266
-#, python-brace-format
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:298
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\types.py:392
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-
-#: .\venv\Lib\site-packages\click\types.py:414
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:470
-#, python-brace-format
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:611
-msgid "{value!r} is not a valid boolean."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:635
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:822
-msgid "file"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:824
-msgid "directory"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:826
-msgid "path"
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:877
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:886
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:894
-#, python-brace-format
-msgid "{name} '{filename}' is a directory."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:903
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:912
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:921
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: .\venv\Lib\site-packages\click\types.py:988
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
@@ -2226,3 +1948,11 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "158 Muqimiy, Chilanzar,"
+#~ msgstr "158 Muqimiy, Chilanzar,"
+
+#, fuzzy, python-brace-format
+#~| msgid "enter your messages"
+#~ msgid "Error: {message}"
+#~ msgstr "Savolingizni Kiriting"
