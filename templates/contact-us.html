@@ -63,9 +63,18 @@
                             <h5 class="mb-12">{% trans 'LOCATION' %}</h5>
                             <p>{{ contact.location }}</p>
                         </div>
-                        <div>
+                        <div class="mb-48">
                             <h5 class="mb-12">{% trans 'OPENING HOUR' %}</h5>
                             <p><span class="me-5">{{ contact.working_days }}</span>{{ contact.working_hours }}<span></span></p>
+                        </div>
+                        <div>
+                            <h5 class="mb-12">{% trans 'COMPANY DETAILS' %}</h5>
+                            <p>{% trans '"East2West" MChJ' %}</p>
+                            <p>{% trans '158 Мукумий, Чиланзар' %}</p>
+                            <p>{% trans 'Ташкент, 100043' %}</p>
+                            <p>{% trans 'АО «Анор Банк» МФО 01183' %}</p>
+                            <p>{% trans '20208000905593005001' %}</p>
+                            <p>{% trans 'ИНН 310055757' %}</p>
                         </div>
                     </div>
                     <iframe src="{{ google_map_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
