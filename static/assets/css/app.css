@@ -3038,7 +3038,7 @@ body.ui-search-open .scrollbar-track {
 .hero-banner-1 .content {
   position: relative;
   z-index: 3;
-  height: 100vh;
+  height: 110vh;
   display: grid;
   align-content: end;
   justify-content: center;
@@ -3050,7 +3050,7 @@ body.ui-search-open .scrollbar-track {
   }
 }
 .hero-banner-1 .content .sub-title {
-  margin-bottom: clamp(300px, 1.66vw, 40px);
+  margin-bottom: clamp(40vh, 1.66vw, 40px);
 }
 .hero-banner-1 .find-banner-row {
   display: flex;
@@ -4416,7 +4416,7 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
   }
 }
 @media (max-width: 430px) {
-  #passengers_btn_list {
+  #passengers_btn_list, .footer-right-content .col-sm-4:last-child {
     width: 100% !important;
   }
   .show-on-mobile {
@@ -4434,7 +4434,7 @@ footer .footer-content .footer-main .footer-widgets .widget .item-list {
     width: 90vw;
   }
   .hero-banner-1 .mask-layer.mask-layer-phone {
-    bottom: -40vw;
+    bottom: -35vw;
   }
   .find-banner-row {
     width: 90vw !important;
