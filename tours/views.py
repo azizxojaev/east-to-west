@@ -103,75 +103,31 @@ def umrah_booking_page(request):
     return render(request, 'umrah-booking.html', context=context)
 
 def country_houses_page(request):
-    contact = Contact.objects.first()
     country_houses_obj = CountryHouse.objects.all()
 
-    min_price = 0
-    max_price = 0
-    if country_houses_obj:
-        min_price = country_houses_obj.order_by('price').first().price
-        max_price = country_houses_obj.order_by('price').last().price
-
-    country_houses = []
-    for i in country_houses_obj:
-        images = HouseImage.objects.filter(house=i)
-        country_houses.append([i, images])
-
-    # active_houses = {}
-    # if request.GET.get('destination'):
-    #     destination = TourDestination.objects.get(slug=request.GET.get('destination'))
-    #     tours = tours.filter(destination=destination)
-    #     active_tours['destination'] = request.GET.get('destination')
-    # if request.GET.get('tour_type'):
-    #     tour_type = TourType.objects.get(slug=request.GET.get('tour_type'))
-    #     tours = tours.filter(type=tour_type)
-    #     active_tours['tour_type'] = request.GET.get('tour_type')
-
-    # if request.method == 'POST':
-    #     destination = request.POST.get('destination')
-    #     tour_type = request.POST.get('tour_type')
-    #     price_from = int(request.POST.get('price_from'))
-    #     price_to = int(request.POST.get('price_to'))
-
-    #     if destination != 'all':
-    #         destination = TourDestination.objects.get(slug=destination)
-    #         tours = tours.filter(destination=destination)
-    #     if tour_type != 'all':
-    #         tour_type = TourType.objects.get(slug=tour_type)
-    #         tours = tours.filter(type=tour_type)
-
-    #     tours = tours.filter(price__gte=price_from, price__lte=price_to)
-
-    #     return render(request, 'includes/tours.html', {'tours': tours})
+    country_houses = [(house, HouseImage.objects.filter(house=house)) for house in country_houses_obj]
 
     context = {
-        'contact': contact,
-        'country_houses': country_houses,
-        'min_price': min_price,
-        'max_price': max_price,
+        'contact': Contact.objects.first(),
+        'country_houses': country_houses
     }
     return render(request, 'tour-grid.html', context=context)
 
 
 def country_house_detail_page(request, slug):
-    contact = Contact.objects.first()
     country_house = CountryHouse.objects.get(slug=slug)
-    country_video = country_house.video.split('"')[5]
-    country_images = HouseImage.objects.filter(house=country_house)
 
     context = {
-        'contact': contact,
+        'contact': Contact.objects.first(),
         'country_house': country_house,
-        'country_video': country_video,
-        'country_images': country_images
+        'country_video': country_house.video.split('"')[5],
+        'country_images': HouseImage.objects.filter(house=country_house)
     }
     return render(request, 'tour-detail.html', context=context)
 
 
 def create_country_house_page(request):
-    contact = Contact.objects.first()
-
     context = {
-        'contact': contact
+        'contact': Contact.objects.first()
     }
     return render(request, 'create-country-house.html', context=context)

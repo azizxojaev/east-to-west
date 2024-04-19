@@ -13,38 +13,6 @@
 <!-- Blogs Start -->
 <section class="py-64">
     <div class="container-fluid">
-        <!-- <form onsubmit="sendAjaxFilter(event)" class="filter-row mb-48">
-            {% csrf_token %}
-            <div class="search-filters">
-                <div class="form-group">
-                    <select name="select" class="has-nice-select cus-form-control">
-                        <option selected="selected" disabled="disabled">Tashkent, Uzbekistan</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select id="destination" name="destination" class="has-nice-select cus-form-control">
-                        <option {% if not active_tours.destination %}selected{% endif %} value="all">Select Destination</option>
-                        {% for d in destinations %}
-                        <option {% if active_tours.destination == d.slug %}selected{% endif %} value="{{ d.slug }}">{{ d.title }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select id="tour_type" name="tour_type" class="has-nice-select cus-form-control">
-                        <option {% if not active_tours.tour_type %}selected{% endif %} value="all">Select Type</option>
-                        {% for t in tour_types %}
-                        <option {% if active_tours.tour_type == t.slug %}selected{% endif %} value="{{ t.slug }}">{{ t.title }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="ui-btn ui-btn-primary">
-                    <button type="submit" data-hover="FIND NOW">FIND NOW</button>
-                </div>
-            </div>
-            <div class="price-filter">
-                <input type="text" class="range-slider" value="0" id="{{ min_price }}-{{ max_price }}">
-            </div>
-        </form> -->
         <div>
             <div class="row tours-wrapper">
                 {% include 'includes/tours.html' %}
