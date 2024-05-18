@@ -45,7 +45,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-7 mb-48 mb-xl-0">
                     <h3 class="text-uppercase mb-48">{% trans 'Fill out the form to create country house' %}</h3>
-                    <form action="{% url 'country_house_booking' %}" class="visa-booking-form">
+                    <form method="post" action="{% url 'create_country_house' %}" class="create-country-house-booking-form">
                         {% csrf_token %}
                         <div class="row booking-from">
                             <div class="col-sm-6">
@@ -55,17 +55,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="number" name="price" required placeholder="{% trans 'Price' %}">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="video_url" required placeholder="{% trans 'Video URL' %}">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="description" required placeholder="{% trans 'Description' %}">
+                                    <input type="text" name="phone_number" required placeholder="{% trans 'Phone Number' %}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -75,42 +65,42 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="number" name="capacity" required placeholder="{% trans 'Capacity' %}">
+                                    <input type="text" name="capacity" required placeholder="{% trans 'Capacity' %}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="rooms" required placeholder="{% trans 'Rooms' %}">
+                                    <input type="text" name="distance" required placeholder="{% trans 'Distance From City' %}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="rooms" required placeholder="{% trans 'Rooms' %}">
+                                    <input type="text" name="rooms" required placeholder="{% trans 'Rooms (ex. 1 Bedroom, 1 Kitchen)' %}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="pools" required placeholder="{% trans 'Pools' %}">
+                                    <input type="text" name="pools" required placeholder="{% trans 'Pools (ex. 1 Summer Pool, 1 Winter Pool)' %}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="phone_number" required placeholder="{% trans 'Phone Number' %}">
+                                    <input type="text" name="bathrooms" placeholder="{% trans 'Bathrooms' %}">
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="tv">
-                                        {% trans 'Has TV?' %}
+                                        {% trans 'Has a TV?' %}
                                         <input type="checkbox" id="tv" name="tv">
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="play_station">
-                                        {% trans 'Has PlayStation?' %}
-                                        <input type="checkbox" id="play_station" name="play_station">
+                                    <label for="playstation">
+                                        {% trans 'Has a PlayStation?' %}
+                                        <input type="checkbox" id="playstation" name="have_playstation">
                                     </label>
                                 </div>
                             </div>
@@ -118,42 +108,162 @@
                                 <div class="form-group">
                                     <label for="karaoke">
                                         {% trans 'Has Karaoke?' %}
-                                        <input type="checkbox" id="karaoke" name="karaoke">
+                                        <input type="checkbox" id="karaoke" name="have_karaoke">
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="tennis">
+                                    <label for="tenis">
                                         {% trans 'Has Tennis?' %}
-                                        <input type="checkbox" id="tennis" name="tennis">
+                                        <input type="checkbox" id="tenis" name="have_tenis">
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="outdoor_table">
-                                        {% trans 'Has Outdoor Garden Table?' %}
-                                        <input type="checkbox" id="outdoor_table" name="outdoor_table">
+                                    <label for="tapchan">
+                                        {% trans 'Has Tapchan?' %}
+                                        <input type="checkbox" id="tapchan" name="have_tapchan">
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="living_room">
+                                        {% trans 'Has Living Room?' %}
+                                        <input type="checkbox" id="living_room" name="have_living_room">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="sauna">
                                         {% trans 'Has Sauna?' %}
-                                        <input type="checkbox" id="sauna" name="sauna">
+                                        <input type="checkbox" id="sauna" name="have_sauna">
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="terrace">
                                         {% trans 'Has Terrace?' %}
-                                        <input type="checkbox" id="terrace" name="terrace">
+                                        <input type="checkbox" id="terrace" name="have_terrace">
                                     </label>
                                 </div>
                             </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="barbeque">
+                                        {% trans 'Has Barbeque?' %}
+                                        <input type="checkbox" id="barbeque" name="have_barbeque">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="jacuzzi">
+                                        {% trans 'Has Jacuzzi?' %}
+                                        <input type="checkbox" id="jacuzzi" name="have_jacuzzi">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="conditioners">
+                                        {% trans 'Has Conditioners?' %}
+                                        <input type="checkbox" id="conditioners" name="have_conditioners">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="wifi">
+                                        {% trans 'Has WiFi?' %}
+                                        <input type="checkbox" id="wifi" name="have_wifi">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="football_pitch">
+                                        {% trans 'Has Football Pitch?' %}
+                                        <input type="checkbox" id="football_pitch" name="have_football_pitch">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="projector">
+                                        {% trans 'Has Projector?' %}
+                                        <input type="checkbox" id="projector" name="have_projector">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="fridge">
+                                        {% trans 'Has Fridge?' %}
+                                        <input type="checkbox" id="fridge" name="have_fridge">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="smoking">
+                                        {% trans 'Smoking Allowed?' %}
+                                        <input type="checkbox" id="smoking" name="smoking">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="alcohol">
+                                        {% trans 'Alcohol Allowed?' %}
+                                        <input type="checkbox" id="alcohol" name="alcohol">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="pets">
+                                        {% trans 'Pets Allowed?' %}
+                                        <input type="checkbox" id="pets" name="pets">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="events">
+                                        {% trans 'Events Allowed?' %}
+                                        <input type="checkbox" id="events" name="events">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="children">
+                                        {% trans 'Children Allowed?' %}
+                                        <input type="checkbox" id="children" name="children">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="outdoor_kitchen">
+                                        {% trans 'Has Outdoor Kitchen?' %}
+                                        <input type="checkbox" id="outdoor_kitchen" name="have_outdoor_kitchen">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="indoor_kitchen">
+                                        {% trans 'Has Indoor Kitchen?' %}
+                                        <input type="checkbox" id="indoor_kitchen" name="have_indoor_kitchen">
+                                    </label>
+                                </div>
+                            </div>                          
                             <button type="submit" id="booking_submit" class="ui-btn ui-btn-primary w-100">
                                 <span data-hover="{% trans 'Add Country House' %}">{% trans 'Add Country House' %}</span>
                             </button>

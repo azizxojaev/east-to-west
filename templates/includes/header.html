@@ -64,7 +64,20 @@
                                             </div> 
                                         </li>
                                         <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
-                                        <li><a href="{% url 'country_houses' %}">{% trans 'Country Houses' %}{{ get_locale }}</a></li>
+                                        <li class="ui-ol-submenu-wrap">
+                                            <div class="ui-ol-submenu-trigger">
+                                                <a href="#">{% trans 'Country Houses' %}</a>
+                                                <div class="ui-ol-submenu-caret-wrap">
+                                                    <div class="ui-ol-submenu-caret"></div>
+                                                </div> 
+                                            </div>
+                                            <div class="ui-ol-submenu">
+                                                <ul class="ui-ol-submenu-list">
+                                                    <li><a href="{% url 'country_houses' %}">{% trans 'Country Houses' %}</a></li>
+                                                    <li><a href="{% url 'create_country_house' %}">{% trans 'Create Country Houses' %}</a></li>
+                                                </ul>
+                                            </div> 
+                                        </li>
                                         <li>
                                             <form class="show-on-mobile" action="{% url 'set_language' %}" method="post">
                                                 {% csrf_token %}
