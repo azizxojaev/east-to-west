@@ -7,11 +7,12 @@ env.read_env()
 
 
 def send_message(text):
-    apiToken = env.str('API_TOKEN')
-    chatID = env.str('CHAT_ID')
-    apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+    api_token = env.str('API_TOKEN')
+    chat_id = env.str('CHAT_ID')
+    api_url = f'https://api.telegram.org/bot{api_token}/sendMessage'
 
     try:
-        response = requests.post(apiURL, json={'chat_id': chatID, 'text': text})
+        response = requests.post(api_url, json={'chat_id': chat_id, 'text': text})
+        response.raise_for_status()
     except Exception as e:
-        print(e)
+        print(f'Произошла ошибка: {e}')

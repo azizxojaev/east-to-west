@@ -49,7 +49,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-7 mb-48 mb-xl-0">
                     <h3 class="text-uppercase mb-48">{% trans 'Fill out the form to create country house' %}</h3>
-                    <form method="post" action="{% url 'create_country_house' %}" class="create-country-house-booking-form">
+                    <form method="post" action="{% url 'add_country_house' %}" class="add-country-house-booking-form" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row booking-from">
                             <div class="col-sm-6">
@@ -100,6 +100,11 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="rooms" required placeholder="{% trans 'Rooms (ex. 1 Bedroom, 1 Kitchen)' %}">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="file" name="images" required multiple placeholder="{% trans 'Images' %}">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -277,9 +282,9 @@
                                         <input type="checkbox" id="indoor_kitchen" name="have_indoor_kitchen">
                                     </label>
                                 </div>
-                            </div>                          
+                            </div>
                             <button type="submit" id="booking_submit" class="ui-btn ui-btn-primary w-100">
-                                <span data-hover="{% trans 'Create Country House' %}">{% trans 'Create Country House' %}</span>
+                                <span data-hover="{% trans 'Add Country House' %}">{% trans 'Add Country House' %}</span>
                             </button>
                         </div>  
                         <div id="success_message"></div>

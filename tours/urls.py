@@ -10,4 +10,5 @@ urlpatterns = [
     path('visa-booking/', visa_booking_page, name='visa_booking'),
     path('umrah-booking/', umrah_booking_page, name='umrah_booking'),
     path('create-country-house/', create_country_house_page, name='create_country_house'),
+    path('add-country-house/', add_country_house_page, name='add_country_house'),
 ]

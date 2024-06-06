@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 22:45+0500\n"
+"POT-Creation-Date: 2024-06-06 18:15+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr ""
 "персонализированные путешествия, гарантируя, что каждая деталь отражает ваши "
 "мечты. Начните свое приключение сегодня."
 
-#: .\templates\about.html:51
+#: .\templates\about.html:51 .\templates\includes\footer.html:63
 msgid "MESSAGE FROM THE CEO"
 msgstr "СООБЩЕНИЕ ОТ ДИРЕКТОРА"
 
@@ -79,7 +79,7 @@ msgstr ""
 "или культурное погружение, мы здесь, чтобы сделать ваши путешественные мечты "
 "реальностью. Давайте исследуем мир вместе!"
 
-#: .\templates\about.html:53
+#: .\templates\about.html:53 .\templates\includes\footer.html:66
 msgid "Find me on Facebook"
 msgstr "Свяжитесь со мной по Facebook"
 
@@ -87,7 +87,7 @@ msgstr "Свяжитесь со мной по Facebook"
 msgid "Warm regards,"
 msgstr "С теплыми пожеланиями,"
 
-#: .\templates\about.html:55
+#: .\templates\about.html:55 .\templates\includes\footer.html:65
 msgid "Sayidillyos Khakimov Saidaziz"
 msgstr "Саидилёс Хакимов Саидазиз"
 
@@ -98,6 +98,225 @@ msgstr "фотографии"
 #: .\templates\about.html:128 .\templates\index.html:153
 msgid "TRAVEL GALLERIES"
 msgstr "ГАЛЕРЕИ ПУТЕШЕСТВИЙ"
+
+#: .\templates\add-country-house.html:38
+#: .\templates\create-country-house.html:38
+#, fuzzy
+#| msgid "COUNTRY HOUSES"
+msgid "ADD COUNTRY HOUSE"
+msgstr "ДАЧИ"
+
+#: .\templates\add-country-house.html:40
+#: .\templates\create-country-house.html:40
+#, fuzzy
+#| msgid "COUNTRY HOUSES"
+msgid "CREATE COUNTRY HOUSE"
+msgstr "ДАЧИ"
+
+#: .\templates\add-country-house.html:51
+#: .\templates\create-country-house.html:51
+#, fuzzy
+#| msgid "Please fill out the form to book your country house"
+msgid "Fill out the form to create country house"
+msgstr "Пожалуйста, заполните форму для бронирования дачи."
+
+#: .\templates\add-country-house.html:57
+#: .\templates\create-country-house.html:57
+#, fuzzy
+#| msgid "Full Name"
+msgid "Name"
+msgstr "Ф.И"
+
+#: .\templates\add-country-house.html:62
+#: .\templates\create-country-house.html:62 .\templates\tour-detail.html:52
+msgid "Phone Number"
+msgstr "Номер Телефона"
+
+#: .\templates\add-country-house.html:67
+#: .\templates\create-country-house.html:67
+msgid "Price ($ per day)"
+msgstr "Цена ($ в день)"
+
+#: .\templates\add-country-house.html:72
+#: .\templates\create-country-house.html:72
+msgid "Youtube Video URL (If exists)"
+msgstr "Ссылка в Ютуб (Если есть)"
+
+#: .\templates\add-country-house.html:77
+#: .\templates\create-country-house.html:77 .\templates\tour-detail.html:34
+msgid "Location"
+msgstr "Локация"
+
+#: .\templates\add-country-house.html:82
+#: .\templates\create-country-house.html:82
+msgid "Capacity"
+msgstr "Вместимость"
+
+#: .\templates\add-country-house.html:87
+#: .\templates\create-country-house.html:87
+msgid "Distance From City"
+msgstr "Расстояние От Города"
+
+#: .\templates\add-country-house.html:92
+#: .\templates\create-country-house.html:92
+msgid "Pools (ex. 1 Summer Pool, 1 Winter Pool)"
+msgstr "Бассейн (1 Летний, 1 Зимний)"
+
+#: .\templates\add-country-house.html:97
+#: .\templates\create-country-house.html:97
+msgid "Bathrooms"
+msgstr "Санузлы"
+
+#: .\templates\add-country-house.html:102
+#: .\templates\create-country-house.html:102
+msgid "Rooms (ex. 1 Bedroom, 1 Kitchen)"
+msgstr "Комнаты (1 Спальня, 1 Кухня)"
+
+#: .\templates\add-country-house.html:107
+msgid "Images"
+msgstr "Фотографии"
+
+#: .\templates\add-country-house.html:113
+#: .\templates\create-country-house.html:108
+#, fuzzy
+#| msgid "Has TV?"
+msgid "Has a TV?"
+msgstr "Имеет Телевизор?"
+
+#: .\templates\add-country-house.html:121
+#: .\templates\create-country-house.html:116
+#, fuzzy
+#| msgid "Play Station"
+msgid "Has a PlayStation?"
+msgstr "Play Station"
+
+#: .\templates\add-country-house.html:129
+#: .\templates\create-country-house.html:124
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Karaoke?"
+msgstr "Караоке"
+
+#: .\templates\add-country-house.html:137
+#: .\templates\create-country-house.html:132
+#, fuzzy
+#| msgid "Mini Tennis"
+msgid "Has Tennis?"
+msgstr "Настольный Теннис"
+
+#: .\templates\add-country-house.html:145
+#: .\templates\create-country-house.html:140
+#, fuzzy
+#| msgid "Terrace"
+msgid "Has Tapchan?"
+msgstr "Терраса"
+
+#: .\templates\add-country-house.html:153
+#: .\templates\create-country-house.html:148
+msgid "Has Living Room?"
+msgstr "Зал"
+
+#: .\templates\add-country-house.html:161
+#: .\templates\create-country-house.html:156
+#, fuzzy
+#| msgid "Sauna"
+msgid "Has Sauna?"
+msgstr "Сауна"
+
+#: .\templates\add-country-house.html:169
+#: .\templates\create-country-house.html:164
+#, fuzzy
+#| msgid "Terrace"
+msgid "Has Terrace?"
+msgstr "Терраса"
+
+#: .\templates\add-country-house.html:177
+#: .\templates\create-country-house.html:172
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Barbeque?"
+msgstr "Караоке"
+
+#: .\templates\add-country-house.html:185
+#: .\templates\create-country-house.html:180
+#, fuzzy
+#| msgid "Sauna"
+msgid "Has Jacuzzi?"
+msgstr "Сауна"
+
+#: .\templates\add-country-house.html:193
+#: .\templates\create-country-house.html:188
+msgid "Has Conditioners?"
+msgstr "Кондиционер"
+
+#: .\templates\add-country-house.html:201
+#: .\templates\create-country-house.html:196
+#, fuzzy
+#| msgid "Has TV?"
+msgid "Has WiFi?"
+msgstr "Имеет Телевизор?"
+
+#: .\templates\add-country-house.html:209
+#: .\templates\create-country-house.html:204
+msgid "Has Football Pitch?"
+msgstr "Футбольное Поле"
+
+#: .\templates\add-country-house.html:217
+#: .\templates\create-country-house.html:212
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Projector?"
+msgstr "Караоке"
+
+#: .\templates\add-country-house.html:225
+#: .\templates\create-country-house.html:220
+#, fuzzy
+#| msgid "Karaoke"
+msgid "Has Fridge?"
+msgstr "Караоке"
+
+#: .\templates\add-country-house.html:233
+#: .\templates\create-country-house.html:228
+msgid "Smoking Allowed?"
+msgstr "Разрешено Курение?"
+
+#: .\templates\add-country-house.html:241
+#: .\templates\create-country-house.html:236
+msgid "Alcohol Allowed?"
+msgstr "Разрешен Алкоголь?"
+
+#: .\templates\add-country-house.html:249
+#: .\templates\create-country-house.html:244
+msgid "Pets Allowed?"
+msgstr "Разрешены Животные?"
+
+#: .\templates\add-country-house.html:257
+#: .\templates\create-country-house.html:252
+msgid "Events Allowed?"
+msgstr "Разрешены Мероприятия?"
+
+#: .\templates\add-country-house.html:265
+#: .\templates\create-country-house.html:260
+msgid "Children Allowed?"
+msgstr "Разрешены Дети?"
+
+#: .\templates\add-country-house.html:273
+#: .\templates\create-country-house.html:268
+#, fuzzy
+#| msgid "Has Outdoor Garden Table?"
+msgid "Has Outdoor Kitchen?"
+msgstr "Имеет Тапчан?"
+
+#: .\templates\add-country-house.html:281
+#: .\templates\create-country-house.html:276
+msgid "Has Indoor Kitchen?"
+msgstr "Внутреняя Кухня"
+
+#: .\templates\add-country-house.html:287
+#, fuzzy
+#| msgid "Country Houses"
+msgid "Add Country House"
+msgstr "Дачи"
 
 #: .\templates\contact-us.html:8
 msgid "CONTACT"
@@ -253,104 +472,11 @@ msgstr "Дополнительное Сообщение"
 msgid "Book Country House"
 msgstr "Забронировать Дачу"
 
-#: .\templates\create-country-house.html:37
+#: .\templates\create-country-house.html:282
 #, fuzzy
-#| msgid "COUNTRY HOUSES"
-msgid "CREATE COUNTRY HOUSE"
-msgstr "ДАЧИ"
-
-#: .\templates\create-country-house.html:47
-#, fuzzy
-#| msgid "Please fill out the form to book your country house"
-msgid "Fill out the form to create country house"
-msgstr "Пожалуйста, заполните форму для бронирования дачи."
-
-#: .\templates\create-country-house.html:53
-#, fuzzy
-#| msgid "Full Name"
-msgid "Name"
-msgstr "Ф.И"
-
-#: .\templates\create-country-house.html:58
-msgid "Price"
-msgstr "Цена"
-
-#: .\templates\create-country-house.html:63
-msgid "Video URL"
-msgstr "Ссылка На Видео"
-
-#: .\templates\create-country-house.html:68
-#, fuzzy
-#| msgid "destinations"
-msgid "Description"
-msgstr "места прибытия"
-
-#: .\templates\create-country-house.html:73 .\templates\tour-detail.html:34
-msgid "Location"
-msgstr "Локация"
-
-#: .\templates\create-country-house.html:78
-msgid "Capacity"
-msgstr "Вместимость"
-
-#: .\templates\create-country-house.html:83
-#: .\templates\create-country-house.html:88 .\templates\tour-detail.html:35
-msgid "Rooms"
-msgstr "Комнаты"
-
-#: .\templates\create-country-house.html:93
-#, fuzzy
-#| msgid "Pool"
-msgid "Pools"
-msgstr "Бассейн"
-
-#: .\templates\create-country-house.html:98 .\templates\tour-detail.html:52
-msgid "Phone Number"
-msgstr "Номер Телефона"
-
-#: .\templates\create-country-house.html:104
-msgid "Has TV?"
-msgstr "Имеет Телевизор?"
-
-#: .\templates\create-country-house.html:112
-#, fuzzy
-#| msgid "Play Station"
-msgid "Has PlayStation?"
-msgstr "Play Station"
-
-#: .\templates\create-country-house.html:120
-#, fuzzy
-#| msgid "Karaoke"
-msgid "Has Karaoke?"
-msgstr "Караоке"
-
-#: .\templates\create-country-house.html:128
-#, fuzzy
-#| msgid "Mini Tennis"
-msgid "Has Tennis?"
-msgstr "Настольный Теннис"
-
-#: .\templates\create-country-house.html:136
-msgid "Has Outdoor Garden Table?"
-msgstr "Имеет Тапчан?"
-
-#: .\templates\create-country-house.html:144
-#, fuzzy
-#| msgid "Sauna"
-msgid "Has Sauna?"
-msgstr "Сауна"
-
-#: .\templates\create-country-house.html:152
-#, fuzzy
-#| msgid "Terrace"
-msgid "Has Terrace?"
-msgstr "Терраса"
-
-#: .\templates\create-country-house.html:158
-#, fuzzy
-#| msgid "Country Houses"
-msgid "Add Country House"
-msgstr "Дачи"
+#| msgid "Select Country House"
+msgid "Create Country House"
+msgstr "Выберите Дачу"
 
 #: .\templates\includes\footer.html:14
 msgid ""
@@ -380,7 +506,8 @@ msgstr "О Нас"
 msgid "Contact Us"
 msgstr "Связаться с Нами"
 
-#: .\templates\includes\footer.html:27 .\templates\includes\header.html:67
+#: .\templates\includes\footer.html:27 .\templates\includes\header.html:69
+#: .\templates\includes\header.html:76
 msgid "Country Houses"
 msgstr "Дачи"
 
@@ -400,7 +527,7 @@ msgstr "Бронирование ВИЗЫ"
 msgid "Umrah Booking Page"
 msgstr "Бронирование поездки в Умру"
 
-#: .\templates\includes\footer.html:70
+#: .\templates\includes\footer.html:77
 msgid "All Rights Reserved"
 msgstr "Все Права Защищены"
 
@@ -455,6 +582,12 @@ msgstr "Бронирования Умры"
 #: .\templates\includes\header.html:66
 msgid "Contact"
 msgstr "Контакты"
+
+#: .\templates\includes\header.html:77
+#, fuzzy
+#| msgid "Country Houses"
+msgid "Create Country Houses"
+msgstr "Дачи"
 
 #: .\templates\includes\tours.html:11
 msgid "Person"
@@ -669,6 +802,10 @@ msgstr "день"
 msgid "SERVICES PROVIDED"
 msgstr "ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ"
 
+#: .\templates\tour-detail.html:35
+msgid "Rooms"
+msgstr "Комнаты"
+
 #: .\templates\tour-detail.html:37
 msgid "Play Station"
 msgstr "Play Station"
@@ -705,11 +842,11 @@ msgstr "Бассейн"
 msgid "Outdoor Day Bed"
 msgstr "Тапчан"
 
-#: .\templates\tour-detail.html:78
+#: .\templates\tour-detail.html:80
 msgid "ADDITIONAL INFO"
 msgstr "ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ"
 
-#: .\templates\tour-detail.html:82
+#: .\templates\tour-detail.html:84
 msgid "GALLERY"
 msgstr "ГАЛЛЕРЕЯ"
 
@@ -1958,6 +2095,22 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Price"
+#~ msgstr "Цена"
+
+#~ msgid "Video URL"
+#~ msgstr "Ссылка На Видео"
+
+#, fuzzy
+#~| msgid "destinations"
+#~ msgid "Description"
+#~ msgstr "места прибытия"
+
+#, fuzzy
+#~| msgid "Pool"
+#~ msgid "Pools"
+#~ msgstr "Бассейн"
 
 #~ msgid "WE WANT TO GIVE THE BEST TOURS"
 #~ msgstr "МЫ ХОТИМ ПРЕДОСТАВИТЬ ЛУЧШИЕ ТУРЫ"

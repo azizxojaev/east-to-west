@@ -67,11 +67,13 @@
                         </div>
                     </div>
                 </div>
+                {% if country_video %}
                 <div class="col-lg-6">
                     <div class="box-blur-bg mb-48">
                         <iframe style="width: 100%; aspect-ratio: 1.5;" src="{{ country_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
+                {% endif %}
             </div>
             <div class="row">
                 <div class="col-xxl-9 col-xl-10 col-md-11">

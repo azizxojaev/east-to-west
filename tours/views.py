@@ -116,11 +116,15 @@ def country_houses_page(request):
 
 def country_house_detail_page(request, slug):
     country_house = CountryHouse.objects.get(slug=slug)
+    try:
+        country_video = country_house.video.split('"')[5]
+    except:
+        country_video = None
 
     context = {
         'contact': Contact.objects.first(),
         'country_house': country_house,
-        'country_video': country_house.video.split('"')[5],
+        'country_video': country_video,
         'country_images': HouseImage.objects.filter(house=country_house)
     }
     return render(request, 'tour-detail.html', context=context)
@@ -130,6 +134,8 @@ def create_country_house_page(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         phone_number = request.POST.get('phone_number')
+        price = request.POST.get('price')
+        video = request.POST.get('video')
         location = request.POST.get('location')
         capacity = request.POST.get('capacity')
         distance = request.POST.get('distance')
@@ -159,13 +165,61 @@ def create_country_house_page(request):
         events = request.POST.get('events') == 'on'
         children = request.POST.get('children') == 'on'
 
-        message = f"""#Заявка на сотрудничество :\n\nИмя: {name}\nНомер телефона: {phone_number}\nЛокация: {location}\nВместимость: {capacity}\nРасстояние от города: {distance}\nКомнаты: {rooms}\nБассейны: {pools}\nВанные комнаты: {bathrooms}\nНаличие ТВ: {'Да' if tv else 'Нет'}\nНаличие PlayStation: {'Да' if have_playstation else 'Нет'}\nНаличие Караоке: {'Да' if have_karaoke else 'Нет'}\nНаличие Тенниса: {'Да' if have_tenis else 'Нет'}\nНаличие Тапчана: {'Да' if have_tapchan else 'Нет'}\nНаличие Гостиной: {'Да' if have_living_room else 'Нет'}\nНаличие Летней кухни: {'Да' if have_outdoor_kitchen else 'Нет'}\nНаличие Внутренней кухни: {'Да' if have_indoor_kitchen else 'Нет'}\nНаличие Сауны: {'Да' if have_sauna else 'Нет'}\nНаличие Террасы: {'Да' if have_terrace else 'Нет'}\nНаличие Барбекю: {'Да' if have_barbeque else 'Нет'}\nНаличие Джакузи: {'Да' if have_jacuzzi else 'Нет'}\nНаличие Кондиционеров: {'Да' if have_conditioners else 'Нет'}\nНаличие WiFi: {'Да' if have_wifi else 'Нет'}\nНаличие Футбольного поля: {'Да' if have_football_pitch else 'Нет'}\nНаличие Проектора: {'Да' if have_projector else 'Нет'}\nНаличие Холодильника: {'Да' if have_fridge else 'Нет'}\nРазрешено курение: {'Да' if smoking else 'Нет'}\nРазрешён алкоголь: {'Да' if alcohol else 'Нет'}\nРазрешены домашние животные: {'Да' if pets else 'Нет'}\nРазрешены мероприятия: {'Да' if events else 'Нет'}\nРазрешены дети: {'Да' if children else 'Нет'}"""
-
+        message = f"""#Заявка на сотрудничество :\n\nИмя: {name}\nНомер телефона: {phone_number}\nЦена: {price}\nВидео: {video}\nЛокация: {location}\nВместимость: {capacity}\nРасстояние от города: {distance}\nКомнаты: {rooms}\nБассейны: {pools}\nВанные комнаты: {bathrooms}\nНаличие ТВ: {'Да' if tv else 'Нет'}\nНаличие PlayStation: {'Да' if have_playstation else 'Нет'}\nНаличие Караоке: {'Да' if have_karaoke else 'Нет'}\nНаличие Тенниса: {'Да' if have_tenis else 'Нет'}\nНаличие Тапчана: {'Да' if have_tapchan else 'Нет'}\nНаличие Гостиной: {'Да' if have_living_room else 'Нет'}\nНаличие Летней кухни: {'Да' if have_outdoor_kitchen else 'Нет'}\nНаличие Внутренней кухни: {'Да' if have_indoor_kitchen else 'Нет'}\nНаличие Сауны: {'Да' if have_sauna else 'Нет'}\nНаличие Террасы: {'Да' if have_terrace else 'Нет'}\nНаличие Барбекю: {'Да' if have_barbeque else 'Нет'}\nНаличие Джакузи: {'Да' if have_jacuzzi else 'Нет'}\nНаличие Кондиционеров: {'Да' if have_conditioners else 'Нет'}\nНаличие WiFi: {'Да' if have_wifi else 'Нет'}\nНаличие Футбольного поля: {'Да' if have_football_pitch else 'Нет'}\nНаличие Проектора: {'Да' if have_projector else 'Нет'}\nНаличие Холодильника: {'Да' if have_fridge else 'Нет'}\nРазрешено курение: {'Да' if smoking else 'Нет'}\nРазрешён алкоголь: {'Да' if alcohol else 'Нет'}\nРазрешены домашние животные: {'Да' if pets else 'Нет'}\nРазрешены мероприятия: {'Да' if events else 'Нет'}\nРазрешены дети: {'Да' if children else 'Нет'}"""
         send_message(message)
 
-        return JsonResponse({'success': True})
+        return JsonResponse({'success': request.path})
 
     context = {
         'contact': Contact.objects.first()
     }
     return render(request, 'create-country-house.html', context=context)
+
+
+def add_country_house_page(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        phone_number = request.POST.get('phone_number')
+        price = request.POST.get('price')
+        video = request.POST.get('video')
+        location = request.POST.get('location')
+        capacity = request.POST.get('capacity')
+        distance = request.POST.get('distance')
+        rooms = request.POST.get('rooms')
+        pools = request.POST.get('pools')
+        bathrooms = request.POST.get('bathrooms')
+        tv = request.POST.get('tv') == 'on'
+        have_playstation = request.POST.get('have_playstation') == 'on'
+        have_karaoke = request.POST.get('have_karaoke') == 'on'
+        have_tenis = request.POST.get('have_tenis') == 'on'
+        have_tapchan = request.POST.get('have_tapchan') == 'on'
+        have_living_room = request.POST.get('have_living_room') == 'on'
+        have_outdoor_kitchen = request.POST.get('have_outdoor_kitchen') == 'on'
+        have_indoor_kitchen = request.POST.get('have_indoor_kitchen') == 'on'
+        have_sauna = request.POST.get('have_sauna') == 'on'
+        have_terrace = request.POST.get('have_terrace') == 'on'
+        have_barbeque = request.POST.get('have_barbeque') == 'on'
+        have_jacuzzi = request.POST.get('have_jacuzzi') == 'on'
+        have_conditioners = request.POST.get('have_conditioners') == 'on'
+        have_wifi = request.POST.get('have_wifi') == 'on'
+        have_football_pitch = request.POST.get('have_football_pitch') == 'on'
+        have_projector = request.POST.get('have_projector') == 'on'
+        have_fridge = request.POST.get('have_fridge') == 'on'
+        smoking = request.POST.get('smoking') == 'on'
+        alcohol = request.POST.get('alcohol') == 'on'
+        pets = request.POST.get('pets') == 'on'
+        events = request.POST.get('events') == 'on'
+        children = request.POST.get('children') == 'on'
+
+        country_house = CountryHouse.objects.create(title=name, price=price, video=video, location=location, capacity=capacity, distance=distance, rooms=rooms, pool=pools, bathrooms=bathrooms, have_tv=tv, have_playstation=have_playstation, have_karaoke=have_karaoke, have_tenis=have_tenis, have_tapchan=have_tapchan, have_living_room=have_living_room, have_outdoor_kitchen=have_outdoor_kitchen, have_indoor_kitchen=have_indoor_kitchen, have_sauna=have_sauna, have_terrace=have_terrace, have_barbeque=have_barbeque, have_jacuzzi=have_jacuzzi, have_conditioners=have_conditioners, have_wifi=have_wifi, have_football_pitch=have_football_pitch, have_projector=have_projector, have_fridge=have_fridge, smoking=smoking, alcohol=alcohol, pets=pets, events=events, children=children, phone_number=phone_number)
+
+        if request.FILES:
+            images = request.FILES.getlist('images')
+            for image in images:
+                HouseImage.objects.create(image=image, house=country_house)
+
+
+    context = {
+        'contact': Contact.objects.first()
+    }
+    return render(request, 'add-country-house.html', context=context)

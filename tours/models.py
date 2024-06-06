@@ -21,11 +21,11 @@ class Departure(models.Model):
 
 
 class CountryHouse(models.Model):
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True, unique=True)
     title = models.CharField(max_length=150)
     price = models.FloatField()
     video = models.TextField()
-    description = models.TextField()
+    distance = models.IntegerField()
     location = models.CharField(max_length=300)
     capacity = models.IntegerField()
     rooms = models.CharField(max_length=200)

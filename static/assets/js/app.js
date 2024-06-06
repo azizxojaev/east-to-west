@@ -37,6 +37,7 @@ var MyScroll = "";
       Init.VISAbookingForm();
       Init.UmrahBookingForm();
       Init.CreateCountryHouseBookingForm();
+      Init.AddCountryHouseBookingForm();
       Init.filterToggle();
     },
 
@@ -791,7 +792,6 @@ var MyScroll = "";
     //  Create Country House Booking Form
     // =======================
     CreateCountryHouseBookingForm: function () {
-      console.log($(".create-country-house-booking-form"))
       $(".create-country-house-booking-form").on("submit", function (e) {
         e.preventDefault();
         
@@ -810,6 +810,46 @@ var MyScroll = "";
           data: data,
           success: function (data) {
             $(".create-country-house-booking-form").trigger("reset");
+
+            if (data.success) {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-success mt-3 mb-2'>Request Sent Successfully</h5>";
+            } else {
+              document.getElementById("success_message").innerHTML =
+                "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
+            }
+            $("#success_message").show("slow");
+            $("#success_message").slideDown("slow");
+            setTimeout(function () {
+              $("#success_message").slideUp("hide");
+              $("#success_message").hide("slow");
+            }, 3000);
+          }
+        });
+      });
+    },
+    // =======================
+    //  Add Country House Booking Form
+    // =======================
+    AddCountryHouseBookingForm: function () {
+      $(".add-country-house-booking-form").on("submit", function (e) {
+        e.preventDefault();
+        
+        document.querySelector('#booking_submit').style.cursor = 'wait'
+
+        var formData = new FormData(this);
+        var data = {};
+        formData.forEach(function(value, key){
+          data[key] = value;
+        });
+
+        $.ajax({
+          url: "/add-country-house/",
+          type: "post",
+          dataType: "json",
+          data: data,
+          success: function (data) {
+            $(".add-country-house-booking-form").trigger("reset");
 
             if (data.success) {
               document.getElementById("success_message").innerHTML =
