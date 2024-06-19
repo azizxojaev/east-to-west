@@ -1,1 +1,1 @@
-# east-to-west
+https://east2west.uz
